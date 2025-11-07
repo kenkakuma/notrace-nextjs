@@ -7,6 +7,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: ['var(--font-roboto)', 'sans-serif'],
+        'noto-sans-jp': ['var(--font-noto-sans-jp)', 'sans-serif'],
+      },
       colors: {
         primary: '#E17B47',
         'bg-light': '#FAF9F7',
