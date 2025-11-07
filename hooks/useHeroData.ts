@@ -16,7 +16,7 @@ export interface HeroConfig {
 }
 
 const DEFAULT_CONFIG: HeroConfig = {
-  currentBackground: '/images/hero-bg-1.svg',
+  currentBackground: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
   heroContent: {
     title: '品質を極め、文化をつなぐ',
     description:

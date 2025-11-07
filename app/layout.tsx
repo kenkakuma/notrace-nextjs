@@ -1,19 +1,6 @@
 import type { Metadata } from 'next'
-import { Roboto, Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 import { RootLayout as AppRootLayout } from '@/components/RootLayout'
-
-const roboto = Roboto({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  variable: '--font-roboto',
-})
-
-const notoSansJp = Noto_Sans_JP({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  variable: '--font-noto-sans-jp',
-})
 
 export const metadata: Metadata = {
   title: 'NO TRACE EXPLORER',
@@ -30,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja" className={`${roboto.variable} ${notoSansJp.variable}`}>
-      <body className="antialiased font-roboto">
+    <html lang="ja">
+      <body className="antialiased">
         <AppRootLayout>
           {children}
         </AppRootLayout>
