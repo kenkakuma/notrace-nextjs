@@ -7,14 +7,14 @@ interface Partner {
 }
 
 const PARTNERS: Partner[] = [
-  { id: 1, name: 'Partner 1', logo: '🏢' },
-  { id: 2, name: 'Partner 2', logo: '🏭' },
-  { id: 3, name: 'Partner 3', logo: '🏗️' },
-  { id: 4, name: 'Partner 4', logo: '🌐' },
-  { id: 5, name: 'Partner 5', logo: '📱' },
-  { id: 6, name: 'Partner 6', logo: '🔬' },
-  { id: 7, name: 'Partner 7', logo: '🎓' },
-  { id: 8, name: 'Partner 8', logo: '🚀' },
+  { id: 1, name: 'Shimano', logo: '🎣' },
+  { id: 2, name: 'Daiwa', logo: '🎯' },
+  { id: 3, name: '東京珈琲', logo: '☕' },
+  { id: 4, name: '東京アートギャラリー', logo: '🎨' },
+  { id: 5, name: 'スポーツテック株式会社', logo: '⚽' },
+  { id: 6, name: 'イベントソリューション', logo: '🎪' },
+  { id: 7, name: 'イノベーションラボ', logo: '🔬' },
+  { id: 8, name: 'グローバル貿易', logo: '🌍' },
 ]
 
 export function PartnersSection() {

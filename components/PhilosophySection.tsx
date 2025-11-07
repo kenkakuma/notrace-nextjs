@@ -11,18 +11,18 @@ interface Principle {
 const PRINCIPLES: Principle[] = [
   {
     icon: <Lightbulb className="w-6 h-6" />,
-    title: '継続的イノベーション',
-    description: '最先端技術を取り入れて複雑な課題を解決',
+    title: '技術革新',
+    description: '常に新しい価値を追求し、市場のニーズに応える',
   },
   {
     icon: <Shield className="w-6 h-6" />,
-    title: '倫理的卓越性',
-    description: 'すべての取り組みにおいて最高水準の誠実性を維持',
+    title: '信頼第一',
+    description: '透明性と誠実さで、長期的な信頼関係を構築',
   },
   {
     icon: <Users className="w-6 h-6" />,
-    title: '協働的成長',
-    description: '相互価値を創造する持続的なパートナーシップの構築',
+    title: '共創価値',
+    description: 'パートナーと共に成長し、持続可能な未来を実現',
   },
 ]
 
@@ -38,11 +38,11 @@ export function PhilosophySection() {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-text-dark mb-6 leading-tight">
-              未知の領域を探索し、革新を創造する
+              文化をつなぎ、未来を創る
             </h2>
 
             <p className="text-lg text-text-secondary mb-8 leading-relaxed">
-              無迹探索株式会社では、未踏の分野への挑戦から最も画期的なイノベーションが生まれると信じています。倫理的基準を維持しながら境界を押し広げるという私たちのコミットメントが、すべての活動の原動力となっています。
+              異なる文化と技術を繋ぎ合わせ、イノベーションと信頼を基盤とした持続可能なパートナーシップで両国市場に新たな価値を提供します。
             </p>
 
             {/* Principles */}

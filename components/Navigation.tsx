@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 
 interface NavItem {
   title: string
@@ -22,6 +22,7 @@ const navigationItems: NavItem[] = [
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const [adminMenuOpen, setAdminMenuOpen] = useState(false)
 
   // スクロール検出
   useEffect(() => {
@@ -32,6 +33,18 @@ export function Navigation() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // 管理メニュー以外をクリックで閉じる
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setAdminMenuOpen(false)
+    }
+
+    if (adminMenuOpen) {
+      document.addEventListener('click', handleClickOutside)
+      return () => document.removeEventListener('click', handleClickOutside)
+    }
+  }, [adminMenuOpen])
 
   return (
     <>
@@ -58,7 +71,7 @@ export function Navigation() {
           <div className="flex-1" />
 
           {/* デスクトップナビゲーションメニュー */}
-          <div className="hidden lg:flex gap-1">
+          <div className="hidden lg:flex gap-1 items-center">
             {navigationItems.map((item) => (
               <Link
                 key={item.to}
@@ -70,6 +83,33 @@ export function Navigation() {
                 {item.title}
               </Link>
             ))}
+
+            {/* 管理システムドロップダウン */}
+            <div className="relative ml-4 pl-4 border-l border-gray-300">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setAdminMenuOpen(!adminMenuOpen)
+                }}
+                className="px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm font-medium text-text-dark hover:bg-opacity-10 hover:bg-primary"
+              >
+                管理システム
+                <ChevronDown size={16} className={`transition-transform ${adminMenuOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {/* ドロップダウンメニュー */}
+              {adminMenuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                  <Link
+                    href="/admin"
+                    onClick={() => setAdminMenuOpen(false)}
+                    className="block px-4 py-2 text-sm text-text-dark hover:bg-gray-50 transition-colors"
+                  >
+                    管理中心
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* モバイルメニューボタン */}
@@ -121,6 +161,29 @@ export function Navigation() {
                   {item.title}
                 </Link>
               ))}
+
+              {/* 管理システム */}
+              <div className="px-4 py-3 border-b border-gray-200">
+                <button
+                  onClick={() => setAdminMenuOpen(!adminMenuOpen)}
+                  className="w-full text-left text-text-dark hover:bg-gray-50 transition-colors flex items-center justify-between py-2"
+                >
+                  管理システム
+                  <ChevronDown size={16} className={`transition-transform ${adminMenuOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {adminMenuOpen && (
+                  <Link
+                    href="/admin"
+                    onClick={() => {
+                      setDrawerOpen(false)
+                      setAdminMenuOpen(false)
+                    }}
+                    className="block px-4 py-2 text-sm text-text-dark hover:bg-gray-100 transition-colors rounded mt-2"
+                  >
+                    管理中心
+                  </Link>
+                )}
+              </div>
             </nav>
           </div>
         </div>
