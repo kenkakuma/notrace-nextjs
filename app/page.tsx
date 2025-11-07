@@ -1,5 +1,5 @@
 import { HeroSection } from '@/components/HeroSection'
-import { ServiceShowcase } from '@/components/ServiceShowcase'
+import { BusinessValueSection } from '@/components/BusinessValueSection'
 import { PhilosophySection } from '@/components/PhilosophySection'
 import { SecondaryHeroSection } from '@/components/SecondaryHeroSection'
 import { FeaturedArticlesSection } from '@/components/FeaturedArticlesSection'
@@ -12,8 +12,8 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Service Showcase Section */}
-      <ServiceShowcase />
+      {/* Business Value Section */}
+      <BusinessValueSection />
 
       {/* Philosophy Section */}
       <PhilosophySection />
