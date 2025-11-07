@@ -5,6 +5,7 @@ import { Lightbulb, Shield, Users } from 'lucide-react'
 interface Principle {
   icon: React.ReactNode
   title: string
+  englishTitle: string
   description: string
 }
 
@@ -12,16 +13,19 @@ const PRINCIPLES: Principle[] = [
   {
     icon: <Lightbulb className="w-6 h-6" />,
     title: '技術革新',
+    englishTitle: 'Innovation',
     description: '常に新しい価値を追求し、市場のニーズに応える',
   },
   {
     icon: <Shield className="w-6 h-6" />,
     title: '信頼第一',
+    englishTitle: 'Trust',
     description: '透明性と誠実さで、長期的な信頼関係を構築',
   },
   {
     icon: <Users className="w-6 h-6" />,
     title: '共創価値',
+    englishTitle: 'Co-Creation',
     description: 'パートナーと共に成長し、持続可能な未来を実現',
   },
 ]
@@ -66,6 +70,9 @@ export function PhilosophySection() {
                     <h4 className="font-semibold text-text-dark mb-1">
                       {principle.title}
                     </h4>
+                    <p className="text-primary text-xs font-medium mb-2">
+                      {principle.englishTitle}
+                    </p>
                     <p className="text-text-secondary text-sm">
                       {principle.description}
                     </p>
