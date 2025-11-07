@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+import { withContentlayer } from 'next-contentlayer'
+
 const nextConfig = {
   typescript: {
     tsconfigPath: './tsconfig.json',
@@ -20,4 +22,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+export default withContentlayer(nextConfig)

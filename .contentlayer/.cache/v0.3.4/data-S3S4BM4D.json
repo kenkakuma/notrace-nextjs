@@ -1,0 +1,38 @@
+{
+  "cacheItemsMap": {
+    "articles/establishment-news.mdx": {
+      "document": {
+        "title": "無迹探索株式会社設立準備開始のお知らせ",
+        "description": "革新的なソリューションで新たなビジネス価値を創造する企業として、無迹探索株式会社の設立準備を開始いたします。",
+        "date": "2025-01-15T00:00:00.000Z",
+        "author": "NO TRACE EXPLORER",
+        "category": "企業ニュース",
+        "featured": true,
+        "readTime": "3分",
+        "tags": [
+          "設立",
+          "企業情報",
+          "新サービス"
+        ],
+        "body": {
+          "raw": "\n## 設立背景\n\n日本と中国を架け橋とする革新的なビジネスソリューション企業として、無迹探索株式会社の設立を準備いたします。\n\n北京での直火焙煎カフェ運営実績と、日本の品質基準を融合させた、新しいビジネスモデルの構築を目指しています。\n\n## 事業内容\n\n無迹探索株式会社では、以下4つの主要事業領域に注力いたします：\n\n### 1. 珈琲事業\n- 商品企画開発\n- コーヒー貿易\n- ブランド展開\n- 中国市場戦略展開\n\n### 2. 展示・イベント運営\n- 文化・技術展示企画\n- イベント運営・管理\n- 文化・芸術プロモーション\n\n### 3. ラボ・研究開発\n- 技術研究開発\n- イノベーション企画\n- 各種実験・検証\n\n### 4. クラブ・コミュニティ運営\n- 会員制コミュニティ\n- 専門家ネットワーク\n- 限定サービス\n\n## ビジョン\n\n2025年より、日本と中国を架け橋として、グローバルなビジネスソリューション提供企業を目指します。\n\n革新、信頼、共創を基本理念として、ステークホルダーとともに持続可能な価値創造に取り組みます。\n",
+          "code": "var Component=(()=>{var a=Object.create;var c=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var j=(i,n)=>()=>(n||i((n={exports:{}}).exports,n),n.exports),_=(i,n)=>{for(var l in n)c(i,l,{get:n[l],enumerable:!0})},t=(i,n,l,h)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of p(n))!x.call(i,r)&&r!==l&&c(i,r,{get:()=>n[r],enumerable:!(h=u(n,r))||h.enumerable});return i};var f=(i,n,l)=>(l=i!=null?a(m(i)):{},t(n||!i||!i.__esModule?c(l,\"default\",{value:i,enumerable:!0}):l,i)),g=i=>t(c({},\"__esModule\",{value:!0}),i);var o=j((R,d)=>{d.exports=_jsx_runtime});var E={};_(E,{default:()=>D,frontmatter:()=>O});var e=f(o()),O={title:\"\\u7121\\u8FF9\\u63A2\\u7D22\\u682A\\u5F0F\\u4F1A\\u793E\\u8A2D\\u7ACB\\u6E96\\u5099\\u958B\\u59CB\\u306E\\u304A\\u77E5\\u3089\\u305B\",description:\"\\u9769\\u65B0\\u7684\\u306A\\u30BD\\u30EA\\u30E5\\u30FC\\u30B7\\u30E7\\u30F3\\u3067\\u65B0\\u305F\\u306A\\u30D3\\u30B8\\u30CD\\u30B9\\u4FA1\\u5024\\u3092\\u5275\\u9020\\u3059\\u308B\\u4F01\\u696D\\u3068\\u3057\\u3066\\u3001\\u7121\\u8FF9\\u63A2\\u7D22\\u682A\\u5F0F\\u4F1A\\u793E\\u306E\\u8A2D\\u7ACB\\u6E96\\u5099\\u3092\\u958B\\u59CB\\u3044\\u305F\\u3057\\u307E\\u3059\\u3002\",date:new Date(17368992e5),author:\"NO TRACE EXPLORER\",category:\"\\u4F01\\u696D\\u30CB\\u30E5\\u30FC\\u30B9\",featured:!0,readTime:\"3\\u5206\",tags:[\"\\u8A2D\\u7ACB\",\"\\u4F01\\u696D\\u60C5\\u5831\",\"\\u65B0\\u30B5\\u30FC\\u30D3\\u30B9\"]};function s(i){let n=Object.assign({h2:\"h2\",p:\"p\",h3:\"h3\",ul:\"ul\",li:\"li\"},i.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(n.h2,{children:\"\\u8A2D\\u7ACB\\u80CC\\u666F\"}),`\n`,(0,e.jsx)(n.p,{children:\"\\u65E5\\u672C\\u3068\\u4E2D\\u56FD\\u3092\\u67B6\\u3051\\u6A4B\\u3068\\u3059\\u308B\\u9769\\u65B0\\u7684\\u306A\\u30D3\\u30B8\\u30CD\\u30B9\\u30BD\\u30EA\\u30E5\\u30FC\\u30B7\\u30E7\\u30F3\\u4F01\\u696D\\u3068\\u3057\\u3066\\u3001\\u7121\\u8FF9\\u63A2\\u7D22\\u682A\\u5F0F\\u4F1A\\u793E\\u306E\\u8A2D\\u7ACB\\u3092\\u6E96\\u5099\\u3044\\u305F\\u3057\\u307E\\u3059\\u3002\"}),`\n`,(0,e.jsx)(n.p,{children:\"\\u5317\\u4EAC\\u3067\\u306E\\u76F4\\u706B\\u7119\\u714E\\u30AB\\u30D5\\u30A7\\u904B\\u55B6\\u5B9F\\u7E3E\\u3068\\u3001\\u65E5\\u672C\\u306E\\u54C1\\u8CEA\\u57FA\\u6E96\\u3092\\u878D\\u5408\\u3055\\u305B\\u305F\\u3001\\u65B0\\u3057\\u3044\\u30D3\\u30B8\\u30CD\\u30B9\\u30E2\\u30C7\\u30EB\\u306E\\u69CB\\u7BC9\\u3092\\u76EE\\u6307\\u3057\\u3066\\u3044\\u307E\\u3059\\u3002\"}),`\n`,(0,e.jsx)(n.h2,{children:\"\\u4E8B\\u696D\\u5185\\u5BB9\"}),`\n`,(0,e.jsx)(n.p,{children:\"\\u7121\\u8FF9\\u63A2\\u7D22\\u682A\\u5F0F\\u4F1A\\u793E\\u3067\\u306F\\u3001\\u4EE5\\u4E0B4\\u3064\\u306E\\u4E3B\\u8981\\u4E8B\\u696D\\u9818\\u57DF\\u306B\\u6CE8\\u529B\\u3044\\u305F\\u3057\\u307E\\u3059\\uFF1A\"}),`\n`,(0,e.jsx)(n.h3,{children:\"1. \\u73C8\\u7432\\u4E8B\\u696D\"}),`\n`,(0,e.jsxs)(n.ul,{children:[`\n`,(0,e.jsx)(n.li,{children:\"\\u5546\\u54C1\\u4F01\\u753B\\u958B\\u767A\"}),`\n`,(0,e.jsx)(n.li,{children:\"\\u30B3\\u30FC\\u30D2\\u30FC\\u8CBF\\u6613\"}),`\n`,(0,e.jsx)(n.li,{children:\"\\u30D6\\u30E9\\u30F3\\u30C9\\u5C55\\u958B\"}),`\n`,(0,e.jsx)(n.li,{children:\"\\u4E2D\\u56FD\\u5E02\\u5834\\u6226\\u7565\\u5C55\\u958B\"}),`\n`]}),`\n`,(0,e.jsx)(n.h3,{children:\"2. \\u5C55\\u793A\\u30FB\\u30A4\\u30D9\\u30F3\\u30C8\\u904B\\u55B6\"}),`\n`,(0,e.jsxs)(n.ul,{children:[`\n`,(0,e.jsx)(n.li,{children:\"\\u6587\\u5316\\u30FB\\u6280\\u8853\\u5C55\\u793A\\u4F01\\u753B\"}),`\n`,(0,e.jsx)(n.li,{children:\"\\u30A4\\u30D9\\u30F3\\u30C8\\u904B\\u55B6\\u30FB\\u7BA1\\u7406\"}),`\n`,(0,e.jsx)(n.li,{children:\"\\u6587\\u5316\\u30FB\\u82B8\\u8853\\u30D7\\u30ED\\u30E2\\u30FC\\u30B7\\u30E7\\u30F3\"}),`\n`]}),`\n`,(0,e.jsx)(n.h3,{children:\"3. \\u30E9\\u30DC\\u30FB\\u7814\\u7A76\\u958B\\u767A\"}),`\n`,(0,e.jsxs)(n.ul,{children:[`\n`,(0,e.jsx)(n.li,{children:\"\\u6280\\u8853\\u7814\\u7A76\\u958B\\u767A\"}),`\n`,(0,e.jsx)(n.li,{children:\"\\u30A4\\u30CE\\u30D9\\u30FC\\u30B7\\u30E7\\u30F3\\u4F01\\u753B\"}),`\n`,(0,e.jsx)(n.li,{children:\"\\u5404\\u7A2E\\u5B9F\\u9A13\\u30FB\\u691C\\u8A3C\"}),`\n`]}),`\n`,(0,e.jsx)(n.h3,{children:\"4. \\u30AF\\u30E9\\u30D6\\u30FB\\u30B3\\u30DF\\u30E5\\u30CB\\u30C6\\u30A3\\u904B\\u55B6\"}),`\n`,(0,e.jsxs)(n.ul,{children:[`\n`,(0,e.jsx)(n.li,{children:\"\\u4F1A\\u54E1\\u5236\\u30B3\\u30DF\\u30E5\\u30CB\\u30C6\\u30A3\"}),`\n`,(0,e.jsx)(n.li,{children:\"\\u5C02\\u9580\\u5BB6\\u30CD\\u30C3\\u30C8\\u30EF\\u30FC\\u30AF\"}),`\n`,(0,e.jsx)(n.li,{children:\"\\u9650\\u5B9A\\u30B5\\u30FC\\u30D3\\u30B9\"}),`\n`]}),`\n`,(0,e.jsx)(n.h2,{children:\"\\u30D3\\u30B8\\u30E7\\u30F3\"}),`\n`,(0,e.jsx)(n.p,{children:\"2025\\u5E74\\u3088\\u308A\\u3001\\u65E5\\u672C\\u3068\\u4E2D\\u56FD\\u3092\\u67B6\\u3051\\u6A4B\\u3068\\u3057\\u3066\\u3001\\u30B0\\u30ED\\u30FC\\u30D0\\u30EB\\u306A\\u30D3\\u30B8\\u30CD\\u30B9\\u30BD\\u30EA\\u30E5\\u30FC\\u30B7\\u30E7\\u30F3\\u63D0\\u4F9B\\u4F01\\u696D\\u3092\\u76EE\\u6307\\u3057\\u307E\\u3059\\u3002\"}),`\n`,(0,e.jsx)(n.p,{children:\"\\u9769\\u65B0\\u3001\\u4FE1\\u983C\\u3001\\u5171\\u5275\\u3092\\u57FA\\u672C\\u7406\\u5FF5\\u3068\\u3057\\u3066\\u3001\\u30B9\\u30C6\\u30FC\\u30AF\\u30DB\\u30EB\\u30C0\\u30FC\\u3068\\u3068\\u3082\\u306B\\u6301\\u7D9A\\u53EF\\u80FD\\u306A\\u4FA1\\u5024\\u5275\\u9020\\u306B\\u53D6\\u308A\\u7D44\\u307F\\u307E\\u3059\\u3002\"})]})}function C(i={}){let{wrapper:n}=i.components||{};return n?(0,e.jsx)(n,Object.assign({},i,{children:(0,e.jsx)(s,i)})):s(i)}var D=C;return g(E);})();\n;return Component;"
+        },
+        "_id": "articles/establishment-news.mdx",
+        "_raw": {
+          "sourceFilePath": "articles/establishment-news.mdx",
+          "sourceFileName": "establishment-news.mdx",
+          "sourceFileDir": "articles",
+          "contentType": "mdx",
+          "flattenedPath": "articles/establishment-news"
+        },
+        "type": "Article",
+        "slug": "establishment-news",
+        "url": "/articles/establishment-news"
+      },
+      "documentHash": "1762503094013",
+      "hasWarnings": false,
+      "documentTypeName": "Article"
+    }
+  }
+}
