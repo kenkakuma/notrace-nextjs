@@ -53,7 +53,7 @@ export function Navigation() {
         className={`fixed top-0 w-full z-40 transition-all duration-300 h-20 ${
           scrolled
             ? 'bg-white shadow-lg'
-            : 'bg-transparent'
+            : 'bg-white/95 backdrop-blur-sm shadow-md'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">

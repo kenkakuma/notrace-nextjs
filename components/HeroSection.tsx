@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useHeroData } from '@/hooks/useHeroData'
 
 export function HeroSection() {
@@ -23,61 +22,33 @@ export function HeroSection() {
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-end pb-16 md:pb-24">
         {/* Main Title */}
-        <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in-up">
+        <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight animate-fade-in-up">
           {config.heroContent.title}
         </h1>
 
-        {/* Description */}
-        <p className="text-white/80 text-lg md:text-xl mb-12 max-w-2xl leading-relaxed whitespace-pre-line animate-fade-in-up animation-delay-100">
-          {config.heroContent.description}
+        {/* Subtitle */}
+        <p className="text-white text-lg md:text-xl mb-6 animate-fade-in-up animation-delay-100">
+          日中コーヒービジネスの新基準
         </p>
 
-        {/* Product Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
-          {/* Coffee Card */}
-          <Link href={config.heroContent.button2Link}>
-            <div className="bg-white/95 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group">
-              {/* Card Header */}
-              <div className="bg-gradient-to-r from-primary to-orange-600 px-6 py-4">
-                <span className="text-white text-sm font-semibold">珈琲事業</span>
-              </div>
+        {/* Description */}
+        <p className="text-white/90 text-base md:text-lg mb-8 max-w-2xl leading-relaxed animate-fade-in-up animation-delay-200">
+          北京で磨いた焙煎技術と、日本の品質管理を融合。
+          <br />
+          両国の架け橋として、コーヒー文化の発展に貢献します。
+        </p>
 
-              {/* Card Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-text-dark mb-3 group-hover:text-primary transition-colors">
-                  プレミアムコーヒー商品
-                </h3>
-                <p className="text-text-secondary text-sm mb-6 leading-relaxed">
-                  世界各地から厳選した高品質コーヒー豆を使用し、独自の焙煎技術で最高品質を実現します。
-                </p>
-                <button className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-text-dark transition-colors">
-                  {config.heroContent.button2Text}
-                </button>
-              </div>
-            </div>
+        {/* Buttons */}
+        <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-300">
+          <Link href="/about">
+            <button className="px-8 py-3 bg-black/80 backdrop-blur-sm text-white rounded-lg font-medium hover:bg-black transition-all duration-300">
+              私たちについて
+            </button>
           </Link>
-
-          {/* Exhibition Card */}
-          <Link href="/exhibition">
-            <div className="bg-white/95 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group">
-              {/* Card Header */}
-              <div className="bg-gradient-to-r from-orange-500 to-primary px-6 py-4">
-                <span className="text-white text-sm font-semibold">展示・イベント</span>
-              </div>
-
-              {/* Card Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-text-dark mb-3 group-hover:text-primary transition-colors">
-                  文化・芸術企画運営
-                </h3>
-                <p className="text-text-secondary text-sm mb-6 leading-relaxed">
-                  中国現代アートから文化交流まで、革新的な展示とイベントを企画・運営いたします。
-                </p>
-                <button className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-text-dark transition-colors">
-                  展示企画を見る
-                </button>
-              </div>
-            </div>
+          <Link href="/coffee">
+            <button className="px-8 py-3 bg-black/80 backdrop-blur-sm text-white rounded-lg font-medium hover:bg-black transition-all duration-300">
+              サービス詳細
+            </button>
           </Link>
         </div>
       </div>

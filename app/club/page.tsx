@@ -1,6 +1,7 @@
 import { ClubHeroSection } from '@/components/ClubHeroSection'
 import { ClubsGridSection } from '@/components/ClubsGridSection'
 import { ClubMembershipBenefitsSection } from '@/components/ClubMembershipBenefitsSection'
+import { ClubUpcomingEventsSection } from '@/components/ClubUpcomingEventsSection'
 import { ClubJoinCTASection } from '@/components/ClubJoinCTASection'
 
 export const metadata = {
@@ -21,6 +22,9 @@ export default function ClubPage() {
 
       {/* Membership Benefits Section */}
       <ClubMembershipBenefitsSection />
+
+      {/* Upcoming Events Section */}
+      <ClubUpcomingEventsSection />
 
       {/* Join CTA Section */}
       <ClubJoinCTASection />

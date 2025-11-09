@@ -1,81 +1,83 @@
 'use client'
 
-interface Partner {
-  id: number
-  name: string
-  logo: string
-}
-
-const PARTNERS: Partner[] = [
-  { id: 1, name: 'Shimano', logo: '🎣' },
-  { id: 2, name: 'Daiwa', logo: '🎯' },
-  { id: 3, name: '東京珈琲', logo: '☕' },
-  { id: 4, name: '東京アートギャラリー', logo: '🎨' },
-  { id: 5, name: 'スポーツテック株式会社', logo: '⚽' },
-  { id: 6, name: 'イベントソリューション', logo: '🎪' },
-  { id: 7, name: 'イノベーションラボ', logo: '🔬' },
-  { id: 8, name: 'グローバル貿易', logo: '🌍' },
+const PARTNERS = [
+  'Shimano',
+  'Daiwa',
+  '東京珈琲',
+  '東京アートギャラリー',
+  'スポーツテック株式会社',
+  'イベントソリューション',
+  'イノベーションラボ',
+  'グローバル貿易',
 ]
 
 export function PartnersSection() {
-  // Double the partners for seamless loop
-  const doubledPartners = [...PARTNERS, ...PARTNERS]
-
   return (
-    <section className="py-20 bg-gradient-to-b from-bg-light to-white">
+    <section className="py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-text-dark mb-4">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-dark mb-4">
             業界リーダーからの信頼
           </h2>
-          <p className="text-lg text-text-secondary animate-fade-in-up animation-delay-100">
+          <p className="text-lg text-text-secondary">
             グローバルパートナーとの協働により卓越した成果を提供
           </p>
         </div>
 
-        {/* Partners Scroll Container */}
-        <div className="relative overflow-hidden bg-white rounded-2xl p-8">
-          {/* Gradient Masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        {/* Partners Logos - Infinite Scroll */}
+        <div className="relative">
+          {/* Fade Effects */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-bg-light to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-bg-light to-transparent z-10 pointer-events-none"></div>
 
           {/* Scrolling Container */}
-          <div className="relative overflow-hidden">
-            <div className="flex animate-scroll gap-12">
-              {doubledPartners.map((partner, index) => (
+          <div className="flex overflow-hidden">
+            {/* First Set of Logos */}
+            <div className="flex animate-scroll">
+              {PARTNERS.map((partner, index) => (
                 <div
-                  key={`${partner.id}-${index}`}
-                  className="flex-shrink-0 w-32 h-32 flex items-center justify-center bg-gradient-to-br from-primary/10 to-orange-600/10 rounded-xl border border-primary/20 hover:border-primary/50 transition-all duration-300 group cursor-pointer"
+                  key={`first-${index}`}
+                  className="flex-shrink-0 mx-8 flex items-center justify-center"
+                  style={{ width: '200px', height: '100px' }}
                 >
                   <div className="text-center">
-                    <div className="text-5xl mb-2 group-hover:scale-110 transition-transform">
-                      {partner.logo}
-                    </div>
-                    <p className="text-xs font-medium text-text-secondary group-hover:text-primary transition-colors">
-                      {partner.name}
-                    </p>
+                    <span className="text-lg md:text-xl font-semibold text-text-secondary hover:text-primary transition-colors">
+                      {partner}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Second Set of Logos (for seamless loop) */}
+            <div className="flex animate-scroll" aria-hidden="true">
+              {PARTNERS.map((partner, index) => (
+                <div
+                  key={`second-${index}`}
+                  className="flex-shrink-0 mx-8 flex items-center justify-center"
+                  style={{ width: '200px', height: '100px' }}
+                >
+                  <div className="text-center">
+                    <span className="text-lg md:text-xl font-semibold text-text-secondary hover:text-primary transition-colors">
+                      {partner}
+                    </span>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-
-        {/* Description */}
-        <p className="text-center text-text-secondary mt-12 text-lg">
-          あなたのビジネスパートナーとして、共に成長・発展を目指します
-        </p>
       </div>
 
-      {/* Add animation styles */}
+      {/* Animation Styles */}
       <style jsx>{`
         @keyframes scroll {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(calc(-50% - 24px));
+            transform: translateX(-100%);
           }
         }
 

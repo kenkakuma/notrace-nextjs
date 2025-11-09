@@ -1,29 +1,20 @@
-import { LabHeroSection } from '@/components/LabHeroSection'
-import { LabResearchSection } from '@/components/LabResearchSection'
-import { LabInnovationSection } from '@/components/LabInnovationSection'
-import { LabPartnershipSection } from '@/components/LabPartnershipSection'
+import { LabHeroSection, LabProductsSection } from '@/components/lab'
 
 export const metadata = {
-  title: 'ラボ | LAB - NO TRACE EXPLORER',
+  title: 'ショップ | SHOP - NO TRACE EXPLORER',
   description:
-    '技術研究・イノベーション。AI・IoT技術とサステナブル技術を中心とした最先端研究開発。',
-  keywords: 'ラボ、技術研究、イノベーション、AI、IoT',
+    'プレミアムコーヒー器具セレクション。北京の老舗カフェで培われた経験と技術を基に選び抜いた高品質なコーヒー機器。',
+  keywords: 'ショップ、コーヒー器具、焙煎機、グラインダー、エスプレッソマシン',
 }
 
 export default function LabPage() {
   return (
     <main className="flex flex-col min-h-screen w-full">
-      {/* Lab Hero Section */}
+      {/* LAB Hero Section - 统一风格的商城入口 */}
       <LabHeroSection />
 
-      {/* Lab Research Section */}
-      <LabResearchSection />
-
-      {/* Lab Innovation Section */}
-      <LabInnovationSection />
-
-      {/* Lab Partnership Section */}
-      <LabPartnershipSection />
+      {/* LAB Products Section - 真实商城数据展示 */}
+      <LabProductsSection />
     </main>
   )
 }

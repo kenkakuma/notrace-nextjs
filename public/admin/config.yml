@@ -1,0 +1,80 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# 本地开发模式
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Cloudinary集成
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: ${NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+    api_key: ${NEXT_PUBLIC_CLOUDINARY_API_KEY}
+
+collections:
+  # Hero背景图片管理
+  - name: "hero"
+    label: "Hero背景图片"
+    folder: "content/hero"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "背景图片", name: "backgroundImage", widget: "image", media_library: {config: {multiple: false}}}
+      - {label: "主标题", name: "heroTitle", widget: "string"}
+      - {label: "副标题", name: "subtitle", widget: "string"}
+      - {label: "描述", name: "description", widget: "text"}
+      - {label: "按钮1文字", name: "button1Text", widget: "string"}
+      - {label: "按钮1链接", name: "button1Link", widget: "string"}
+      - {label: "按钮2文字", name: "button2Text", widget: "string"}
+      - {label: "按钮2链接", name: "button2Link", widget: "string"}
+      - {label: "更新时间", name: "lastUpdated", widget: "datetime"}
+
+  # 企业文章管理
+  - name: "articles"
+    label: "企业文章"
+    folder: "content/articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime"}
+      - {label: "分类", name: "category", widget: "select", options: ["企業ニュース", "サービス", "コーヒー事業", "展示・イベント", "釣具・器具"]}
+      - {label: "摘要", name: "excerpt", widget: "text"}
+      - {label: "特色图片", name: "featuredImage", widget: "image", required: false, media_library: {config: {multiple: false}}}
+      - {label: "正文", name: "body", widget: "markdown"}
+      - {label: "作者", name: "author", widget: "string", default: "NO TRACE EXPLORER"}
+      - {label: "发布状态", name: "published", widget: "boolean", default: true}
+
+  # 业务价值部分
+  - name: "business-value"
+    label: "业务价值部分"
+    folder: "content/business-value"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - {label: "主标题", name: "title", widget: "text"}
+      - {label: "副标题", name: "subtitle", widget: "string"}
+      - {label: "描述", name: "description", widget: "text"}
+      - label: "业务卡片"
+        name: "businessCards"
+        widget: "list"
+        fields:
+          - {label: "图标", name: "icon", widget: "select", options: ["compass", "lightbulb", "globe"]}
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "描述", name: "description", widget: "text"}
+
+  # FAQ部分
+  - name: "faq"
+    label: "常见问题"
+    folder: "content/faq"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "问题", name: "question", widget: "string"}
+      - {label: "答案", name: "answer", widget: "text"}
+      - {label: "顺序", name: "order", widget: "number", default: 1}

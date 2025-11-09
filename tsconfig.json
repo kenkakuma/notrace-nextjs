@@ -23,6 +23,9 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
       ]
     },
     "incremental": true,

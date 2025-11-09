@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { CldImage } from 'next-cloudinary'
 
 export interface HeroContent {
   title: string
@@ -29,45 +30,55 @@ const DEFAULT_CONFIG: HeroConfig = {
   lastUpdated: new Date().toISOString(),
 }
 
-const LOCAL_IMAGE_OPTIONS = [
-  '/images/hero-bg-1.svg',
-  '/images/hero-bg-2.svg',
-  '/images/hero-bg-3.svg',
-  '/images/hero-bg-4.svg',
-  '/images/hero-bg-5.svg',
-  '/images/hero-bg-6.svg',
-  '/images/default-hero-bg.svg',
-]
-
-const EXTERNAL_IMAGE_OPTIONS = [
-  'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-  'https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-  'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-  'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-]
-
 export function useHeroData() {
   const [config, setConfig] = useState<HeroConfig>(DEFAULT_CONFIG)
+  const [loading, setLoading] = useState(true)
 
-  // Load hero configuration from localStorage on mount
+  // Load hero configuration from API or markdown file
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    async function loadConfig() {
       try {
-        const saved = localStorage.getItem('hero_simple_config')
-        if (saved) {
-          const parsedConfig = JSON.parse(saved) as HeroConfig
-          if (
-            parsedConfig.currentBackground &&
-            (parsedConfig.currentBackground.startsWith('http') ||
-              parsedConfig.currentBackground.startsWith('/images/'))
-          ) {
-            setConfig(parsedConfig)
+        // Try to fetch from API endpoint (which reads from markdown)
+        const response = await fetch('/api/hero-config')
+        if (response.ok) {
+          const data = await response.json()
+          setConfig(data)
+        } else {
+          // Fallback to localStorage
+          if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem('hero_simple_config')
+            if (saved) {
+              const parsedConfig = JSON.parse(saved) as HeroConfig
+              if (
+                parsedConfig.currentBackground &&
+                (parsedConfig.currentBackground.startsWith('http') ||
+                  parsedConfig.currentBackground.startsWith('/'))
+              ) {
+                setConfig(parsedConfig)
+              }
+            }
           }
         }
       } catch (error) {
-        console.warn('Failed to load saved hero config:', error)
+        console.warn('Failed to load hero config from API:', error)
+        // Try localStorage as fallback
+        if (typeof window !== 'undefined') {
+          try {
+            const saved = localStorage.getItem('hero_simple_config')
+            if (saved) {
+              const parsedConfig = JSON.parse(saved) as HeroConfig
+              setConfig(parsedConfig)
+            }
+          } catch (e) {
+            console.warn('Failed to load from localStorage:', e)
+          }
+        }
+      } finally {
+        setLoading(false)
       }
     }
+
+    loadConfig()
   }, [])
 
   // Update hero configuration
@@ -104,12 +115,17 @@ export function useHeroData() {
     }
   }, [])
 
+  // Check if image is from Cloudinary
+  const isCloudinaryImage = (url: string) => {
+    return url.includes('cloudinary.com') || url.includes('res.cloudinary.com')
+  }
+
   return {
     config,
+    loading,
     updateHeroConfig,
     updateBackgroundImage,
     resetToDefault,
-    localImageOptions: LOCAL_IMAGE_OPTIONS,
-    externalImageOptions: EXTERNAL_IMAGE_OPTIONS,
+    isCloudinaryImage,
   }
 }

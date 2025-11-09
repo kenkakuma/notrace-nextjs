@@ -44,7 +44,7 @@ export function FAQSection() {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
@@ -72,7 +72,7 @@ export function FAQSection() {
                 className="w-full text-left group"
               >
                 {/* Question */}
-                <div className="bg-gradient-to-r from-white to-bg-light border-2 border-primary/20 rounded-lg p-6 hover:border-primary hover:shadow-md transition-all duration-300">
+                <div className="bg-white/50 border-2 border-primary/20 rounded-lg p-6 hover:border-primary hover:shadow-md transition-all duration-300">
                   <div className="flex items-center justify-between gap-4">
                     <h3 className="text-lg font-semibold text-text-dark group-hover:text-primary transition-colors pr-8">
                       {item.question}
