@@ -1,6 +1,14 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { RootLayout as AppRootLayout } from '@/components/RootLayout'
+import { Noto_Serif_JP } from 'next/font/google'
+
+const notoSerifJP = Noto_Serif_JP({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-noto-serif-jp',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'NO TRACE EXPLORER',
@@ -17,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={notoSerifJP.variable}>
       <body className="antialiased">
         <AppRootLayout>
           {children}

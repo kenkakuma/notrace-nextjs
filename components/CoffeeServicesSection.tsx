@@ -78,34 +78,44 @@ export function CoffeeServicesSection() {
   return (
     <>
       {/* Business Structure Section - 事業構成（双軸型） */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">
+          <div className="text-center mb-20">
+            {/* English Label with Lines */}
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-px w-32 bg-primary/20"></div>
+              <span className="text-primary/60 text-xs tracking-[0.3em] uppercase">Business Structure</span>
+              <div className="h-px w-32 bg-primary/20"></div>
+            </div>
+
+            <h2 className="font-noto-serif-jp text-xl md:text-2xl font-medium text-text-dark mb-6 drop-shadow-sm">
               事業構成（双軸型）
             </h2>
-            <p className="text-lg text-text-secondary">
+
+            <div className="w-12 h-px bg-primary/30 mx-auto mb-8"></div>
+
+            <p className="text-xs md:text-sm text-text-secondary/80 max-w-2xl mx-auto leading-loose">
               中国現地基盤と日本技術力を活かした二つの事業軸で相互成長を実現
             </p>
           </div>
 
           {/* Business Axes Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {BUSINESS_AXES.map((axis) => (
               <div
                 key={axis.number}
-                className="bg-bg-light rounded-lg p-8 border border-gray-200"
+                className="p-8 transition-all duration-500 group"
               >
-                <div className="text-primary text-sm font-bold mb-2">
+                <div className="text-primary/80 text-xs font-light tracking-wide mb-4">
                   {axis.number}
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-text-dark mb-4">
+                <h3 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-6 tracking-wide drop-shadow-sm">
                   {axis.title}
                 </h3>
-                <div className="space-y-1">
+                <div className="space-y-2">
                   {axis.description.map((line, index) => (
-                    <p key={index} className="text-text-secondary leading-relaxed">
+                    <p key={index} className="text-xs md:text-sm text-text-secondary/80 leading-loose">
                       {line}
                     </p>
                   ))}
@@ -117,32 +127,42 @@ export function CoffeeServicesSection() {
       </section>
 
       {/* Core Services Section - 6つのコアサービス */}
-      <section className="py-16 md:py-20 bg-bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 md:py-32 bg-bg-light">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">
+          <div className="text-center mb-20">
+            {/* English Label with Lines */}
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-px w-32 bg-primary/20"></div>
+              <span className="text-primary/60 text-xs tracking-[0.3em] uppercase">Core Services</span>
+              <div className="h-px w-32 bg-primary/20"></div>
+            </div>
+
+            <h2 className="font-noto-serif-jp text-xl md:text-2xl font-medium text-text-dark mb-6 drop-shadow-sm">
               6つのコアサービス
             </h2>
-            <p className="text-lg text-text-secondary">
+
+            <div className="w-12 h-px bg-primary/30 mx-auto mb-8"></div>
+
+            <p className="text-xs md:text-sm text-text-secondary/80 max-w-md mx-auto leading-loose">
               お客様のニーズに応える包括的ソリューション
             </p>
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {CORE_SERVICES.map((service) => (
               <div
                 key={service.number}
-                className="bg-white rounded-lg p-8 border border-gray-200 hover:border-primary hover:shadow-lg transition-all duration-300"
+                className="p-8 transition-all duration-500 group"
               >
-                <div className="text-primary text-sm font-bold mb-2">
+                <div className="text-primary/80 text-xs font-light tracking-wide mb-4">
                   {service.number}
                 </div>
-                <h3 className="text-xl font-bold text-text-dark mb-4">
+                <h3 className="font-noto-serif-jp text-base font-medium text-text-dark mb-6 tracking-wide drop-shadow-sm">
                   {service.title}
                 </h3>
-                <p className="text-text-secondary leading-relaxed">
+                <p className="text-xs text-text-secondary/80 leading-loose">
                   {service.description}
                 </p>
               </div>

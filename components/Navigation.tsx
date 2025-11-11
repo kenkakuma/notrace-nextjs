@@ -43,6 +43,7 @@ export function Navigation() {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [adminMenuOpen, setAdminMenuOpen] = useState(false)
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null)
 
   // スクロール検出
   useEffect(() => {
@@ -53,6 +54,32 @@ export function Navigation() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // タイムアウトをクリーンアップ
+  useEffect(() => {
+    return () => {
+      if (closeTimeout) {
+        clearTimeout(closeTimeout)
+      }
+    }
+  }, [closeTimeout])
+
+  // メニューを開く（遅延キャンセル）
+  const handleMenuEnter = (itemTitle: string) => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout)
+      setCloseTimeout(null)
+    }
+    setOpenSubmenu(itemTitle)
+  }
+
+  // メニューを閉じる（300ms遅延）
+  const handleMenuLeave = () => {
+    const timeout = setTimeout(() => {
+      setOpenSubmenu(null)
+    }, 300)
+    setCloseTimeout(timeout)
+  }
 
   // 管理メニュー以外をクリックで閉じる
   useEffect(() => {
@@ -98,8 +125,8 @@ export function Navigation() {
                   // ドロップダウンメニュー付きアイテム
                   <>
                     <button
-                      onMouseEnter={() => setOpenSubmenu(item.title)}
-                      onMouseLeave={() => setOpenSubmenu(null)}
+                      onMouseEnter={() => handleMenuEnter(item.title)}
+                      onMouseLeave={handleMenuLeave}
                       className="px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm font-medium text-text-dark hover:bg-opacity-10 hover:bg-primary"
                     >
                       {item.title}
@@ -107,8 +134,8 @@ export function Navigation() {
                     </button>
                     {openSubmenu === item.title && (
                       <div
-                        onMouseEnter={() => setOpenSubmenu(item.title)}
-                        onMouseLeave={() => setOpenSubmenu(null)}
+                        onMouseEnter={() => handleMenuEnter(item.title)}
+                        onMouseLeave={handleMenuLeave}
                         className="absolute left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
                       >
                         {item.submenu.map((subItem) => (

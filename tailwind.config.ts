@@ -10,6 +10,7 @@ const config: Config = {
       fontFamily: {
         roboto: ['var(--font-roboto)', 'sans-serif'],
         'noto-sans-jp': ['var(--font-noto-sans-jp)', 'sans-serif'],
+        'noto-serif-jp': ['var(--font-noto-serif-jp)', 'serif'],
       },
       colors: {
         primary: '#E17B47',

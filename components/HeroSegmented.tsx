@@ -28,12 +28,12 @@ export function HeroSegmented() {
       {/* Content Wrapper */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center text-center">
         {/* Main Title - 简洁大气 */}
-        <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-3 leading-tight tracking-tight animate-fade-in-up">
-          日中コーヒー商業橋
+        <h1 className="font-noto-serif-jp text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-tight tracking-tight animate-fade-in-up drop-shadow-md">
+          無迹探索株式会社
         </h1>
 
         {/* English Subtitle */}
-        <p className="text-white/80 text-base md:text-lg mb-8 animate-fade-in-up animation-delay-100">
+        <p className="text-white/80 text-sm md:text-base mb-8 animate-fade-in-up animation-delay-100">
           The Japan-China Coffee Business Bridge
         </p>
 

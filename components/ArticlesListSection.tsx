@@ -89,54 +89,63 @@ const ARTICLES: Article[] = [
 
 export function ArticlesListSection() {
   return (
-    <section className="py-20 bg-bg-light">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Articles List */}
-        <div className="space-y-6">
+    <section className="py-24 md:py-32 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-32 bg-primary/20"></div>
+            <span className="text-primary/60 text-xs tracking-[0.3em] uppercase">News & Articles</span>
+            <div className="h-px w-32 bg-primary/20"></div>
+          </div>
+
+          <h2 className="font-noto-serif-jp text-xl md:text-2xl font-medium text-text-dark mb-6 drop-shadow-sm">
+            最新情報
+          </h2>
+
+          <div className="w-12 h-px bg-primary/30 mx-auto mb-8"></div>
+
+          <p className="text-xs md:text-sm text-text-secondary/80 max-w-md mx-auto leading-loose">
+            企業活動とサービスの最新情報
+          </p>
+        </div>
+
+        {/* Articles Timeline - Japanese Style */}
+        <div className="max-w-4xl mx-auto space-y-0 mb-16">
           {ARTICLES.map((article, index) => (
-            <div
+            <Link
               key={article.id}
-              className="animate-fade-in-up group cursor-pointer"
-              style={{
-                animation: `fadeInUp 0.8s ease-out ${0.1 * (index + 1)}s forwards`,
-                opacity: 0,
-              }}
+              href={`/articles/${article.id}`}
+              className="group block"
             >
-              <div className="pb-6 border-b border-gray-200 last:border-b-0 hover:pb-6 transition-all">
-                {/* Article Header */}
-                <div className="flex items-start justify-between gap-4">
-                  {/* Date Badge */}
-                  <div className="flex-shrink-0 text-center">
-                    <div className="text-xs font-semibold text-primary mb-1">
-                      {article.date.split('.')[1]}月
-                    </div>
-                    <div className="text-2xl font-bold text-text-dark">
-                      {article.date.split('.')[2]}
-                    </div>
+              <div className="grid grid-cols-[140px_1fr] gap-8 py-8 border-b border-gray-200/50 last:border-b-0 transition-all duration-500 hover:bg-primary/5">
+                {/* Date Column - Timeline Style */}
+                <div className="text-right pr-8 border-r border-gray-200/50">
+                  <div className="font-noto-serif-jp text-xl font-light text-primary/80 mb-1">
+                    {article.date.split('.')[0]}
                   </div>
+                  <div className="font-noto-serif-jp text-base text-text-secondary/60">
+                    {article.date.split('.')[1]}.{article.date.split('.')[2]}
+                  </div>
+                </div>
 
-                  {/* Content */}
+                {/* Content Column */}
+                <div className="flex items-start justify-between gap-6">
                   <div className="flex-grow min-w-0">
-                    <Link href={`/articles/${article.id}`}>
-                      <h3 className="text-lg md:text-xl font-semibold text-text-dark mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                        {article.title}
-                      </h3>
-                    </Link>
-
-                    {/* Meta Information */}
-                    <div className="flex flex-wrap items-center gap-3 mb-3 text-sm">
-                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full font-medium text-xs">
+                    {/* Category Badge */}
+                    <div className="mb-3">
+                      <span className="inline-block px-3 py-1 bg-primary/10 text-primary/80 text-xs font-light tracking-wide">
                         {article.category}
                       </span>
-                      <div className="flex items-center gap-1 text-text-secondary">
-                        <Calendar className="w-4 h-4" />
-                        <span>{article.date}</span>
-                      </div>
-                      <span className="text-text-secondary">{article.readTime}</span>
                     </div>
 
+                    {/* Title */}
+                    <h3 className="font-noto-serif-jp text-base md:text-lg font-medium text-text-dark mb-3 group-hover:text-primary transition-colors drop-shadow-sm">
+                      {article.title}
+                    </h3>
+
                     {/* Excerpt */}
-                    <p className="text-text-secondary leading-relaxed mb-3 line-clamp-2">
+                    <p className="text-xs text-text-secondary/80 leading-loose mb-3 line-clamp-2">
                       {article.excerpt}
                     </p>
 
@@ -145,33 +154,31 @@ export function ArticlesListSection() {
                       {article.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="inline-flex items-center gap-1 text-xs text-text-secondary bg-gray-100 px-2 py-1 rounded"
+                          className="text-xs text-text-secondary/60 font-light"
                         >
-                          <Tag className="w-3 h-3" />
-                          {tag}
+                          #{tag}
                         </span>
                       ))}
                     </div>
                   </div>
 
                   {/* Arrow Icon */}
-                  <div className="flex-shrink-0 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                    <ArrowRight className="w-5 h-5" />
+                  <div className="flex-shrink-0 text-primary/60 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-0 group-hover:translate-x-2">
+                    <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         {/* View All Link */}
-        <div className="mt-12 text-center">
+        <div className="text-center">
           <Link
             href="/articles"
-            className="inline-flex items-center gap-2 px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300"
+            className="inline-flex items-center gap-2 px-10 py-3 border border-primary/30 text-primary/80 font-light text-sm tracking-wide hover:border-primary hover:text-primary transition-all duration-300"
           >
-            すべての記事を見る
-            <ArrowRight className="w-5 h-5" />
+            すべての記事を見る <span className="text-xs">→</span>
           </Link>
         </div>
       </div>

@@ -6,70 +6,73 @@ const SHOP_URL = process.env.NEXT_PUBLIC_SHOP_URL || 'http://localhost:8000'
 
 export function LabHeroSection() {
   return (
-    <section className="relative w-full min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/5 via-bg-light to-primary/10">
-      {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 md:py-28">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-            <ShoppingBag className="w-8 h-8 text-primary" />
+    <section className="py-24 md:py-32 bg-bg-light">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          {/* English Label with Lines */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-32 bg-primary/20"></div>
+            <span className="text-primary/60 text-xs tracking-[0.3em] uppercase">Coffee Equipment</span>
+            <div className="h-px w-32 bg-primary/20"></div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-dark mb-6">
-            MUSEKI Coffee Shop
+          {/* Main Title */}
+          <h1 className="font-noto-serif-jp text-2xl md:text-3xl lg:text-4xl font-medium text-text-dark mb-8 leading-relaxed drop-shadow-sm">
+            設備・器具
           </h1>
 
-          <p className="text-xl md:text-2xl text-primary font-semibold mb-4">
+          {/* Divider */}
+          <div className="w-12 h-px bg-primary/30 mx-auto mb-12"></div>
+
+          {/* Subtitle */}
+          <p className="text-base md:text-lg text-primary/80 font-light mb-8 tracking-wide">
             プレミアムコーヒー器具セレクション
           </p>
 
-          <p className="text-lg text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed">
+          {/* Description */}
+          <p className="text-sm md:text-base text-text-secondary/80 leading-loose max-w-2xl mx-auto mb-4">
             北京の老舗カフェで培われた経験と技術を基に
-            <br />
+          </p>
+          <p className="text-xs md:text-sm text-text-secondary/70 leading-loose max-w-xl mx-auto">
             選び抜いた高品質なコーヒー機器をお届けします
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-          <div className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
-              <Package className="w-6 h-6 text-primary" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-4xl mx-auto mb-16">
+          <div className="text-center">
+            <div className="w-20 h-20 flex items-center justify-center mx-auto mb-6 opacity-60">
+              <Package className="w-10 h-10 text-primary/70" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-bold text-text-dark mb-2">
+            <h3 className="font-noto-serif-jp text-base font-medium text-text-dark mb-4 tracking-wide drop-shadow-sm">
               プロ仕様器具
             </h3>
-            <p className="text-sm text-text-secondary">
-              バリスタレベルの
-              <br />
-              抽出器具とアクセサリー
+            <p className="text-xs text-text-secondary/80 leading-loose max-w-xs mx-auto">
+              バリスタレベルの抽出器具とアクセサリー
             </p>
           </div>
 
-          <div className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
-              <Sparkles className="w-6 h-6 text-primary" />
+          <div className="text-center">
+            <div className="w-20 h-20 flex items-center justify-center mx-auto mb-6 opacity-60">
+              <Sparkles className="w-10 h-10 text-primary/70" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-bold text-text-dark mb-2">
+            <h3 className="font-noto-serif-jp text-base font-medium text-text-dark mb-4 tracking-wide drop-shadow-sm">
               厳選コーヒー豆
             </h3>
-            <p className="text-sm text-text-secondary">
-              世界各地から選ばれた
-              <br />
-              プレミアム品質の豆
+            <p className="text-xs text-text-secondary/80 leading-loose max-w-xs mx-auto">
+              世界各地から選ばれたプレミアム品質の豆
             </p>
           </div>
 
-          <div className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
-              <ShoppingBag className="w-6 h-6 text-primary" />
+          <div className="text-center">
+            <div className="w-20 h-20 flex items-center justify-center mx-auto mb-6 opacity-60">
+              <ShoppingBag className="w-10 h-10 text-primary/70" strokeWidth={1.5} />
             </div>
-            <h3 className="text-lg font-bold text-text-dark mb-2">
+            <h3 className="font-noto-serif-jp text-base font-medium text-text-dark mb-4 tracking-wide drop-shadow-sm">
               グローバル配送
             </h3>
-            <p className="text-sm text-text-secondary">
-              世界13カ国に
-              <br />
-              スピーディーにお届け
+            <p className="text-xs text-text-secondary/80 leading-loose max-w-xs mx-auto">
+              世界13カ国にスピーディーにお届け
             </p>
           </div>
         </div>
@@ -80,12 +83,12 @@ export function LabHeroSection() {
             href={SHOP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-primary text-white rounded-lg font-semibold text-lg hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 px-10 py-3 bg-primary/90 text-white font-light text-sm tracking-wide hover:bg-primary transition-all duration-300"
           >
             オンラインストアで購入
-            <ShoppingBag className="w-5 h-5" />
+            <ShoppingBag className="w-4 h-4" strokeWidth={1.5} />
           </a>
-          <p className="mt-4 text-sm text-text-secondary">
+          <p className="mt-4 text-xs text-text-secondary/70">
             ※ オンラインストアは別ウィンドウで開きます
           </p>
         </div>

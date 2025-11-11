@@ -54,14 +54,24 @@ const SERVICES: Service[] = [
 
 export function ExhibitionServicesSection() {
   return (
-    <section className="py-16 md:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 md:py-32 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">
+        <div className="text-center mb-20">
+          {/* English Label with Lines */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-32 bg-primary/20"></div>
+            <span className="text-primary/60 text-xs tracking-[0.3em] uppercase">Comprehensive Services</span>
+            <div className="h-px w-32 bg-primary/20"></div>
+          </div>
+
+          <h2 className="font-noto-serif-jp text-xl md:text-2xl font-medium text-text-dark mb-6 drop-shadow-sm">
             総合コーヒー展示サービス
           </h2>
-          <p className="text-lg text-text-secondary">
+
+          <div className="w-12 h-px bg-primary/30 mx-auto mb-8"></div>
+
+          <p className="text-xs md:text-sm text-text-secondary/80 max-w-2xl mx-auto leading-loose">
             中国・日本・独立咖啡主理人のための開放的な展示・競技・交流プラットフォーム
           </p>
         </div>
@@ -71,15 +81,15 @@ export function ExhibitionServicesSection() {
           {SERVICES.map((service) => (
             <div
               key={service.number}
-              className="bg-bg-light rounded-lg p-8 border border-gray-200"
+              className="p-8 transition-all duration-500 group"
             >
-              <div className="text-primary text-sm font-bold mb-2">
+              <div className="text-primary/80 text-xs font-light tracking-wide mb-4">
                 {service.number}
               </div>
-              <h3 className="text-xl font-bold text-text-dark mb-3">
+              <h3 className="font-noto-serif-jp text-base font-medium text-text-dark mb-4 tracking-wide drop-shadow-sm">
                 {service.title}
               </h3>
-              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+              <p className="text-xs text-text-secondary/80 leading-loose mb-6">
                 {service.description}
               </p>
 
@@ -87,10 +97,10 @@ export function ExhibitionServicesSection() {
               <ul className="space-y-2">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2">
-                    <span className="text-primary font-bold mt-0.5 flex-shrink-0">
+                    <span className="text-primary/80 font-light mt-0.5 flex-shrink-0 text-xs">
                       ✓
                     </span>
-                    <span className="text-text-secondary text-sm leading-relaxed">
+                    <span className="text-text-secondary/70 text-xs leading-loose">
                       {feature}
                     </span>
                   </li>

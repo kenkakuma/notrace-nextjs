@@ -25,23 +25,33 @@ const PLATFORM_FEATURES: PlatformFeature[] = [
 
 export function ExhibitionQualitySection() {
   return (
-    <section className="py-16 md:py-20 bg-bg-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-dark text-center">
+    <section className="py-24 md:py-32 bg-bg-light">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          {/* English Label with Lines */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-32 bg-primary/20"></div>
+            <span className="text-primary/60 text-xs tracking-[0.3em] uppercase">Platform Features</span>
+            <div className="h-px w-32 bg-primary/20"></div>
+          </div>
+
+          <h2 className="font-noto-serif-jp text-xl md:text-2xl font-medium text-text-dark mb-6 drop-shadow-sm">
             プラットフォームの特色
           </h2>
+
+          <div className="w-12 h-px bg-primary/30 mx-auto mb-8"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Features */}
-          <div className="space-y-8">
+          <div className="space-y-12">
             {PLATFORM_FEATURES.map((feature) => (
-              <div key={feature.title}>
-                <h3 className="text-xl font-bold text-text-dark mb-3">
+              <div key={feature.title} className="text-center lg:text-left">
+                <h3 className="font-noto-serif-jp text-base font-medium text-text-dark mb-4 tracking-wide drop-shadow-sm">
                   {feature.title}
                 </h3>
-                <p className="text-text-secondary leading-relaxed">
+                <p className="text-xs text-text-secondary/80 leading-loose">
                   {feature.description}
                 </p>
               </div>
@@ -49,11 +59,11 @@ export function ExhibitionQualitySection() {
           </div>
 
           {/* Right Side - Image */}
-          <div className="rounded-lg overflow-hidden">
+          <div className="overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400"
               alt="Coffee Exhibition Platform"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover opacity-90"
             />
           </div>
         </div>

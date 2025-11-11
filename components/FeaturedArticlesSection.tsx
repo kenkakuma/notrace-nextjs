@@ -35,87 +35,94 @@ export function FeaturedArticlesSection() {
     .slice(0, 5)
 
   return (
-    <section className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Side - Title */}
-          <div className="lg:col-span-3">
-            <h2 className="text-4xl md:text-5xl font-bold text-text-dark">
-              企業情報
-            </h2>
+    <section className="py-24 md:py-32 bg-bg-light">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-32 bg-primary/20"></div>
+            <span className="text-primary/60 text-xs tracking-[0.3em] uppercase">News & Articles</span>
+            <div className="h-px w-32 bg-primary/20"></div>
           </div>
+          <h2 className="font-noto-serif-jp text-xl md:text-2xl font-medium text-text-dark mb-6 drop-shadow-sm">
+            企業情報
+          </h2>
+          <div className="w-12 h-px bg-primary/30 mx-auto mb-8"></div>
+          <p className="text-xs md:text-sm text-text-secondary/80 max-w-md mx-auto leading-loose">
+            最新のニュースと記事をご覧ください
+          </p>
+        </div>
 
-          {/* Right Side - Content List */}
-          <div className="lg:col-span-9">
-            <div className="space-y-6">
-              {allItems.map((item) => {
-                const LinkComponent = item.type === 'news' && item.isExternal ? 'a' : Link
-                const linkProps = item.type === 'news' && item.isExternal
-                  ? { target: '_blank', rel: 'noopener noreferrer' }
-                  : {}
+        {/* Vertical Scroll Layout - Japanese Book Style */}
+        <div className="max-w-6xl mx-auto mb-16 overflow-x-auto">
+          <div className="flex flex-row-reverse justify-center gap-8 pb-4 px-4">
+            {allItems.map((item, index) => {
+              const LinkComponent = item.type === 'news' && item.isExternal ? 'a' : Link
+              const linkProps = item.type === 'news' && item.isExternal
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {}
 
-                return (
-                  <LinkComponent key={item._id} href={item.href} {...linkProps}>
-                    <div className="group pb-6 border-b border-gray-200 last:border-b-0 hover:pb-6 transition-all duration-300 cursor-pointer">
-                      <div className="flex items-start justify-between gap-4">
-                        {/* Content */}
-                        <div className="flex-grow min-w-0">
-                          <h3 className="text-xl font-semibold text-text-dark mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                            {item.title}
-                            {item.type === 'news' && item.isExternal && (
-                              <ExternalLink className="inline w-4 h-4 ml-2" />
-                            )}
-                          </h3>
-
-                          {/* Meta Information */}
-                          <div className="flex items-center gap-4 text-sm">
-                            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full font-medium">
-                              {item.category}
-                            </span>
-                            <span className="text-text-secondary">
-                              {format(new Date(item.date), 'yyyy.MM.dd', { locale: ja })}
-                            </span>
-                          </div>
+              return (
+                <LinkComponent key={item._id} href={item.href} {...linkProps}>
+                  <div className="group flex flex-col items-center py-6 px-4 border-r border-gray-200/50 last:border-r-0 transition-all duration-500 cursor-pointer hover:bg-primary/5">
+                    {/* Date and Category at Top */}
+                    <div className="flex flex-col items-center gap-3 mb-6 [writing-mode:vertical-rl]">
+                      {/* Date */}
+                      <div className="flex items-center gap-2">
+                        <div className="font-noto-serif-jp text-base font-light text-primary/80">
+                          {format(new Date(item.date), 'yyyy', { locale: ja })}
                         </div>
-
-                        {/* Arrow Icon */}
-                        <div className="flex-shrink-0 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
-                          <ArrowRight className="w-5 h-5" />
+                        <div className="font-noto-serif-jp text-base font-light text-primary/80">
+                          {format(new Date(item.date), 'MM.dd', { locale: ja })}
                         </div>
                       </div>
+
+                      {/* Category Badge */}
+                      <span className="inline-block py-2 px-1 bg-primary/10 text-primary/80 text-xs font-light">
+                        {item.category}
+                      </span>
                     </div>
-                  </LinkComponent>
-                )
-              })}
-            </div>
 
-            {/* Empty State */}
-            {allItems.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-text-secondary">
-                  現在、公開されている記事はありません
-                </p>
-              </div>
-            )}
+                    {/* Title - Vertical Text Below */}
+                    <div className="[writing-mode:vertical-rl] text-right">
+                      <h3 className="font-noto-serif-jp text-base font-medium text-text-dark group-hover:text-primary transition-colors drop-shadow-sm">
+                        {item.title}
+                      </h3>
+                    </div>
 
-            {/* View All Links */}
-            <div className="flex flex-wrap gap-4 mt-10">
-              <Link
-                href="/articles"
-                className="inline-flex items-center gap-2 px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300"
-              >
-                企業文章を見る
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/news"
-                className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gray-300 text-text-dark rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300"
-              >
-                ニュースを見る
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
+                    {/* Arrow Icon */}
+                    <div className="mt-6 text-primary/60 opacity-0 group-hover:opacity-100 transition-all duration-500 transform rotate-90">
+                      <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
+                    </div>
+                  </div>
+                </LinkComponent>
+              )
+            })}
           </div>
+        </div>
+
+        {/* Empty State */}
+        {allItems.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-xs text-text-secondary/70">
+              現在、公開されている記事はありません
+            </p>
+          </div>
+        )}
+
+        {/* View All Links */}
+        <div className="flex flex-wrap gap-4 justify-center">
+          <Link
+            href="/articles"
+            className="inline-flex items-center gap-2 px-10 py-3 border border-primary/30 text-primary/80 font-light text-sm tracking-wide hover:border-primary hover:text-primary transition-all duration-300"
+          >
+            企業文章を見る <span className="text-xs">→</span>
+          </Link>
+          <Link
+            href="/news"
+            className="inline-flex items-center gap-2 px-10 py-3 border border-text-dark/20 text-text-dark font-light text-sm tracking-wide hover:border-text-dark/40 hover:bg-text-dark/5 transition-all duration-300"
+          >
+            ニュースを見る <span className="text-xs">→</span>
+          </Link>
         </div>
       </div>
     </section>
