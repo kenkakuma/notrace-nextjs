@@ -60,7 +60,7 @@ export function HeroSegmented() {
             </Link>
 
             {/* B2C Button */}
-            <Link href="/lab">
+            <Link href="/shop">
               <button className="group relative px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/30 rounded-lg text-white hover:bg-[#E17B47] hover:border-[#E17B47] transition-all duration-300 min-w-[160px]">
                 <div className="flex flex-col items-center gap-1">
                   <span className="text-sm font-medium">コーヒー愛好者</span>

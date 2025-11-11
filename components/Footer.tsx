@@ -5,7 +5,7 @@ import Link from 'next/link'
 const services = [
   { title: 'コーヒー', to: '/coffee' },
   { title: 'エキシビション', to: '/exhibition' },
-  { title: 'ショップ', to: '/lab' },
+  { title: 'ショップ', to: '/shop' },
   { title: 'クラブ', to: '/club' }
 ]
 

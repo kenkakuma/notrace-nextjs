@@ -106,7 +106,7 @@ export default function Home() {
                 <p className="text-sm text-text-secondary leading-relaxed mb-4">
                   北京カフェ運営の経験から厳選した、プロフェッショナル向けコーヒー機器
                 </p>
-                <a href="/lab" className="text-sm text-primary font-medium hover:underline">
+                <a href="/shop" className="text-sm text-primary font-medium hover:underline">
                   商品を見る →
                 </a>
               </div>

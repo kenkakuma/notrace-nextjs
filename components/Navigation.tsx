@@ -30,7 +30,7 @@ const navigationItems: NavItem[] = [
     title: 'ショップ',
     icon: 'shopping-bag',
     submenu: [
-      { title: '設備・器具', to: '/lab', description: 'プロ向けコーヒー機器' },
+      { title: '設備・器具', to: '/shop', description: 'プロ向けコーヒー機器' },
       { title: 'コミュニティ', to: '/club', description: '会員制プログラム' }
     ]
   },

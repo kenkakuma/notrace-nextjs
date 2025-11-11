@@ -20,6 +20,20 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/lab',
+        destination: '/shop',
+        permanent: true, // 301 redirect
+      },
+      {
+        source: '/lab/:path*',
+        destination: '/shop/:path*',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default withContentlayer(nextConfig)
