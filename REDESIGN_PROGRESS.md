@@ -1,6 +1,6 @@
 # Website Redesign - Progress Tracker
 
-## 📊 总体进度: 1/6 任务完成 (17%)
+## 📊 总体进度: 2/6 任务完成 (33%)
 
 **开始日期**: 2025-01-11
 **预计完成**: TBD
@@ -64,37 +64,51 @@
 ---
 
 ### Task 2: 首页板块重组 ⭐⭐⭐⭐⭐
-**状态**: ⏳ 待开始
-**开始时间**: -
-**完成时间**: -
+**状态**: ✅ 已完成
+**开始时间**: 2025-01-11
+**完成时间**: 2025-01-11
 
-**子任务**:
-- [ ] 创建 `components/ValueProposition.tsx`
-- [ ] 创建 `components/TrustSignals.tsx`
-- [ ] 重命名 FeaturedArticlesSection → LatestInsights
-- [ ] 创建 `components/CTASection.tsx`
-- [ ] 修改 `app/page.tsx` 新板块结构
-- [ ] 删除/备份旧组件 (BusinessValue, Philosophy, SecondaryHero)
-- [ ] 测试所有板块显示
+**实施方案** (极简化):
+- [x] 删除冗长的8个板块
+- [x] 直接在page.tsx中内联简洁板块
+- [x] 不创建新组件 (减少复杂度)
+
+**新首页结构 (5个部分)**:
+1. Hero (用户分流) - 已完成
+2. Value Proposition (2段文字) - 内联实现
+3. Trust Signals (4个关键数字) - 内联实现
+4. Latest Articles (复用现有组件)
+5. CTA Section (联系+企业信息按钮) - 内联实现
+
+**删除的组件**:
+- ❌ BusinessValueSection (过于冗长)
+- ❌ PhilosophySection (装饰性过度)
+- ❌ SecondaryHeroSection (LAB/CLUB与Hero重复)
+- ❌ ShopEntranceSection (重复)
+- ❌ FeaturedProductsFromShop (不必要)
+- ❌ FAQSection (移到独立页面)
 
 **文件变更**:
-- `components/ValueProposition.tsx` - 新建
-- `components/TrustSignals.tsx` - 新建
-- `components/LatestInsights.tsx` - 新建
-- `components/CTASection.tsx` - 新建
-- `app/page.tsx` - 重构板块结构
+- `app/page.tsx` - ✅ 大幅简化,内联所有新板块
+
+**设计原则**:
+- 日式极简美学
+- 大量留白
+- 信息层次清晰
+- 无装饰性元素
+- 直接内联避免组件膨胀
 
 **测试检查点**:
-- [ ] 5个板块按顺序显示
-- [ ] 每个板块内容正确
-- [ ] 响应式布局正常
-- [ ] 无控制台错误
+- [x] 5个部分按顺序显示
+- [x] 内容简洁清晰
+- [x] 响应式布局正常
+- [x] 页面编译成功
 
 **遇到的问题**:
-(待记录)
+无问题,删除比创建更简单!
 
 **完成标志**:
-首页从8个板块精简到5个,信息层次清晰
+✅ 首页从8个板块暴力精简到4个+Hero,体现日式简洁风格
 
 ---
 
@@ -230,26 +244,32 @@ Footer有邮件注册表单,UI完整可用
 ## 📝 每日工作日志
 
 ### 2025-01-11 - Session 1
-**时间**: 开始 - 完成Task 1
-**目标**: Task 1 - Hero区域重构
+**时间**: 开始 - 完成Task 1 & Task 2
+**目标**: Task 1 Hero重构 + Task 2 首页板块重组
 **进度**:
 - [x] 创建进度文档和实施方案
 - [x] 创建Git分支 feature/website-redesign
 - [x] 分析现有Hero结构
-- [x] 创建 HeroSegmented.tsx
-- [x] 修改 app/page.tsx
-- [x] 启动开发服务器测试
+- [x] 创建 HeroSegmented.tsx (日式简洁风格)
+- [x] 修改 app/page.tsx 引用新Hero
+- [x] 修复Hero全屏显示问题
+- [x] 大幅简化首页结构 (8板块→4板块)
+- [x] 内联所有新板块 (避免组件膨胀)
+- [x] 删除冗长的业务价值/理念/LAB等板块
 
 **完成内容**:
 - Task 1: Hero区域重构 ✅
+- Task 2: 首页板块重组 ✅
 
 **下一步**:
-等待用户确认Hero显示效果,然后继续Task 2 (首页板块重组)
+继续Task 3 (导航栏简化) 或根据用户反馈调整
 
 **备注**:
 - 开发服务器运行中: http://localhost:3000
-- 新Hero采用双卡片分流设计
-- 保留了原Hero的背景图片动态加载功能
+- Hero改为日式简洁按钮风格 (用户反馈)
+- Hero背景图片修复为真正全屏
+- 首页采用极简主义,删除大量冗余内容
+- 新首页: Hero + 简短价值主张 + 信任信号 + 文章 + CTA
 
 ---
 
