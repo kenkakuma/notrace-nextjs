@@ -4,17 +4,36 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X, ChevronDown } from 'lucide-react'
 
-interface NavItem {
+interface SubMenuItem {
   title: string
   to: string
+  description?: string
+}
+
+interface NavItem {
+  title: string
+  to?: string
   icon: string
+  submenu?: SubMenuItem[]
 }
 
 const navigationItems: NavItem[] = [
-  { title: 'コーヒー', to: '/coffee', icon: 'coffee' },
-  { title: 'エキシビション', to: '/exhibition', icon: 'calendar' },
-  { title: 'ショップ', to: '/lab', icon: 'shopping-bag' },
-  { title: 'クラブ', to: '/club', icon: 'users' },
+  {
+    title: 'コーヒー事業',
+    icon: 'coffee',
+    submenu: [
+      { title: '貿易・OEM', to: '/coffee', description: 'コーヒー貿易とOEMサービス' },
+      { title: '展示サービス', to: '/exhibition', description: '文化・技術展示の企画運営' }
+    ]
+  },
+  {
+    title: 'ショップ',
+    icon: 'shopping-bag',
+    submenu: [
+      { title: '設備・器具', to: '/lab', description: 'プロ向けコーヒー機器' },
+      { title: 'コミュニティ', to: '/club', description: '会員制プログラム' }
+    ]
+  },
   { title: '企業情報', to: '/about', icon: 'info' },
   { title: 'お問い合わせ', to: '/contact', icon: 'mail' }
 ]
@@ -23,6 +42,7 @@ export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [adminMenuOpen, setAdminMenuOpen] = useState(false)
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
 
   // スクロール検出
   useEffect(() => {
@@ -73,15 +93,49 @@ export function Navigation() {
           {/* デスクトップナビゲーションメニュー */}
           <div className="hidden lg:flex gap-1 items-center">
             {navigationItems.map((item) => (
-              <Link
-                key={item.to}
-                href={item.to}
-                className={`px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm font-medium ${
-                  'text-text-dark hover:bg-opacity-10 hover:bg-primary'
-                }`}
-              >
-                {item.title}
-              </Link>
+              <div key={item.title} className="relative">
+                {item.submenu ? (
+                  // ドロップダウンメニュー付きアイテム
+                  <>
+                    <button
+                      onMouseEnter={() => setOpenSubmenu(item.title)}
+                      onMouseLeave={() => setOpenSubmenu(null)}
+                      className="px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm font-medium text-text-dark hover:bg-opacity-10 hover:bg-primary"
+                    >
+                      {item.title}
+                      <ChevronDown size={14} />
+                    </button>
+                    {openSubmenu === item.title && (
+                      <div
+                        onMouseEnter={() => setOpenSubmenu(item.title)}
+                        onMouseLeave={() => setOpenSubmenu(null)}
+                        className="absolute left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                      >
+                        {item.submenu.map((subItem) => (
+                          <Link
+                            key={subItem.to}
+                            href={subItem.to}
+                            className="block px-4 py-3 text-sm text-text-dark hover:bg-gray-50 transition-colors"
+                          >
+                            <div className="font-medium mb-1">{subItem.title}</div>
+                            {subItem.description && (
+                              <div className="text-xs text-text-secondary">{subItem.description}</div>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  // 通常のリンク
+                  <Link
+                    href={item.to!}
+                    className="px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm font-medium text-text-dark hover:bg-opacity-10 hover:bg-primary"
+                  >
+                    {item.title}
+                  </Link>
+                )}
+              </div>
             ))}
 
             {/* 管理システムドロップダウン */}
@@ -152,14 +206,49 @@ export function Navigation() {
             {/* ナビゲーションアイテム */}
             <nav className="flex-1 overflow-y-auto py-4">
               {navigationItems.map((item) => (
-                <Link
-                  key={item.to}
-                  href={item.to}
-                  onClick={() => setDrawerOpen(false)}
-                  className="block px-4 py-3 text-text-dark hover:bg-gray-50 transition-colors border-l-4 border-transparent hover:border-primary"
-                >
-                  {item.title}
-                </Link>
+                <div key={item.title}>
+                  {item.submenu ? (
+                    // サブメニュー付きアイテム
+                    <>
+                      <button
+                        onClick={() => setOpenSubmenu(openSubmenu === item.title ? null : item.title)}
+                        className="w-full flex items-center justify-between px-4 py-3 text-text-dark hover:bg-gray-50 transition-colors border-l-4 border-transparent hover:border-primary"
+                      >
+                        <span className="font-medium">{item.title}</span>
+                        <ChevronDown
+                          size={16}
+                          className={`transition-transform ${openSubmenu === item.title ? 'rotate-180' : ''}`}
+                        />
+                      </button>
+                      {openSubmenu === item.title && (
+                        <div className="bg-gray-50">
+                          {item.submenu.map((subItem) => (
+                            <Link
+                              key={subItem.to}
+                              href={subItem.to}
+                              onClick={() => {
+                                setDrawerOpen(false)
+                                setOpenSubmenu(null)
+                              }}
+                              className="block px-8 py-2 text-sm text-text-dark hover:bg-gray-100 transition-colors"
+                            >
+                              {subItem.title}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    // 通常のリンク
+                    <Link
+                      href={item.to!}
+                      onClick={() => setDrawerOpen(false)}
+                      className="block px-4 py-3 text-text-dark hover:bg-gray-50 transition-colors border-l-4 border-transparent hover:border-primary"
+                    >
+                      {item.title}
+                    </Link>
+                  )}
+                </div>
               ))}
 
               {/* 管理システム */}
