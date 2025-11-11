@@ -9,10 +9,11 @@ import { FAQSection } from '@/components/FAQSection'
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen w-full">
-      {/* Hero Section - 用户分流 (企业 vs 爱好者) */}
+    <>
+      {/* Hero Section - Full Screen (突破容器限制) */}
       <HeroSegmented />
 
+      <main className="flex flex-col min-h-screen w-full">
       {/* Business Value Section - 使命区域(左右布局) */}
       <BusinessValueSection />
 
@@ -33,6 +34,7 @@ export default function Home() {
 
       {/* FAQ Section - 常见问题 */}
       <FAQSection />
-    </main>
+      </main>
+    </>
   )
 }
