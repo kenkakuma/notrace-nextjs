@@ -36,19 +36,54 @@ collections:
 
   # 企业文章管理
   - name: "articles"
-    label: "企业文章"
+    label: "企業文章"
+    label_singular: "企業文章"
     folder: "content/articles"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    editor:
+      preview: true
     fields:
-      - {label: "标题", name: "title", widget: "string"}
-      - {label: "发布日期", name: "date", widget: "datetime"}
-      - {label: "分类", name: "category", widget: "select", options: ["企業ニュース", "サービス", "コーヒー事業", "展示・イベント", "釣具・器具"]}
-      - {label: "摘要", name: "excerpt", widget: "text"}
-      - {label: "特色图片", name: "featuredImage", widget: "image", required: false, media_library: {config: {multiple: false}}}
-      - {label: "正文", name: "body", widget: "markdown"}
-      - {label: "作者", name: "author", widget: "string", default: "NO TRACE EXPLORER"}
-      - {label: "发布状态", name: "published", widget: "boolean", default: true}
+      - {label: "タイトル", name: "title", widget: "string", required: true}
+      - {label: "説明", name: "description", widget: "text", required: true}
+      - {label: "抜粋", name: "excerpt", widget: "text", required: false, hint: "リスト表示用の短い概要"}
+      - {label: "公開日", name: "date", widget: "datetime", required: true}
+      - {label: "カテゴリー", name: "category", widget: "select", required: true, options: ["企業ニュース", "サービス", "コーヒー事業", "展示・イベント", "釣具・器具", "その他"]}
+      - {label: "アイキャッチ画像", name: "image", widget: "image", required: false, media_library: {config: {multiple: false}}}
+      - {label: "著者", name: "author", widget: "string", default: "NO TRACE EXPLORER", required: true}
+      - {label: "読了時間", name: "readTime", widget: "string", required: false, hint: "例：3分"}
+      - {label: "タグ", name: "tags", widget: "list", required: false, allow_add: true}
+      - {label: "注目記事", name: "featured", widget: "boolean", default: false, required: false}
+      - {label: "公開状態", name: "published", widget: "boolean", default: true, required: true}
+      - {label: "本文", name: "body", widget: "markdown", required: true}
+
+  # 新闻发布管理
+  - name: "news"
+    label: "ニュース"
+    label_singular: "ニュース"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    editor:
+      preview: true
+    fields:
+      - {label: "タイトル", name: "title", widget: "string", required: true}
+      - {label: "説明", name: "description", widget: "text", required: true}
+      - {label: "抜粋", name: "excerpt", widget: "text", required: false, hint: "リスト表示用の短い概要"}
+      - {label: "公開日", name: "date", widget: "datetime", required: true}
+      - {label: "カテゴリー", name: "category", widget: "select", required: true, options: ["プレスリリース", "お知らせ", "イベント情報", "メディア掲載"]}
+      - {label: "アイキャッチ画像", name: "image", widget: "image", required: false, media_library: {config: {multiple: false}}}
+      - {label: "著者", name: "author", widget: "string", default: "NO TRACE EXPLORER", required: true}
+      - {label: "読了時間", name: "readTime", widget: "string", required: false, hint: "例：5分"}
+      - {label: "タグ", name: "tags", widget: "list", required: false, allow_add: true}
+      - {label: "外部リンク", name: "externalLink", widget: "string", required: false, hint: "外部サイトへのリンク（任意）"}
+      - {label: "注目記事", name: "featured", widget: "boolean", default: false, required: false}
+      - {label: "公開状態", name: "published", widget: "boolean", default: true, required: true}
+      - {label: "本文", name: "body", widget: "markdown", required: true}
 
   # 业务价值部分
   - name: "business-value"

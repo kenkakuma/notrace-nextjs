@@ -1,60 +1,39 @@
 'use client'
 
+import { allArticles, allNews } from 'contentlayer/generated'
+import { compareDesc, format } from 'date-fns'
+import { ja } from 'date-fns/locale'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-
-interface Article {
-  id: number
-  date: string
-  title: string
-  category: string
-  excerpt: string
-}
-
-const ARTICLES: Article[] = [
-  {
-    id: 1,
-    date: '2025.01.15',
-    title: '無迹探索株式会社設立準備開始のお知らせ',
-    category: '企業ニュース',
-    excerpt:
-      '革新的なソリューションで新たなビジネス価値を創造する企業として、無迹探索株式会社の設立準備を開始いたします。',
-  },
-  {
-    id: 2,
-    date: '2025.01.10',
-    title: '東京ルアー・フライフィッシング学院 2025年春季コース募集開始',
-    category: 'サービス',
-    excerpt:
-      'プロフェッショナルな技術指導と最新器具を用いた実践的なフィッシング技術習得プログラムの受講生を募集いたします。',
-  },
-  {
-    id: 3,
-    date: '2025.01.08',
-    title: '厳選コーヒー商品ラインナップ拡充について',
-    category: 'コーヒー事業',
-    excerpt:
-      '世界各地から厳選した高品質コーヒー豆を使用した新商品を順次発表。サステナブルな調達と独自の焙煎技術で最高の品質を実現。',
-  },
-  {
-    id: 4,
-    date: '2025.01.05',
-    title: '中国アーティスト展示スペース 中目黒オープン準備中',
-    category: '展示・イベント',
-    excerpt:
-      '中国現代アートの発信地となる新しい展示スペースが中目黒にオープン予定。革新的なアート企画と文化交流の拠点として機能いたします。',
-  },
-  {
-    id: 5,
-    date: '2025.01.03',
-    title: '2025年限定釣具予約受付開始 - Shimano・Daiwa最新モデル',
-    category: '釣具・器具',
-    excerpt:
-      '業界トップブランドのShimanoとDaiwaの限定最新モデル釣具が2025年用に登場。予約受付を開始いたしました。',
-  },
-]
+import { ArrowRight, ExternalLink } from 'lucide-react'
 
 export function FeaturedArticlesSection() {
+  // 获取最新的文章和新闻（合并显示）
+  const latestArticles = allArticles
+    .filter((article) => article.published)
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+    .slice(0, 3)
+    .map(item => ({
+      ...item,
+      type: 'article' as const,
+      href: item.url
+    }))
+
+  const latestNews = allNews
+    .filter((news) => news.published)
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+    .slice(0, 2)
+    .map(item => ({
+      ...item,
+      type: 'news' as const,
+      href: item.externalLink || item.url,
+      isExternal: !!item.externalLink
+    }))
+
+  // 合并并按日期排序，取最新5条
+  const allItems = [...latestArticles, ...latestNews]
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+    .slice(0, 5)
+
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,48 +45,76 @@ export function FeaturedArticlesSection() {
             </h2>
           </div>
 
-          {/* Right Side - News List */}
+          {/* Right Side - Content List */}
           <div className="lg:col-span-9">
             <div className="space-y-6">
-              {ARTICLES.slice(0, 5).map((article, index) => (
-                <Link key={article.id} href={`/article/${article.id}`}>
-                  <div className="group pb-6 border-b border-gray-200 last:border-b-0 hover:pb-6 transition-all duration-300 cursor-pointer">
-                    <div className="flex items-start justify-between gap-4">
-                      {/* Content */}
-                      <div className="flex-grow min-w-0">
-                        <h3 className="text-xl font-semibold text-text-dark mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                          {article.title}
-                        </h3>
+              {allItems.map((item) => {
+                const LinkComponent = item.type === 'news' && item.isExternal ? 'a' : Link
+                const linkProps = item.type === 'news' && item.isExternal
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {}
 
-                        {/* Meta Information */}
-                        <div className="flex items-center gap-4 text-sm">
-                          <span className="px-3 py-1 bg-primary/10 text-primary rounded-full font-medium">
-                            {article.category}
-                          </span>
-                          <span className="text-text-secondary">
-                            {article.date}
-                          </span>
+                return (
+                  <LinkComponent key={item._id} href={item.href} {...linkProps}>
+                    <div className="group pb-6 border-b border-gray-200 last:border-b-0 hover:pb-6 transition-all duration-300 cursor-pointer">
+                      <div className="flex items-start justify-between gap-4">
+                        {/* Content */}
+                        <div className="flex-grow min-w-0">
+                          <h3 className="text-xl font-semibold text-text-dark mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                            {item.title}
+                            {item.type === 'news' && item.isExternal && (
+                              <ExternalLink className="inline w-4 h-4 ml-2" />
+                            )}
+                          </h3>
+
+                          {/* Meta Information */}
+                          <div className="flex items-center gap-4 text-sm">
+                            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full font-medium">
+                              {item.category}
+                            </span>
+                            <span className="text-text-secondary">
+                              {format(new Date(item.date), 'yyyy.MM.dd', { locale: ja })}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Arrow Icon */}
+                        <div className="flex-shrink-0 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
+                          <ArrowRight className="w-5 h-5" />
                         </div>
                       </div>
-
-                      {/* Arrow Icon */}
-                      <div className="flex-shrink-0 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
-                        <ArrowRight className="w-5 h-5" />
-                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </LinkComponent>
+                )
+              })}
             </div>
 
-            {/* View All Link */}
-            <Link
-              href="/articles"
-              className="inline-flex items-center gap-2 mt-10 px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300"
-            >
-              すべての記事を見る
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            {/* Empty State */}
+            {allItems.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-text-secondary">
+                  現在、公開されている記事はありません
+                </p>
+              </div>
+            )}
+
+            {/* View All Links */}
+            <div className="flex flex-wrap gap-4 mt-10">
+              <Link
+                href="/articles"
+                className="inline-flex items-center gap-2 px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300"
+              >
+                企業文章を見る
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                href="/news"
+                className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gray-300 text-text-dark rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300"
+              >
+                ニュースを見る
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

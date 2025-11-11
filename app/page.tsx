@@ -1,4 +1,4 @@
-import { HeroSection } from '@/components/HeroSection'
+import { HeroSegmented } from '@/components/HeroSegmented'
 import { BusinessValueSection } from '@/components/BusinessValueSection'
 import { PhilosophySection } from '@/components/PhilosophySection'
 import { SecondaryHeroSection } from '@/components/SecondaryHeroSection'
@@ -10,8 +10,8 @@ import { FAQSection } from '@/components/FAQSection'
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen w-full">
-      {/* Hero Section - 全屏背景+产品卡片 */}
-      <HeroSection />
+      {/* Hero Section - 用户分流 (企业 vs 爱好者) */}
+      <HeroSegmented />
 
       {/* Business Value Section - 使命区域(左右布局) */}
       <BusinessValueSection />

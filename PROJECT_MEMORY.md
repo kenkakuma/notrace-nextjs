@@ -1,7 +1,7 @@
 # 项目记忆 - NO TRACE EXPLORER
 
 > 最后更新: 2025-01-15
-> 当前版本: v0.3.0
+> 当前版本: v0.4.0
 
 ## 📋 项目概述
 
@@ -17,7 +17,8 @@
 - **LAB页面**: 商城商品展示（统一设计风格 + 真实API数据）
 - **CLUB页面**: 会员活动和服务
 - **关于页面**: 企业介绍
-- **CMS集成**: Sveltia CMS + Contentlayer
+- **CMS集成**: Sveltia CMS + Contentlayer + 完整文章/新闻系统
+- **管理后台**: 统一管理仪表板（CMS + 图片 + Hero管理）
 
 ### 2. 商城集成
 - **架构**: 双项目独立运营
@@ -27,9 +28,10 @@
 - **集成方式**: API调用 + 外部链接
 
 ### 3. 内容管理
-- **Hero配置**: Markdown文件 + API端点
-- **文章系统**: Contentlayer集成
-- **图片管理**: Cloudinary CDN
+- **Hero配置**: Markdown文件 + API端点 + 管理界面
+- **文章系统**: Contentlayer + Sveltia CMS（企業文章 + ニュース）
+- **图片管理**: Cloudinary CDN + 管理界面
+- **统一后台**: /admin 管理仪表板（Tab界面）
 
 ## 🏗️ 项目架构
 
@@ -38,27 +40,52 @@
 notrace-nextjs/
 ├── app/                    # Next.js 14 App Router
 │   ├── page.tsx           # 首页
-│   ├── lab/               # LAB页面（商品展示）
-│   ├── club/              # CLUB页面
-│   ├── api/               # API路由
-│   └── error.tsx          # 全局错误页面
-├── components/            # React组件
-│   ├── ui/               # 共享UI组件
+│   ├── articles/          # 文章系统
+│   │   ├── page.tsx      # 文章列表
+│   │   └── [slug]/       # 文章详情
+│   ├── news/             # 新闻系统
+│   │   ├── page.tsx      # 新闻列表
+│   │   └── [slug]/       # 新闻详情
+│   ├── admin/            # 管理后台
+│   │   ├── page.tsx      # 统一仪表板
+│   │   ├── layout.tsx    # 后台布局
+│   │   └── cms/          # Sveltia CMS专用页
+│   ├── lab/              # LAB页面（商品展示）
+│   ├── club/             # CLUB页面
+│   ├── api/              # API路由
+│   │   └── hero-config/  # Hero配置API
+│   └── error.tsx         # 全局错误页面
+├── components/           # React组件
+│   ├── ui/              # 共享UI组件
 │   │   ├── Container.tsx
 │   │   ├── Section.tsx
 │   │   └── OptimizedImage.tsx
-│   ├── lab/              # LAB专用组件
+│   ├── admin/           # 管理后台组件
+│   │   ├── AdminTabs.tsx
+│   │   ├── CMSPanel.tsx
+│   │   ├── ImageManagementPanel.tsx
+│   │   └── HeroManagementPanel.tsx
+│   ├── articles/        # 文章组件
+│   │   ├── ArticleCard.tsx
+│   │   └── Mdx.tsx
+│   ├── news/            # 新闻组件
+│   │   └── NewsCard.tsx
+│   ├── lab/             # LAB专用组件
 │   │   ├── LabHeroSection.tsx
 │   │   └── LabProductsSection.tsx
 │   ├── ShopEntranceSection.tsx
 │   ├── FeaturedProductsFromShop.tsx
+│   ├── FeaturedArticlesSection.tsx
 │   └── ErrorBoundary.tsx
-├── content/              # Markdown内容
-│   └── hero/
-├── public/               # 静态资源
+├── content/             # Markdown内容
+│   ├── articles/        # 企业文章
+│   ├── news/           # 新闻发布
+│   └── hero/           # Hero配置
+├── public/             # 静态资源
 │   ├── images/
-│   └── admin/           # Sveltia CMS
-└── hooks/               # 自定义Hooks
+│   └── admin/         # Sveltia CMS
+│       └── config.yml  # CMS配置
+└── hooks/             # 自定义Hooks
 ```
 
 ### 关键组件说明
@@ -74,6 +101,18 @@ notrace-nextjs/
 2. **FeaturedProductsFromShop** - 精选商品展示（首页，6个商品）
 3. **LabHeroSection** - LAB Hero区域
 4. **LabProductsSection** - LAB商品展示（分类筛选 + 全部商品）
+
+#### 内容管理组件
+1. **ArticleCard** - 文章卡片（支持Featured模式）
+2. **NewsCard** - 新闻卡片（垂直/水平布局）
+3. **Mdx** - MDX内容渲染器
+4. **FeaturedArticlesSection** - 首页精选内容展示
+
+#### 管理后台组件
+1. **AdminTabs** - Tab导航组件
+2. **CMSPanel** - CMS管理面板（iframe集成）
+3. **ImageManagementPanel** - 图片管理界面
+4. **HeroManagementPanel** - Hero编辑器（实时预览）
 
 ## 🔌 API集成
 
@@ -145,7 +184,9 @@ group-hover:scale-105 transition-transform duration-500
   "typescript": "^5.0.0",
   "tailwindcss": "^3.4.1",
   "contentlayer": "^0.3.4",
-  "lucide-react": "^0.263.1"
+  "lucide-react": "^0.263.1",
+  "date-fns": "^4.1.0",
+  "next-contentlayer": "^0.3.4"
 }
 ```
 
@@ -164,15 +205,43 @@ group-hover:scale-105 transition-transform duration-500
 - `.env.local.example` - 环境变量示例
 
 ### 文档文件
-- `RELEASE_NOTES_v0.3.0.md` - 版本发布说明
+- `RELEASE_NOTES_v0.3.0.md` - v0.3.0版本发布说明
 - `SHOP_INTEGRATION_GUIDE.md` - 商城集成指南（67KB）
 - `LAB_PAGE_UPGRADE.md` - LAB页面升级文档
 - `CODE_QUALITY_IMPROVEMENTS.md` - 代码质量改进文档
+- `CMS_USER_GUIDE.md` - CMS用户指南（11KB）
+- `CMS_TECHNICAL_GUIDE.md` - CMS技术指南（15KB）
+- `CMS_IMPLEMENTATION_SUMMARY.md` - CMS实现总结
+- `ADMIN_DASHBOARD_GUIDE.md` - 管理后台使用指南（18KB）
+- `ADMIN_IMPLEMENTATION_SUMMARY.md` - 管理后台实现总结
+- `FINAL_IMPLEMENTATION_SUMMARY.md` - v0.4.0完整实现总结（13KB）
 - `PROJECT_MEMORY.md` - 本文件（项目记忆）
 
 ## 🔄 版本历史
 
-### v0.3.0 (2025-01-15) - 当前版本
+### v0.4.0 (2025-01-15) - 当前版本 ✨
+**主要更新**:
+- ✅ 完整CMS系统（文章 + 新闻发布）
+- ✅ 统一管理后台（CMS + 图片 + Hero管理）
+- ✅ Sveltia CMS集成（Git-based内容管理）
+- ✅ Contentlayer MDX处理（TypeScript类型生成）
+
+**统计**:
+- 24个新文件
+- 约4,300行新增代码
+- 11个新组件
+- 7个新页面
+- 6个文档文件（62KB）
+
+**关键功能**:
+- 企业文章系统（6个分类）
+- 新闻发布系统（4个分类 + 外部链接支持）
+- Tab式管理仪表板
+- Hero实时预览编辑
+- Cloudinary图片管理界面
+- MDX内容渲染
+
+### v0.3.0 (2025-01-15)
 **主要更新**:
 - ✅ 商城集成系统（双项目独立运营）
 - ✅ LAB页面升级（统一设计 + 真实数据）
@@ -182,12 +251,6 @@ group-hover:scale-105 transition-transform duration-500
 - 59个文件修改
 - 5488行新增代码
 - 31个新文件
-
-**关键功能**:
-- Medusa API集成
-- 分类筛选功能
-- 多货币支持
-- 响应式设计完善
 
 ### v0.2.x - 之前版本
 - 基础页面结构
@@ -213,23 +276,27 @@ const STORE_CORS = process.env.STORE_CORS || "http://localhost:3000"
 
 ## 🎯 下一步开发计划
 
-### v0.4.0 规划
+### v0.5.0 规划
+- [ ] 管理后台认证系统（Basic Auth / GitHub OAuth）
+- [ ] Cloudinary Upload Widget集成
+- [ ] Hero保存API完整实现
+- [ ] 文章/新闻统计数据实时获取
 - [ ] 商品搜索功能
 - [ ] 购物车预览
-- [ ] 商品收藏功能
-- [ ] 移动端交互优化
 
 ### 技术债务
 - [ ] 添加单元测试（Jest + React Testing Library）
 - [ ] 添加E2E测试（Playwright）
 - [ ] 性能监控集成
 - [ ] SEO元数据优化
+- [ ] 解决viewport metadata警告
 
 ### 优化建议
 - [ ] 实现图片懒加载优化
 - [ ] 添加Redis缓存层
 - [ ] API响应缓存
 - [ ] 代码分割优化
+- [ ] 操作履歴/监査ログ追加
 
 ## 💡 开发经验总结
 
@@ -239,6 +306,9 @@ const STORE_CORS = process.env.STORE_CORS || "http://localhost:3000"
 3. **共享组件**: 提取Container/Section等组件，减少重复代码
 4. **错误处理**: 完善的加载、错误、空状态处理
 5. **文档驱动**: 详细文档便于团队协作和后续维护
+6. **Git-based CMS**: Sveltia CMS实现版本控制的内容管理
+7. **TypeScript类型安全**: Contentlayer自动生成类型定义
+8. **统一管理界面**: Tab式设计集中管理多个功能
 
 ### 避免的坑
 1. ❌ 不要将商城完全集成到主站（维护困难）
@@ -279,17 +349,23 @@ const STORE_CORS = process.env.STORE_CORS || "http://localhost:3000"
 
 ---
 
-## 📊 项目统计（v0.3.0）
+## 📊 项目统计（v0.4.0）
 
-- **总文件数**: 100+ 文件
-- **代码行数**: 10,000+ 行
-- **组件数量**: 40+ 组件
-- **页面数量**: 8个主要页面
+- **总文件数**: 124+ 文件
+- **代码行数**: 14,300+ 行
+- **组件数量**: 51+ 组件
+- **页面数量**: 15个页面
 - **API端点**: 3个端点
-- **文档数量**: 10+ 文档文件
+- **文档数量**: 17+ 文档文件
+- **内容文件**: 4个示例文章/新闻
+
+### 详细统计
+- **v0.4.0新增**: 24文件，4,300行代码
+- **v0.3.0累计**: 59文件，5,488行代码
+- **v0.2.x基础**: 41文件，4,512行代码
 
 ---
 
 **最后更新**: 2025-01-15
 **维护者**: Development Team
-**版本**: v0.3.0
+**版本**: v0.4.0 ✨

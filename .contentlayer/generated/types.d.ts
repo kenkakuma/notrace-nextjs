@@ -17,11 +17,36 @@ export type Article = {
   description: string
   date: IsoDateTimeString
   author: string
-  category: string
+  category: '企業ニュース' | 'サービス' | 'コーヒー事業' | '展示・イベント' | '釣具・器具' | 'その他'
   image?: string | undefined
   featured: boolean
+  published: boolean
   readTime?: string | undefined
-  tags?: any | undefined
+  tags?: string[] | undefined
+  excerpt?: string | undefined
+  /** MDX file body */
+  body: MDX
+  slug: string
+  url: string
+}
+
+export type News = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'News'
+  title: string
+  description: string
+  date: IsoDateTimeString
+  author: string
+  category: 'プレスリリース' | 'お知らせ' | 'イベント情報' | 'メディア掲載'
+  image?: string | undefined
+  featured: boolean
+  published: boolean
+  readTime?: string | undefined
+  tags?: string[] | undefined
+  excerpt?: string | undefined
+  externalLink?: string | undefined
   /** MDX file body */
   body: MDX
   slug: string
@@ -55,8 +80,8 @@ export type Product = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Article | Product
-export type DocumentTypeNames = 'Article' | 'Product'
+export type DocumentTypes = Article | News | Product
+export type DocumentTypeNames = 'Article' | 'News' | 'Product'
 
 export type NestedTypes = never
 export type NestedTypeNames = never
@@ -64,6 +89,7 @@ export type NestedTypeNames = never
 export type DataExports = {
   allDocuments: DocumentTypes[]
   allArticles: Article[]
+  allNews: News[]
   allProducts: Product[]
 }
 
@@ -85,6 +111,7 @@ declare global {
 
 export type DocumentTypeMap = {
   Article: Article
+  News: News
   Product: Product
 }
 
