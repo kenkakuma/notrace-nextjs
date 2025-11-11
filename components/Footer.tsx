@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { NewsletterSignup } from './NewsletterSignup'
 
 const services = [
   { title: 'コーヒー', to: '/coffee' },
@@ -19,6 +20,11 @@ export function Footer() {
   return (
     <footer className="bg-text-dark text-white">
       <div className="max-w-7xl mx-auto px-4 py-12">
+        {/* Newsletter Signup - Above main footer content */}
+        <div className="mb-12">
+          <NewsletterSignup />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* ブランド情報 */}
           <div className="col-span-1">
