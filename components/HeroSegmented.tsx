@@ -8,7 +8,7 @@ export function HeroSegmented() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-4 w-full">
         {/* Japanese Book-Style Layout: Left Text, Right Image */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
@@ -18,7 +18,7 @@ export function HeroSegmented() {
             <div className="flex items-center gap-3">
               <div className="h-px w-12 bg-primary/30"></div>
               <span className="text-primary/70 text-xs tracking-[0.3em] uppercase">
-                No Trace Explorer
+                NO TRACE EXPLORATION
               </span>
               <div className="h-px w-12 bg-primary/30"></div>
             </div>

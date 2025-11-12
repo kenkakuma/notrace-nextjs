@@ -107,9 +107,9 @@ export function Navigation() {
           {/* ブランドロゴ */}
           <Link href="/" className="flex items-center no-underline">
             <div className="flex flex-col">
-              <h1 className="hidden md:block text-xl font-bold text-text-dark">
+              <h1 className="hidden md:block text-base font-bold text-text-dark">
                 NO TRACE EXPLORATION
-                <span className="text-sm font-normal ml-2">| 無迹探索株式会社</span>
+                <span className="text-base font-normal ml-2">| 無迹探索株式会社</span>
               </h1>
               <h1 className="md:hidden text-xl font-bold text-text-dark">NTE</h1>
             </div>
