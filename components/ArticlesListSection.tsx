@@ -17,7 +17,7 @@ interface Article {
 const ARTICLES: Article[] = [
   {
     id: 1,
-    date: '2025.01.15',
+    date: '2025.11.01',
     title: '無迹探索株式会社設立準備開始のお知らせ',
     category: '企業ニュース',
     excerpt:
@@ -31,7 +31,7 @@ const ARTICLES: Article[] = [
   },
   {
     id: 2,
-    date: '2025.01.10',
+    date: '2025.11.01',
     title: '東京ルアー・フライフィッシング学院 2025年春季コース募集開始',
     category: 'サービス',
     excerpt:
@@ -45,7 +45,7 @@ const ARTICLES: Article[] = [
   },
   {
     id: 3,
-    date: '2025.01.08',
+    date: '2025.11.01',
     title: '厳選コーヒー商品ラインナップ拡充について',
     category: 'コーヒー事業',
     excerpt:
@@ -59,7 +59,7 @@ const ARTICLES: Article[] = [
   },
   {
     id: 4,
-    date: '2025.01.05',
+    date: '2025.11.01',
     title: '中国アーティスト展示スペース 中目黒オープン準備中',
     category: '展示・イベント',
     excerpt:
@@ -70,20 +70,6 @@ const ARTICLES: Article[] = [
       <h2>展示予定</h2>
       <p>定期的に企画展を開催し、両国のアーティストと観覧者の交流の場を提供いたします。</p>`,
     tags: ['展示', 'アート', '文化交流'],
-  },
-  {
-    id: 5,
-    date: '2025.01.03',
-    title: '2025年限定釣具予約受付開始 - Shimano・Daiwa最新モデル',
-    category: '釣具・器具',
-    excerpt:
-      '2025年の限定釣具の予約受付を開始。Shimano、Daiwの最新モデルを含む厳選されたラインナップをご用意しました。',
-    readTime: '3分',
-    content: `<h2>限定モデル詳細</h2>
-      <p>ShimanoとDaiwaの2025年最新限定モデルを含む、厳選された高品質釣具の予約受付を開始いたします。</p>
-      <h2>予約方法</h2>
-      <p>オンラインまたは店頭にて予約を承ります。数量限定となっておりますので、お早めにご予約ください。</p>`,
-    tags: ['釣具', '限定商品', 'Shimano'],
   },
 ]
 
