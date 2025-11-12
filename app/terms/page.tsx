@@ -1,28 +1,50 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '利用規約 | NO TRACE EXPLORER',
-  description: 'NO TRACE EXPLORERのサービス利用規約について',
+  title: '利用規約 | NO TRACE EXPLORATION',
+  description: 'NO TRACE EXPLORATIONのサービス利用規約について',
 }
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen py-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-text-dark mb-8">
-          利用規約
-        </h1>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            {/* English Label */}
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-px w-32 bg-primary/20"></div>
+              <span className="text-primary/60 text-xs tracking-[0.3em] uppercase">Terms of Service</span>
+              <div className="h-px w-32 bg-primary/20"></div>
+            </div>
 
-        <div className="prose prose-lg max-w-none">
-          <p className="text-text-secondary mb-8">
-            最終更新日: {new Date().getFullYear()}年{new Date().getMonth() + 1}月{new Date().getDate()}日
-          </p>
+            {/* Main Title */}
+            <h1 className="font-noto-serif-jp text-2xl md:text-3xl font-medium text-text-dark mb-6 leading-relaxed drop-shadow-sm">
+              利用規約
+            </h1>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第1条(適用)</h2>
-            <ol className="list-decimal list-inside text-text-secondary space-y-3 ml-4">
+            {/* Divider */}
+            <div className="w-12 h-px bg-primary/30 mx-auto mb-8"></div>
+
+            {/* Last Updated */}
+            <p className="text-xs text-text-secondary/70">
+              最終更新日: {new Date().getFullYear()}年{new Date().getMonth() + 1}月{new Date().getDate()}日
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-12">
+
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第1条(適用)</h2>
+            <ol className="list-decimal list-inside text-sm text-text-secondary/80 space-y-3 ml-4">
               <li>
-                本利用規約(以下「本規約」といいます。)は、NO TRACE EXPLORER(以下「当社」といいます。)が
+                本利用規約(以下「本規約」といいます。)は、NO TRACE EXPLORATION(以下「当社」といいます。)が
                 提供するサービス(以下「本サービス」といいます。)の利用条件を定めるものです。
               </li>
               <li>
@@ -34,21 +56,21 @@ export default function TermsPage() {
             </ol>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第2条(定義)</h2>
-            <p className="text-text-secondary leading-relaxed mb-4">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第2条(定義)</h2>
+            <p className="text-sm text-text-secondary/80 leading-loose mb-4">
               本規約において使用する以下の用語は、各々以下に定める意味を有するものとします。
             </p>
-            <ol className="list-decimal list-inside text-text-secondary space-y-3 ml-4">
+            <ol className="list-decimal list-inside text-sm text-text-secondary/80 space-y-3 ml-4">
               <li>「サービス利用契約」とは、本規約を契約条件として当社とユーザーの間で締結される、本サービスの利用契約を意味します。</li>
               <li>「知的財産権」とは、著作権、特許権、実用新案権、意匠権、商標権その他の知的財産権(それらの権利を取得し、またはそれらの権利につき登録等を出願する権利を含みます。)を意味します。</li>
               <li>「投稿データ」とは、ユーザーが本サービスを利用して投稿その他送信するコンテンツ(文章、画像、動画その他のデータを含みますがこれらに限りません。)を意味します。</li>
             </ol>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第3条(会員登録)</h2>
-            <ol className="list-decimal list-inside text-text-secondary space-y-3 ml-4">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第3条(会員登録)</h2>
+            <ol className="list-decimal list-inside text-sm text-text-secondary/80 space-y-3 ml-4">
               <li>
                 本サービスの利用を希望する者(以下「登録希望者」といいます。)は、本規約を遵守することに同意し、
                 かつ当社の定める一定の情報(以下「登録事項」といいます。)を当社の定める方法で当社に提供することにより、
@@ -66,16 +88,16 @@ export default function TermsPage() {
             </ol>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第4条(登録事項の変更)</h2>
-            <p className="text-text-secondary leading-relaxed">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第4条(登録事項の変更)</h2>
+            <p className="text-sm text-text-secondary/80 leading-loose">
               ユーザーは、登録事項に変更があった場合、当社の定める方法により当該変更事項を遅滞なく当社に通知するものとします。
             </p>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第5条(パスワード及びユーザーIDの管理)</h2>
-            <ol className="list-decimal list-inside text-text-secondary space-y-3 ml-4">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第5条(パスワード及びユーザーIDの管理)</h2>
+            <ol className="list-decimal list-inside text-sm text-text-secondary/80 space-y-3 ml-4">
               <li>
                 ユーザーは、自己の責任において、本サービスに関するパスワード及びユーザーIDを適切に管理及び保管するものとし、
                 これを第三者に利用させ、または貸与、譲渡、名義変更、売買等をしてはならないものとします。
@@ -87,12 +109,12 @@ export default function TermsPage() {
             </ol>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第6条(禁止事項)</h2>
-            <p className="text-text-secondary leading-relaxed mb-4">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第6条(禁止事項)</h2>
+            <p className="text-sm text-text-secondary/80 leading-loose mb-4">
               ユーザーは、本サービスの利用にあたり、以下の行為をしてはなりません。
             </p>
-            <ol className="list-decimal list-inside text-text-secondary space-y-3 ml-4">
+            <ol className="list-decimal list-inside text-sm text-text-secondary/80 space-y-3 ml-4">
               <li>法令または公序良俗に違反する行為</li>
               <li>犯罪行為に関連する行為</li>
               <li>当社、本サービスの他のユーザー、または第三者の知的財産権、肖像権、プライバシー、名誉その他の権利または利益を侵害する行為</li>
@@ -122,13 +144,13 @@ export default function TermsPage() {
             </ol>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第7条(本サービスの停止等)</h2>
-            <ol className="list-decimal list-inside text-text-secondary space-y-3 ml-4">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第7条(本サービスの停止等)</h2>
+            <ol className="list-decimal list-inside text-sm text-text-secondary/80 space-y-3 ml-4">
               <li>
                 当社は、以下のいずれかに該当する場合には、ユーザーに事前に通知することなく、
                 本サービスの全部または一部の提供を停止または中断することができるものとします。
-                <ul className="list-disc list-inside ml-6 mt-2 space-y-2">
+                <ul className="list-disc list-inside text-sm text-text-secondary/80 ml-6 mt-2 space-y-2">
                   <li>本サービスに係るコンピューター・システムの点検または保守作業を緊急に行う場合</li>
                   <li>コンピューター、通信回線等の障害、誤操作、過度なアクセスの集中、不正アクセス、ハッキング等により本サービスの運営ができなくなった場合</li>
                   <li>地震、落雷、火災、風水害、停電、天災地変などの不可抗力により本サービスの運営ができなくなった場合</li>
@@ -141,9 +163,9 @@ export default function TermsPage() {
             </ol>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第8条(権利帰属)</h2>
-            <ol className="list-decimal list-inside text-text-secondary space-y-3 ml-4">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第8条(権利帰属)</h2>
+            <ol className="list-decimal list-inside text-sm text-text-secondary/80 space-y-3 ml-4">
               <li>
                 本サービスに関する知的財産権は全て当社または当社にライセンスを許諾している者に帰属しており、
                 本規約に基づく本サービスの利用許諾は、本サービスに関する当社または当社にライセンスを許諾している者の
@@ -156,9 +178,9 @@ export default function TermsPage() {
             </ol>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第9条(保証の否認及び免責)</h2>
-            <ol className="list-decimal list-inside text-text-secondary space-y-3 ml-4">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第9条(保証の否認及び免責)</h2>
+            <ol className="list-decimal list-inside text-sm text-text-secondary/80 space-y-3 ml-4">
               <li>
                 当社は、本サービスがユーザーの特定の目的に適合すること、期待する機能・商品的価値・正確性・有用性を有すること、
                 ユーザーによる本サービスの利用がユーザーに適用のある法令または業界団体の内部規則等に適合すること、
@@ -177,24 +199,24 @@ export default function TermsPage() {
             </ol>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第10条(利用規約の変更)</h2>
-            <p className="text-text-secondary leading-relaxed">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第10条(利用規約の変更)</h2>
+            <p className="text-sm text-text-secondary/80 leading-loose">
               当社は、必要と判断した場合には、ユーザーに通知することなくいつでも本規約を変更することができるものとします。
               変更後の本規約は、本ウェブサイト上に表示した時点より効力を生じるものとします。
             </p>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第11条(通知または連絡)</h2>
-            <p className="text-text-secondary leading-relaxed">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第11条(通知または連絡)</h2>
+            <p className="text-sm text-text-secondary/80 leading-loose">
               ユーザーと当社との間の通知または連絡は、当社の定める方法によって行うものとします。
             </p>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">第12条(準拠法及び管轄裁判所)</h2>
-            <ol className="list-decimal list-inside text-text-secondary space-y-3 ml-4">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">第12条(準拠法及び管轄裁判所)</h2>
+            <ol className="list-decimal list-inside text-sm text-text-secondary/80 space-y-3 ml-4">
               <li>本規約の準拠法は日本法とします。</li>
               <li>
                 本規約に起因し、または関連する一切の紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。
@@ -202,18 +224,19 @@ export default function TermsPage() {
             </ol>
           </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-text-dark mb-4">お問い合わせ</h2>
-            <p className="text-text-secondary leading-relaxed mb-4">
+          <section>
+            <h2 className="font-noto-serif-jp text-lg md:text-xl font-medium text-text-dark mb-4">お問い合わせ</h2>
+            <p className="text-sm text-text-secondary/80 leading-loose mb-4">
               本規約に関するお問い合わせは、以下までご連絡ください:
             </p>
             <div className="bg-gray-50 rounded-lg p-6">
-              <p className="text-text-dark font-semibold mb-2">NO TRACE EXPLORER</p>
+              <p className="text-text-dark font-semibold mb-2">NO TRACE EXPLORATION</p>
               <p className="text-text-secondary">メール: legal@no-trace.jp</p>
             </div>
           </section>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }

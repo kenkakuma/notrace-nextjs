@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Send, CheckCircle } from 'lucide-react'
 
 interface FormData {
   firstName: string
@@ -133,31 +134,27 @@ export function ContactFormSection() {
 
   if (submitted) {
     return (
-      <section className="py-20 bg-bg-light">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center py-12">
-            <div className="mb-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full">
-                <svg
-                  className="w-8 h-8 text-green-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </div>
+      <section className="py-20 ">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center py-16">
+            {/* Success Icon */}
+            <div className="w-20 h-20 flex items-center justify-center mx-auto mb-8">
+              <CheckCircle className="w-16 h-16 text-green-500/80" strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-semibold text-text-dark mb-3">
+
+            {/* Success Title */}
+            <h3 className="font-noto-serif-jp text-xl md:text-2xl font-medium text-text-dark mb-4 tracking-wide">
               お問い合わせを受け付けました
             </h3>
-            <p className="text-text-secondary">
-              ご送信ありがとうございます。専門スタッフが確認し、ご連絡いたします。
+
+            {/* Divider */}
+            <div className="w-12 h-px bg-primary/30 mx-auto mb-8"></div>
+
+            {/* Success Message */}
+            <p className="text-sm md:text-base text-text-secondary/80 leading-loose max-w-lg mx-auto">
+              ご送信ありがとうございます
+              <br />
+              専門スタッフが確認し、ご連絡いたします
             </p>
           </div>
         </div>
@@ -166,26 +163,20 @@ export function ContactFormSection() {
   }
 
   return (
-    <section className="py-20 bg-bg-light">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-lg border border-gray-200 p-8 shadow-sm">
-          {/* Form Header */}
-          <div className="text-center mb-12 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-text-dark mb-4">
-              お気軽にお問い合わせください
-            </h2>
-            <p className="text-lg text-text-secondary">
-              お客様のご要望をお聞かせください。専門スタッフが丁寧にご対応いたします。
-            </p>
-          </div>
-
+    <section className="py-20 bg-white">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Form Container */}
+        <div className="border border-gray-200/50 p-8 md:p-12">
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-8">
             {/* Name Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-text-dark mb-2">
-                  姓 <span className="text-red-600">*</span>
+                <label
+                  htmlFor="firstName"
+                  className="block text-xs text-text-secondary/80 mb-3 tracking-wide"
+                >
+                  姓 <span className="text-primary/80">*</span>
                 </label>
                 <input
                   type="text"
@@ -193,18 +184,23 @@ export function ContactFormSection() {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition ${
-                    errors.firstName ? 'border-red-500' : 'border-gray-200'
-                  }`}
+                  className={`w-full px-4 py-3 border ${
+                    errors.firstName
+                      ? 'border-red-500/50'
+                      : 'border-gray-200/50'
+                  } focus:outline-none focus:border-primary/30 transition-colors text-sm`}
                   required
                 />
                 {errors.firstName && (
-                  <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
+                  <p className="mt-2 text-xs text-red-500/80">{errors.firstName}</p>
                 )}
               </div>
               <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-text-dark mb-2">
-                  名 <span className="text-red-600">*</span>
+                <label
+                  htmlFor="lastName"
+                  className="block text-xs text-text-secondary/80 mb-3 tracking-wide"
+                >
+                  名 <span className="text-primary/80">*</span>
                 </label>
                 <input
                   type="text"
@@ -212,21 +208,24 @@ export function ContactFormSection() {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition ${
-                    errors.lastName ? 'border-red-500' : 'border-gray-200'
-                  }`}
+                  className={`w-full px-4 py-3 border ${
+                    errors.lastName ? 'border-red-500/50' : 'border-gray-200/50'
+                  } focus:outline-none focus:border-primary/30 transition-colors text-sm`}
                   required
                 />
                 {errors.lastName && (
-                  <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
+                  <p className="mt-2 text-xs text-red-500/80">{errors.lastName}</p>
                 )}
               </div>
             </div>
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-text-dark mb-2">
-                メールアドレス <span className="text-red-600">*</span>
+              <label
+                htmlFor="email"
+                className="block text-xs text-text-secondary/80 mb-3 tracking-wide"
+              >
+                メールアドレス <span className="text-primary/80">*</span>
               </label>
               <input
                 type="email"
@@ -234,17 +233,20 @@ export function ContactFormSection() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition ${
-                  errors.email ? 'border-red-500' : 'border-gray-200'
-                }`}
+                className={`w-full px-4 py-3 border ${
+                  errors.email ? 'border-red-500/50' : 'border-gray-200/50'
+                } focus:outline-none focus:border-primary/30 transition-colors text-sm`}
                 required
               />
-              {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
+              {errors.email && <p className="mt-2 text-xs text-red-500/80">{errors.email}</p>}
             </div>
 
             {/* Company */}
             <div>
-              <label htmlFor="company" className="block text-sm font-medium text-text-dark mb-2">
+              <label
+                htmlFor="company"
+                className="block text-xs text-text-secondary/80 mb-3 tracking-wide"
+              >
                 会社名・組織名
               </label>
               <input
@@ -253,23 +255,26 @@ export function ContactFormSection() {
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition"
+                className="w-full px-4 py-3 border border-gray-200/50 focus:outline-none focus:border-primary/30 transition-colors text-sm"
               />
             </div>
 
             {/* Category */}
             <div>
-              <label htmlFor="category" className="block text-sm font-medium text-text-dark mb-2">
-                お問い合わせ種別 <span className="text-red-600">*</span>
+              <label
+                htmlFor="category"
+                className="block text-xs text-text-secondary/80 mb-3 tracking-wide"
+              >
+                お問い合わせ種別 <span className="text-primary/80">*</span>
               </label>
               <select
                 id="category"
                 name="category"
                 value={formData.category}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition ${
-                  errors.category ? 'border-red-500' : 'border-gray-200'
-                }`}
+                className={`w-full px-4 py-3 border ${
+                  errors.category ? 'border-red-500/50' : 'border-gray-200/50'
+                } focus:outline-none focus:border-primary/30 transition-colors text-sm`}
                 required
               >
                 <option value="">選択してください</option>
@@ -280,28 +285,31 @@ export function ContactFormSection() {
                 ))}
               </select>
               {errors.category && (
-                <p className="mt-1 text-sm text-red-600">{errors.category}</p>
+                <p className="mt-2 text-xs text-red-500/80">{errors.category}</p>
               )}
             </div>
 
             {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-text-dark mb-2">
-                お問い合わせ内容 <span className="text-red-600">*</span>
+              <label
+                htmlFor="message"
+                className="block text-xs text-text-secondary/80 mb-3 tracking-wide"
+              >
+                お問い合わせ内容 <span className="text-primary/80">*</span>
               </label>
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows={5}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition resize-none ${
-                  errors.message ? 'border-red-500' : 'border-gray-200'
-                }`}
+                rows={6}
+                className={`w-full px-4 py-3 border ${
+                  errors.message ? 'border-red-500/50' : 'border-gray-200/50'
+                } focus:outline-none focus:border-primary/30 transition-colors resize-none text-sm`}
                 required
               />
               {errors.message && (
-                <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+                <p className="mt-2 text-xs text-red-500/80">{errors.message}</p>
               )}
             </div>
 
@@ -313,18 +321,18 @@ export function ContactFormSection() {
                   name="agreement"
                   checked={formData.agreement}
                   onChange={handleChange}
-                  className="w-5 h-5 mt-1 accent-primary"
+                  className="w-4 h-4 mt-1 accent-primary/80 cursor-pointer"
                   required
                 />
-                <span className="text-sm text-text-secondary leading-relaxed">
-                  <a href="#" className="text-primary font-medium hover:underline">
+                <span className="text-xs text-text-secondary/80 leading-relaxed tracking-wide">
+                  <a href="#" className="text-primary/80 hover:text-primary transition-colors">
                     プライバシーポリシー
                   </a>
                   に同意します
                 </span>
               </label>
               {errors.agreement && (
-                <p className="mt-1 text-sm text-red-600">{errors.agreement}</p>
+                <p className="mt-2 text-xs text-red-500/80">{errors.agreement}</p>
               )}
             </div>
 
@@ -333,9 +341,16 @@ export function ContactFormSection() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-text-dark transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-3 px-10 py-4 border border-primary/30 text-primary/80 font-light text-sm tracking-wide hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? '送信中...' : '送信する'}
+                {loading ? (
+                  <>送信中...</>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" strokeWidth={1.5} />
+                    送信する
+                  </>
+                )}
               </button>
             </div>
           </form>

@@ -13,62 +13,71 @@ const CONTACT_INFO: ContactInfo[] = [
   {
     title: 'Email',
     type: 'email',
-    icon: <Mail className="w-8 h-8" />,
+    icon: <Mail className="w-8 h-8" strokeWidth={1.5} />,
     details: ['info@no-trace.jp', 'support@no-trace.jp'],
   },
   {
     title: 'Office',
     type: 'office',
-    icon: <Building2 className="w-8 h-8" />,
+    icon: <Building2 className="w-8 h-8" strokeWidth={1.5} />,
     details: ['東京都渋谷区', '(設立準備中につき詳細は後日公開)'],
   },
   {
     title: 'Business Hours',
     type: 'hours',
-    icon: <Clock className="w-8 h-8" />,
+    icon: <Clock className="w-8 h-8" strokeWidth={1.5} />,
     details: ['平日 9:00-18:00', '土日祝日休業'],
   },
 ]
 
 export function ContactInfoSection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-100 to-bg-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-bg-light">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-text-dark mb-4">
+        <div className="text-center mb-16">
+          {/* English Label with Lines */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-32 bg-primary/20"></div>
+            <span className="text-primary/60 text-xs tracking-[0.3em] uppercase">Information</span>
+            <div className="h-px w-32 bg-primary/20"></div>
+          </div>
+
+          <h2 className="font-noto-serif-jp text-xl md:text-2xl font-medium text-text-dark mb-8">
             お問い合わせ先
           </h2>
-          <p className="text-lg text-text-secondary">
+
+          {/* Divider */}
+          <div className="w-12 h-px bg-primary/30 mx-auto mb-8"></div>
+
+          <p className="text-sm md:text-base text-text-secondary/80 leading-loose">
             その他のお問い合わせ方法
           </p>
         </div>
 
         {/* Contact Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {CONTACT_INFO.map((contact, index) => (
+          {CONTACT_INFO.map((contact) => (
             <div
               key={contact.title}
-              className="animate-fade-in-up bg-white rounded-2xl p-8 border border-gray-200 hover:border-primary hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center"
-              style={{
-                animation: `fadeInUp 0.8s ease-out ${0.1 * (index + 1)}s forwards`,
-                opacity: 0,
-              }}
+              className="bg-white border border-gray-200/50 p-8 hover:border-primary/30 transition-all duration-300 text-center flex flex-col items-center"
             >
               {/* Icon */}
-              <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mb-6">
-                {contact.icon}
+              <div className="w-16 h-16 flex items-center justify-center mb-6 opacity-60">
+                <div className="text-primary/70" style={{ transform: 'scale(1)' }}>
+                  {contact.icon}
+                </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold text-text-dark mb-4">
+              <h3 className="text-sm text-text-secondary/80 mb-6 tracking-wide uppercase">
                 {contact.title}
               </h3>
 
               {/* Details */}
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {contact.details.map((detail, idx) => (
-                  <div key={idx} className="text-text-secondary">
+                  <div key={idx} className="text-sm text-text-secondary/80 leading-relaxed">
                     {detail}
                   </div>
                 ))}

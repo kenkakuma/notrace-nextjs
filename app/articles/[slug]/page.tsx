@@ -34,7 +34,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${article.title} | NO TRACE EXPLORER`,
+    title: `${article.title} | NO TRACE EXPLORATION`,
     description: article.description,
     openGraph: {
       title: article.title,
@@ -151,7 +151,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       )}
 
       {/* Related Articles */}
-      <Section variant="light">
+      <Section>
         <Container size="narrow">
           <h2 className="text-2xl font-bold text-text-dark mb-6">
             関連記事

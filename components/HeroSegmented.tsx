@@ -7,95 +7,119 @@ export function HeroSegmented() {
   const { config } = useHeroData()
 
   return (
-    <section className="relative w-screen h-screen overflow-hidden bg-black ml-[calc(-50vw+50%)]">
-      {/* Background Image - Full Screen */}
-      <div
-        className="absolute inset-0 w-full h-full"
-        style={{
-          backgroundImage: `url('${config.currentBackground}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
+    <section className="relative min-h-screen flex items-center justify-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Japanese Book-Style Layout: Left Text, Right Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-      {/* Overlay for text clarity */}
-      <div className="absolute inset-0 bg-black/40" />
+          {/* Left Side - Text Content */}
+          <div className="flex flex-col justify-center items-center space-y-8 order-2 lg:order-1 text-center min-h-[500px] lg:min-h-[600px]">
+            {/* Small Label */}
+            <div className="flex items-center gap-3">
+              <div className="h-px w-12 bg-primary/30"></div>
+              <span className="text-primary/70 text-xs tracking-[0.3em] uppercase">
+                No Trace Explorer
+              </span>
+              <div className="h-px w-12 bg-primary/30"></div>
+            </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 w-full h-full flex items-center justify-center">
+            {/* Main Title */}
+            <div className="space-y-4">
+              <h1 className="font-noto-serif-jp text-2xl md:text-3xl font-medium text-text-dark leading-tight tracking-tight">
+                無迹探索株式会社
+              </h1>
+              <p className="text-sm md:text-base text-text-secondary/80 leading-relaxed">
+                The Japan-China Coffee Business Bridge
+              </p>
+            </div>
 
-      {/* Content Wrapper */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center text-center">
-        {/* Main Title - 简洁大气 */}
-        <h1 className="font-noto-serif-jp text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-tight tracking-tight animate-fade-in-up drop-shadow-md">
-          無迹探索株式会社
-        </h1>
+            {/* Divider */}
+            <div className="w-16 h-px bg-primary/30"></div>
 
-        {/* English Subtitle */}
-        <p className="text-white/80 text-sm md:text-base mb-8 animate-fade-in-up animation-delay-100">
-          The Japan-China Coffee Business Bridge
-        </p>
+            {/* Value Proposition */}
+            <div className="space-y-3">
+              <p className="font-noto-serif-jp text-base md:text-lg text-text-dark leading-relaxed">
+                北京焙煎専門技術 × 日本品質管理
+              </p>
+              <p className="text-sm text-text-secondary/80 leading-loose max-w-md mx-auto">
+                北京の直火焙煎カフェで培った専門技術と、日本の厳格な品質管理基準を融合させた、日中両国をつなぐコーヒー商社です。
+              </p>
+            </div>
 
-        {/* Value Proposition - 精简 */}
-        <p className="text-white/70 text-sm md:text-base mb-12 leading-relaxed animate-fade-in-up animation-delay-150">
-          北京焙煎専門技術 × 日本品質管理
-        </p>
-
-        {/* User Segmentation - 简洁按钮式 */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mb-8 animate-fade-in-up animation-delay-200">
-          {/* Label */}
-          <span className="text-white/60 text-sm">あなたに合ったサービスを選択：</span>
-
-          {/* Two Simple Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3">
-            {/* B2B Button */}
-            <Link href="/coffee">
-              <button className="group relative px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/30 rounded-lg text-white hover:bg-[#E17B47] hover:border-[#E17B47] transition-all duration-300 min-w-[160px]">
-                <div className="flex flex-col items-center gap-1">
-                  <span className="text-sm font-medium">企業のお客様</span>
-                  <span className="text-xs text-white/70 group-hover:text-white/90">Business</span>
-                </div>
-              </button>
-            </Link>
-
-            {/* B2C Button */}
-            <Link href="/shop">
-              <button className="group relative px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/30 rounded-lg text-white hover:bg-[#E17B47] hover:border-[#E17B47] transition-all duration-300 min-w-[160px]">
-                <div className="flex flex-col items-center gap-1">
-                  <span className="text-sm font-medium">コーヒー愛好者</span>
-                  <span className="text-xs text-white/70 group-hover:text-white/90">Enthusiast</span>
-                </div>
-              </button>
-            </Link>
+            {/* Services Preview - Minimalist */}
+            <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-xs text-text-secondary/60 max-w-md mx-auto">
+              <div>貿易・OEM</div>
+              <div>設備・器具</div>
+              <div>品質管理</div>
+              <div>コミュニティ</div>
+              <div>展示サービス</div>
+              <div>イベント</div>
+            </div>
           </div>
-        </div>
 
-        {/* Services Overview - 极简展示 */}
-        <div className="grid grid-cols-2 gap-8 max-w-2xl text-white/50 text-xs md:text-sm animate-fade-in-up animation-delay-250">
-          <div className="text-left">
-            <p className="mb-1">貿易・OEM</p>
-            <p className="mb-1">品質管理</p>
-            <p>展示サービス</p>
-          </div>
-          <div className="text-left">
-            <p className="mb-1">設備・器具</p>
-            <p className="mb-1">コミュニティ</p>
-            <p>イベント</p>
-          </div>
-        </div>
+          {/* Right Side - Image + Buttons */}
+          <div className="flex flex-col justify-center space-y-6 order-1 lg:order-2 min-h-[500px] lg:min-h-[600px] lg:mt-[80px]">
+            {/* Image Container with subtle border and rounded corners */}
+            <div className="relative aspect-[4/3] overflow-hidden border border-primary/10 rounded-md">
+              <img
+                src={config.currentBackground}
+                alt="NO TRACE EXPLORATION"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-        {/* Tagline */}
-        <p className="text-white/40 text-xs mt-12 animate-fade-in-up animation-delay-300">
-          両国の架け橋として、コーヒー文化の発展に貢献します
-        </p>
+            {/* Service Selection - Below Image, aligned with image width */}
+            <div className="space-y-4">
+              {/* Label */}
+              <p className="text-xs text-text-secondary/70 tracking-wide">
+                サービスを選択：
+              </p>
+
+              {/* Two Buttons */}
+              <div className="grid grid-cols-2 gap-3">
+                {/* Business Button */}
+                <Link href="/coffee">
+                  <button className="group w-full py-4 px-6 border border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 rounded-sm">
+                    <div className="flex flex-col items-center gap-1">
+                      <span className="font-noto-serif-jp text-sm font-medium text-text-dark">
+                        企業のお客様
+                      </span>
+                      <span className="text-xs text-text-secondary/60 tracking-wider">
+                        Business
+                      </span>
+                    </div>
+                  </button>
+                </Link>
+
+                {/* Enthusiast Button */}
+                <Link href="/shop">
+                  <button className="group w-full py-4 px-6 border border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 rounded-sm">
+                    <div className="flex flex-col items-center gap-1">
+                      <span className="font-noto-serif-jp text-sm font-medium text-text-dark">
+                        コーヒー愛好者
+                      </span>
+                      <span className="text-xs text-text-secondary/60 tracking-wider">
+                        Enthusiast
+                      </span>
+                    </div>
+                  </button>
+                </Link>
+              </div>
+
+              {/* Tagline */}
+              <p className="text-xs text-text-secondary/50 text-center mt-4 leading-relaxed">
+                両国の架け橋として、コーヒー文化の発展に貢献します
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <svg
-          className="w-6 h-6 text-white/60"
+          className="w-5 h-5 text-primary/40"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -103,7 +127,7 @@ export function HeroSegmented() {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
+            strokeWidth={1.5}
             d="M19 14l-7 7m0 0l-7-7m7 7V3"
           />
         </svg>

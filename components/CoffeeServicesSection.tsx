@@ -127,7 +127,7 @@ export function CoffeeServicesSection() {
       </section>
 
       {/* Core Services Section - 6つのコアサービス */}
-      <section className="py-24 md:py-32 bg-bg-light">
+      <section className="py-24 md:py-32 ">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-20">

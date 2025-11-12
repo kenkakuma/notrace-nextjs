@@ -1,7 +1,7 @@
 import { Sparkles } from 'lucide-react'
 
 export const metadata = {
-  title: 'コミュニティ | COMMUNITY - NO TRACE EXPLORER',
+  title: 'コミュニティ | COMMUNITY - NO TRACE EXPLORATION',
   description:
     '会員制コミュニティサービス準備中。コーヒー愛好家のための特別なコミュニティを近日公開予定。',
   keywords: 'コミュニティ、会員制、コーヒー、coming soon',

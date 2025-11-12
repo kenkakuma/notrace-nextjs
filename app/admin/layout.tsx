@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '管理者ダッシュボード | NO TRACE EXPLORER',
+  title: '管理者ダッシュボード | NO TRACE EXPLORATION',
   description: 'コンテンツ、画像、設定を一元管理',
   robots: {
     index: false,

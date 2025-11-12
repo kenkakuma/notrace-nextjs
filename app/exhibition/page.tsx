@@ -4,7 +4,7 @@ import { ExhibitionQualitySection } from '@/components/ExhibitionQualitySection'
 import { ExhibitionProcessSection } from '@/components/ExhibitionProcessSection'
 
 export const metadata = {
-  title: '展覧 | EXHIBITION - NO TRACE EXPLORER',
+  title: '展覧 | EXHIBITION - NO TRACE EXPLORATION',
   description:
     '文化・技術・芸術事業。革新的なアプローチで印象的な体験を創造します。展示企画・イベント運営・文化プロモーション。',
   keywords: '展覧、展示、イベント、企画、運営',

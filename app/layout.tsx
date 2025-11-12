@@ -11,7 +11,7 @@ const notoSerifJP = Noto_Serif_JP({
 })
 
 export const metadata: Metadata = {
-  title: 'NO TRACE EXPLORER',
+  title: 'NO TRACE EXPLORATION',
   description: '品質を極め、文化をつなぐ',
   generator: 'Next.js',
   viewport: 'width=device-width, initial-scale=1',

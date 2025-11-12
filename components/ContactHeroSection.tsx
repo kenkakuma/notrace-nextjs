@@ -1,15 +1,22 @@
 'use client'
 
+import { Mail } from 'lucide-react'
+
 export function ContactHeroSection() {
   return (
-    <section className="py-24 md:py-32 bg-bg-light">
+    <section className="py-24 md:py-32 ">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center">
           {/* English Label with Lines */}
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="h-px w-32 bg-primary/20"></div>
             <span className="text-primary/60 text-xs tracking-[0.3em] uppercase">Contact</span>
             <div className="h-px w-32 bg-primary/20"></div>
+          </div>
+
+          {/* Icon */}
+          <div className="w-20 h-20 flex items-center justify-center mx-auto mb-8 opacity-60">
+            <Mail className="w-12 h-12 text-primary/70" strokeWidth={1.5} />
           </div>
 
           {/* Main Title */}
@@ -21,9 +28,13 @@ export function ContactHeroSection() {
           <div className="w-12 h-px bg-primary/30 mx-auto mb-12"></div>
 
           {/* Description */}
-          <p className="text-sm md:text-base text-text-secondary/80 leading-loose max-w-2xl mx-auto">
-            NO TRACE EXPLORERへのお問い合わせ、ご相談はこちらからお気軽にどうぞ
-          </p>
+          <div className="max-w-2xl mx-auto">
+            <p className="text-sm md:text-base text-text-secondary/80 leading-loose">
+              NO TRACE EXPLORATIONへのお問い合わせ、ご相談はこちらから
+              <br className="md:hidden" />
+              お気軽にどうぞ
+            </p>
+          </div>
         </div>
       </div>
     </section>

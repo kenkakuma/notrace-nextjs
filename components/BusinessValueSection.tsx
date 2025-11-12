@@ -38,7 +38,7 @@ export function BusinessValueSection() {
           {/* Left Side - Main Title */}
           <div>
             <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-text-dark leading-tight">
-              NO TRACE EXPLORERでは、
+              NO TRACE EXPLORATIONでは、
               <br />
               未知の領域を探索し、
               <br />

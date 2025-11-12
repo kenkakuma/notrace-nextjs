@@ -3,9 +3,9 @@ import { ContactFormSection } from '@/components/ContactFormSection'
 import { ContactInfoSection } from '@/components/ContactInfoSection'
 
 export const metadata = {
-  title: 'お問い合わせ | CONTACT - NO TRACE EXPLORER',
+  title: 'お問い合わせ | CONTACT - NO TRACE EXPLORATION',
   description:
-    'NO TRACE EXPLORERへのお問い合わせ、ご相談はこちらからお気軽にお問い合わせください。メール、電話、オフィス所在地などのお問い合わせ先情報。',
+    'NO TRACE EXPLORATIONへのお問い合わせ、ご相談はこちらからお気軽にお問い合わせください。メール、電話、オフィス所在地などのお問い合わせ先情報。',
   keywords: 'お問い合わせ、コンタクト、相談、電話、メール',
 }
 

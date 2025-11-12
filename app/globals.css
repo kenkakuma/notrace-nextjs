@@ -18,8 +18,128 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FAF9F7;
   color: #1A1A1A;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Washi paper background - base color layer */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  /* Rich washi paper base color with natural variation */
+  background:
+    radial-gradient(
+      ellipse at 40% 30%,
+      #F5F1E8 0%,
+      #EDE8DC 25%,
+      #E8E3D5 50%,
+      #E3DED0 75%,
+      #EDE8DC 100%
+    );
+}
+
+/* Washi paper main texture layer */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  /* Visible fiber texture patterns */
+  background-image:
+    /* Primary horizontal fibers - visible */
+    repeating-linear-gradient(
+      0deg,
+      rgba(139, 69, 19, 0.06) 0px,
+      rgba(139, 69, 19, 0.04) 1px,
+      transparent 2px,
+      transparent 3px,
+      rgba(139, 69, 19, 0.05) 4px,
+      transparent 5px,
+      transparent 8px
+    ),
+    /* Primary vertical fibers - visible */
+    repeating-linear-gradient(
+      90deg,
+      rgba(139, 69, 19, 0.07) 0px,
+      rgba(139, 69, 19, 0.05) 1px,
+      transparent 2px,
+      transparent 4px,
+      rgba(139, 69, 19, 0.055) 5px,
+      transparent 6px
+    ),
+    /* Diagonal light reflection */
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 250, 240, 0.12) 0px,
+      transparent 3px,
+      transparent 6px,
+      rgba(255, 250, 240, 0.09) 9px,
+      transparent 12px,
+      transparent 18px
+    ),
+    /* Organic irregular fibers */
+    repeating-linear-gradient(
+      -20deg,
+      rgba(160, 82, 45, 0.03) 0px,
+      transparent 4px,
+      transparent 10px,
+      rgba(160, 82, 45, 0.025) 14px,
+      transparent 18px,
+      transparent 25px
+    ),
+    /* Paper grain texture */
+    repeating-linear-gradient(
+      120deg,
+      rgba(210, 180, 140, 0.045) 0px,
+      transparent 2px,
+      transparent 5px,
+      rgba(210, 180, 140, 0.035) 7px,
+      transparent 10px
+    ),
+    /* Fine washi fibers */
+    repeating-linear-gradient(
+      60deg,
+      rgba(205, 133, 63, 0.035) 0px,
+      transparent 3px,
+      transparent 8px,
+      rgba(205, 133, 63, 0.028) 11px
+    ),
+    /* Cross-grain texture */
+    repeating-linear-gradient(
+      -60deg,
+      rgba(222, 184, 135, 0.03) 0px,
+      transparent 2px,
+      transparent 6px,
+      rgba(222, 184, 135, 0.025) 8px
+    );
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 1;
+}
+
+/* Additional paper depth layer */
+html::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  /* Subtle shadow variations for paper depth */
+  background:
+    radial-gradient(
+      circle at 20% 40%,
+      transparent 30%,
+      rgba(139, 69, 19, 0.015) 60%,
+      rgba(139, 69, 19, 0.025) 100%
+    ),
+    radial-gradient(
+      circle at 80% 60%,
+      rgba(255, 250, 240, 0.02) 20%,
+      transparent 50%
+    );
+  pointer-events: none;
 }
 
 /* ===== Animations ===== */
@@ -59,4 +179,156 @@ body {
 
 .animate-bounce {
   animation: bounce 2s infinite;
+}
+
+/* ===== Washi Paper Texture ===== */
+
+/* Base washi texture using noise pattern */
+@layer utilities {
+  .washi-texture {
+    position: relative;
+    isolation: isolate;
+    /* Lighter washi paper color for cards - ivory white */
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 253, 248, 0.85) 0%,
+        rgba(252, 250, 245, 0.75) 50%,
+        rgba(255, 253, 248, 0.8) 100%
+      );
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  /* Ensure content is above pseudo-elements */
+  .washi-texture > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Add subtle noise/fiber texture overlay */
+  .washi-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      /* Horizontal paper fibers */
+      repeating-linear-gradient(
+        0deg,
+        rgba(139, 69, 19, 0.025) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(139, 69, 19, 0.02) 3px
+      ),
+      /* Vertical paper fibers */
+      repeating-linear-gradient(
+        90deg,
+        rgba(139, 69, 19, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(139, 69, 19, 0.025) 3px
+      ),
+      /* Diagonal highlights */
+      repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 240, 0.06) 0px,
+        transparent 2px,
+        transparent 4px,
+        rgba(255, 255, 240, 0.05) 6px
+      ),
+      /* Organic irregularity */
+      repeating-linear-gradient(
+        -20deg,
+        rgba(222, 184, 135, 0.015) 0px,
+        transparent 3px,
+        transparent 6px,
+        rgba(222, 184, 135, 0.012) 9px
+      );
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: 0.7;
+  }
+
+  /* Soft inner glow for depth */
+  .washi-texture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    box-shadow:
+      inset 0 1px 3px rgba(255, 255, 255, 0.5),
+      inset 0 -1px 2px rgba(139, 69, 19, 0.03);
+    pointer-events: none;
+  }
+
+  /* Paper edges - soft and organic with depth */
+  .washi-edges {
+    box-shadow:
+      /* Close shadow for paper edge */
+      0 1px 3px rgba(139, 69, 19, 0.12),
+      /* Medium distance shadow */
+      0 3px 10px -2px rgba(139, 69, 19, 0.1),
+      /* Far shadow for depth */
+      0 8px 20px -6px rgba(139, 69, 19, 0.08),
+      /* Top edge highlight */
+      inset 0 1px 0 rgba(255, 255, 255, 0.6),
+      /* Bottom edge subtle shadow */
+      inset 0 -1px 0 rgba(139, 69, 19, 0.04);
+    /* Subtle border for paper edge */
+    border: 1px solid rgba(139, 69, 19, 0.06);
+  }
+
+  /* Section background - lighter washi texture */
+  .washi-section {
+    position: relative;
+    isolation: isolate;
+    /* Very subtle background overlay */
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(252, 250, 245, 0.1) 50%,
+        rgba(255, 255, 255, 0.15) 100%
+      );
+  }
+
+  /* Section fiber texture - very subtle */
+  .washi-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(139, 69, 19, 0.008) 0px,
+        transparent 1px,
+        transparent 3px,
+        rgba(139, 69, 19, 0.006) 4px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(139, 69, 19, 0.01) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(139, 69, 19, 0.008) 3px
+      ),
+      repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 240, 0.015) 0px,
+        transparent 3px,
+        transparent 6px,
+        rgba(255, 255, 240, 0.012) 9px
+      );
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+  }
+
+  /* Ensure section content is above pseudo-elements */
+  .washi-section > * {
+    position: relative;
+    z-index: 1;
+  }
 }

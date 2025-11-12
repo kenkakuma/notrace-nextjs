@@ -15,7 +15,7 @@ interface NewsCardProps {
 
 export function NewsCard({ news, featured = false, layout = 'vertical' }: NewsCardProps) {
   const isExternal = !!news.externalLink
-  const href = isExternal ? news.externalLink : news.url
+  const href = (isExternal ? news.externalLink : news.url) || '#'
   const LinkComponent = isExternal ? 'a' : Link
 
   if (layout === 'horizontal') {

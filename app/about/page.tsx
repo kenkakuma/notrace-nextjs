@@ -2,9 +2,9 @@ import { AboutHeroSection } from '@/components/AboutHeroSection'
 import { ArticlesListSection } from '@/components/ArticlesListSection'
 
 export const metadata = {
-  title: '企業情報・ニュース | ABOUT - NO TRACE EXPLORER',
+  title: '企業情報・ニュース | ABOUT - NO TRACE EXPLORATION',
   description:
-    'NO TRACE EXPLORERの最新ニュース、お知らせ、サービス情報。企業活動の最新情報をご覧いただけます。',
+    'NO TRACE EXPLORATIONの最新ニュース、お知らせ、サービス情報。企業活動の最新情報をご覧いただけます。',
   keywords: '企業情報、ニュース、お知らせ、サービス情報',
 }
 

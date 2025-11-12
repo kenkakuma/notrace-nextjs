@@ -35,9 +35,9 @@ export function FeaturedArticlesSection() {
     .slice(0, 5)
 
   return (
-    <section className="py-24 md:py-32 bg-bg-light">
+    <section className="py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="h-px w-32 bg-primary/20"></div>
             <span className="text-primary/60 text-xs tracking-[0.3em] uppercase">News & Articles</span>
@@ -53,7 +53,7 @@ export function FeaturedArticlesSection() {
         </div>
 
         {/* Vertical Scroll Layout - Japanese Book Style */}
-        <div className="max-w-6xl mx-auto mb-16 overflow-x-auto">
+        <div className="max-w-6xl mx-auto mb-12 overflow-x-auto">
           <div className="flex flex-row-reverse justify-center gap-8 pb-4 px-4">
             {allItems.map((item, index) => {
               const LinkComponent = item.type === 'news' && item.isExternal ? 'a' : Link
@@ -109,19 +109,13 @@ export function FeaturedArticlesSection() {
           </div>
         )}
 
-        {/* View All Links */}
-        <div className="flex flex-wrap gap-4 justify-center">
-          <Link
-            href="/articles"
-            className="inline-flex items-center gap-2 px-10 py-3 border border-primary/30 text-primary/80 font-light text-sm tracking-wide hover:border-primary hover:text-primary transition-all duration-300"
-          >
-            企業文章を見る <span className="text-xs">→</span>
-          </Link>
+        {/* View All Link */}
+        <div className="flex justify-center">
           <Link
             href="/news"
-            className="inline-flex items-center gap-2 px-10 py-3 border border-text-dark/20 text-text-dark font-light text-sm tracking-wide hover:border-text-dark/40 hover:bg-text-dark/5 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-10 py-3 border border-primary/30 text-primary/80 font-light text-sm tracking-wide hover:border-primary hover:text-primary transition-all duration-300"
           >
-            ニュースを見る <span className="text-xs">→</span>
+            すべて見る <span className="text-xs">→</span>
           </Link>
         </div>
       </div>

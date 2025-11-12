@@ -6,7 +6,7 @@ import { ArticleCard } from '@/components/articles/ArticleCard'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '企業文章 | NO TRACE EXPLORER',
+  title: '企業文章 | NO TRACE EXPLORATION',
   description: '無迹探索のコーヒー事業、展示イベント、研究開発に関する企業文章をご覧いただけます。',
 }
 
@@ -27,7 +27,7 @@ export default function ArticlesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-24 md:py-32 bg-bg-light">
+      <section className="py-24 md:py-32 ">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             {/* English Label with Lines */}
@@ -79,7 +79,7 @@ export default function ArticlesPage() {
 
       {/* Featured Articles */}
       {featuredArticles.length > 0 && (
-        <section className="py-24 md:py-32 bg-bg-light">
+        <section className="py-24 md:py-32 ">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-noto-serif-jp text-xl md:text-2xl font-medium text-text-dark mb-12 text-center drop-shadow-sm">
               注目記事

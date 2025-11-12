@@ -52,7 +52,7 @@ collections:
       - {label: "公開日", name: "date", widget: "datetime", required: true}
       - {label: "カテゴリー", name: "category", widget: "select", required: true, options: ["企業ニュース", "サービス", "コーヒー事業", "展示・イベント", "釣具・器具", "その他"]}
       - {label: "アイキャッチ画像", name: "image", widget: "image", required: false, media_library: {config: {multiple: false}}}
-      - {label: "著者", name: "author", widget: "string", default: "NO TRACE EXPLORER", required: true}
+      - {label: "著者", name: "author", widget: "string", default: "NO TRACE EXPLORATION", required: true}
       - {label: "読了時間", name: "readTime", widget: "string", required: false, hint: "例：3分"}
       - {label: "タグ", name: "tags", widget: "list", required: false, allow_add: true}
       - {label: "注目記事", name: "featured", widget: "boolean", default: false, required: false}
@@ -77,7 +77,7 @@ collections:
       - {label: "公開日", name: "date", widget: "datetime", required: true}
       - {label: "カテゴリー", name: "category", widget: "select", required: true, options: ["プレスリリース", "お知らせ", "イベント情報", "メディア掲載"]}
       - {label: "アイキャッチ画像", name: "image", widget: "image", required: false, media_library: {config: {multiple: false}}}
-      - {label: "著者", name: "author", widget: "string", default: "NO TRACE EXPLORER", required: true}
+      - {label: "著者", name: "author", widget: "string", default: "NO TRACE EXPLORATION", required: true}
       - {label: "読了時間", name: "readTime", widget: "string", required: false, hint: "例：5分"}
       - {label: "タグ", name: "tags", widget: "list", required: false, allow_add: true}
       - {label: "外部リンク", name: "externalLink", widget: "string", required: false, hint: "外部サイトへのリンク（任意）"}

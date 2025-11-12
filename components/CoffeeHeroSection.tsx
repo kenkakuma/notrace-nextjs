@@ -2,7 +2,7 @@
 
 export function CoffeeHeroSection() {
   return (
-    <section className="py-24 md:py-32 bg-bg-light">
+    <section className="py-24 md:py-32 ">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           {/* English Label with Lines */}

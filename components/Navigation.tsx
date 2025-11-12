@@ -108,7 +108,7 @@ export function Navigation() {
           <Link href="/" className="flex items-center no-underline">
             <div className="flex flex-col">
               <h1 className="hidden md:block text-xl font-bold text-text-dark">
-                NO TRACE EXPLORER
+                NO TRACE EXPLORATION
                 <span className="text-sm font-normal ml-2">| 無迹探索株式会社</span>
               </h1>
               <h1 className="md:hidden text-xl font-bold text-text-dark">NTE</h1>
@@ -164,33 +164,6 @@ export function Navigation() {
                 )}
               </div>
             ))}
-
-            {/* 管理システムドロップダウン */}
-            <div className="relative ml-4 pl-4 border-l border-gray-300">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setAdminMenuOpen(!adminMenuOpen)
-                }}
-                className="px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm font-medium text-text-dark hover:bg-opacity-10 hover:bg-primary"
-              >
-                管理システム
-                <ChevronDown size={16} className={`transition-transform ${adminMenuOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              {/* ドロップダウンメニュー */}
-              {adminMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                  <Link
-                    href="/admin"
-                    onClick={() => setAdminMenuOpen(false)}
-                    className="block px-4 py-2 text-sm text-text-dark hover:bg-gray-50 transition-colors"
-                  >
-                    管理中心
-                  </Link>
-                </div>
-              )}
-            </div>
           </div>
 
           {/* モバイルメニューボタン */}
@@ -277,29 +250,6 @@ export function Navigation() {
                   )}
                 </div>
               ))}
-
-              {/* 管理システム */}
-              <div className="px-4 py-3 border-b border-gray-200">
-                <button
-                  onClick={() => setAdminMenuOpen(!adminMenuOpen)}
-                  className="w-full text-left text-text-dark hover:bg-gray-50 transition-colors flex items-center justify-between py-2"
-                >
-                  管理システム
-                  <ChevronDown size={16} className={`transition-transform ${adminMenuOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {adminMenuOpen && (
-                  <Link
-                    href="/admin"
-                    onClick={() => {
-                      setDrawerOpen(false)
-                      setAdminMenuOpen(false)
-                    }}
-                    className="block px-4 py-2 text-sm text-text-dark hover:bg-gray-100 transition-colors rounded mt-2"
-                  >
-                    管理中心
-                  </Link>
-                )}
-              </div>
             </nav>
           </div>
         </div>

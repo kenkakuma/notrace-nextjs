@@ -75,7 +75,7 @@ export default function AdminPage() {
           <AdminTabs
             tabs={tabs}
             activeTab={activeTab}
-            onTabChange={setActiveTab}
+            onTabChange={(tab) => setActiveTab(tab as TabType)}
           />
         </Container>
       </div>
@@ -94,7 +94,7 @@ export default function AdminPage() {
         <Container>
           <div className="py-6 text-center text-sm text-text-secondary">
             <p>
-              NO TRACE EXPLORER 管理システム v0.4.0
+              NO TRACE EXPLORATION 管理システム v0.4.0
             </p>
             <p className="mt-1">
               問題がある場合は{' '}

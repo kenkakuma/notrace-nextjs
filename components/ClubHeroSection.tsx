@@ -2,7 +2,7 @@
 
 export function ClubHeroSection() {
   return (
-    <section className="py-20 bg-bg-light border-b border-gray-200">
+    <section className="py-20  border-b border-primary/10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in-up">
           <h1 className="text-5xl md:text-6xl font-bold text-text-dark mb-4">
