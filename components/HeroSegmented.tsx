@@ -60,11 +60,11 @@ export function HeroSegmented() {
           {/* Right Side - Image + Buttons */}
           <div className="flex flex-col justify-center space-y-6 order-1 lg:order-2 min-h-[500px] lg:min-h-[600px] lg:mt-[80px]">
             {/* Image Container with subtle border and rounded corners */}
-            <div className="relative aspect-[4/3] overflow-hidden border border-primary/10 rounded-md">
+            <div className="relative aspect-[4/3] overflow-hidden border border-primary/10 rounded-md group">
               <img
                 src={config.currentBackground}
                 alt="NO TRACE EXPLORATION"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500"
               />
             </div>
 
