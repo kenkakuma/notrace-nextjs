@@ -8,6 +8,7 @@ interface ScrollRevealProps {
   className?: string
   delay?: number
   duration?: number
+  direction?: 'up' | 'down' | 'left' | 'right'
 }
 
 export function ScrollReveal({
@@ -15,6 +16,7 @@ export function ScrollReveal({
   className = '',
   delay = 0,
   duration = 800,
+  direction = 'up',
 }: ScrollRevealProps) {
   const { ref, isVisible } = useScrollReveal({
     threshold: 0.1,
@@ -22,13 +24,30 @@ export function ScrollReveal({
     triggerOnce: true,
   })
 
+  const getTransform = () => {
+    if (isVisible) return 'translate(0, 0)'
+
+    switch (direction) {
+      case 'up':
+        return 'translateY(30px)'
+      case 'down':
+        return 'translateY(-30px)'
+      case 'left':
+        return 'translateX(-30px)' // Appears from left
+      case 'right':
+        return 'translateX(30px)' // Appears from right
+      default:
+        return 'translateY(30px)'
+    }
+  }
+
   return (
     <div
       ref={ref}
       className={className}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+        transform: getTransform(),
         transition: `opacity ${duration}ms ease-out ${delay}ms, transform ${duration}ms ease-out ${delay}ms`,
       }}
     >

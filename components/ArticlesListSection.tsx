@@ -24,7 +24,7 @@ export function ArticlesListSection() {
         isExternal: !!item.externalLink
       }))
   ].sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-  .slice(0, 5) // 只显示最新的5条
+  .slice(0, 7) // 只显示最新的7条
 
   return (
     <section className="py-24 md:py-32 bg-white">

@@ -3,5 +3,7 @@
 import articles__2025_01_18CoffeeCultureJapanChinaMdx from './articles__2025-01-18-coffee-culture-japan-china.mdx.json' assert { type: 'json' }
 import articles__2025_01_22SpecialtyCoffeeGuideMdx from './articles__2025-01-22-specialty-coffee-guide.mdx.json' assert { type: 'json' }
 import articles__establishmentNewsMdx from './articles__establishment-news.mdx.json' assert { type: 'json' }
+import articles__2025_01_15TokyoCoffeeExpo_2025ReportMdx from './articles__2025-01-15-tokyo-coffee-expo-2025-report.mdx.json' assert { type: 'json' }
+import articles__2025_01_20TokyoCoffeeCultureFutureMdx from './articles__2025-01-20-tokyo-coffee-culture-future.mdx.json' assert { type: 'json' }
 
-export const allArticles = [articles__2025_01_18CoffeeCultureJapanChinaMdx, articles__2025_01_22SpecialtyCoffeeGuideMdx, articles__establishmentNewsMdx]
+export const allArticles = [articles__2025_01_18CoffeeCultureJapanChinaMdx, articles__2025_01_22SpecialtyCoffeeGuideMdx, articles__establishmentNewsMdx, articles__2025_01_15TokyoCoffeeExpo_2025ReportMdx, articles__2025_01_20TokyoCoffeeCultureFutureMdx]

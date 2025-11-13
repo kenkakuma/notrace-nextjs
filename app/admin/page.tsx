@@ -1,12 +1,14 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import {
   FileText,
   Image as ImageIcon,
   Layout,
   Settings,
-  Newspaper
+  Newspaper,
+  LogOut
 } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { AdminTabs } from '@/components/admin/AdminTabs'
@@ -17,7 +19,20 @@ import { HeroManagementPanel } from '@/components/admin/HeroManagementPanel'
 type TabType = 'cms' | 'images' | 'hero'
 
 export default function AdminPage() {
+  const router = useRouter()
   const [activeTab, setActiveTab] = useState<TabType>('cms')
+
+  const handleLogout = async () => {
+    if (confirm('ログアウトしますか？')) {
+      try {
+        await fetch('/api/admin/auth', { method: 'DELETE' })
+        router.push('/admin/login')
+        router.refresh()
+      } catch (error) {
+        console.error('Logout failed:', error)
+      }
+    }
+  }
 
   const tabs = [
     {
@@ -56,14 +71,23 @@ export default function AdminPage() {
                   コンテンツ、画像、設定を一元管理
                 </p>
               </div>
-              <a
-                href="/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                サイトを表示
-              </a>
+              <div className="flex gap-3">
+                <a
+                  href="/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                >
+                  サイトを表示
+                </a>
+                <button
+                  onClick={handleLogout}
+                  className="px-6 py-2 border border-gray-300 text-text-dark rounded-lg hover:bg-gray-50 transition-colors inline-flex items-center gap-2"
+                >
+                  <LogOut className="w-4 h-4" />
+                  ログアウト
+                </button>
+              </div>
             </div>
           </div>
         </Container>
