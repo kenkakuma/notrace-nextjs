@@ -1,0 +1,17 @@
+# Robots.txt for NO TRACE EXPLORATION
+# https://no-trace.jp
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://no-trace.jp/sitemap.xml
+
+# Block admin areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /public/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

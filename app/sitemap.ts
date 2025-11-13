@@ -1,63 +1,48 @@
 import { MetadataRoute } from 'next'
+import { allArticles, allNews } from 'contentlayer/generated'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://no-trace.jp'
-  const currentDate = new Date()
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/coffee`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/exhibition`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/lab`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/club`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
+  // Static pages
+  const staticPages = [
+    '',
+    '/about',
+    '/coffee',
+    '/exhibition',
+    '/shop',
+    '/club',
+    '/contact',
+    '/news',
+    '/articles',
+    '/privacy',
+    '/terms',
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: route === '' ? 1 : 0.8,
+  }))
+
+  // News pages
+  const newsPages = allNews
+    .filter((news) => news.published)
+    .map((news) => ({
+      url: `${baseUrl}${news.url}`,
+      lastModified: new Date(news.date),
+      changeFrequency: 'weekly' as const,
       priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-  ]
+    }))
+
+  // Article pages
+  const articlePages = allArticles
+    .filter((article) => article.published)
+    .map((article) => ({
+      url: `${baseUrl}${article.url}`,
+      lastModified: new Date(article.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+
+  return [...staticPages, ...newsPages, ...articlePages]
 }
