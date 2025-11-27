@@ -7,6 +7,13 @@ import Link from 'next/link'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 import { ScrollReveal } from '@/components/ScrollReveal'
 
+/**
+ * FeaturedArticlesSection Component
+ * Version: 0.6.1 - Japanese Book Style Layout
+ * - Displays 7 latest articles/news
+ * - Horizontal scroll with vertical text (writing-mode: vertical-rl)
+ * - Right-to-left reading direction (flex-row-reverse)
+ */
 export function FeaturedArticlesSection() {
   // 获取最新的文章和新闻（合并显示）
   const latestArticles = allArticles
@@ -35,7 +42,8 @@ export function FeaturedArticlesSection() {
     .slice(0, 7)
 
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-16 md:py-20" data-component="FeaturedArticlesSection" data-version="0.6.1">
+      {/* Version 0.6.1: Japanese Book Style - 7 articles, vertical text, RTL layout */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal direction="up" duration={800} delay={0}>
           <div className="text-center mb-12">
