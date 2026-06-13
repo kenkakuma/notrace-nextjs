@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OLLA · Support &amp; About / 软件介绍与技术支持 / 紹介とサポート</title>
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="OLLA — a local-first specialty-coffee companion. Bean cards & Home Screen widget, a visual coffee dictionary, brew logging, and tools. No account, no tracking. Support & FAQ." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #57606a;
+      --line: #d8dee4;
+      --code-bg: #f6f8fa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --text: #e6edf3;
+        --muted: #8b949e;
+        --line: #30363d;
+        --code-bg: #161b22;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+        "PingFang SC", "Hiragino Sans", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 48px 24px 96px; }
+
+    h1 {
+      font-size: 30px; font-weight: 600; margin: 0 0 4px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--line); line-height: 1.3;
+    }
+    h2 {
+      font-size: 22px; font-weight: 600; margin: 44px 0 12px;
+      padding-bottom: 8px; border-bottom: 1px solid var(--line); line-height: 1.3;
+    }
+    h3 { font-size: 17px; font-weight: 600; margin: 26px 0 6px; line-height: 1.4; }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+
+    blockquote {
+      margin: 16px 0; padding: 2px 0 2px 16px;
+      border-left: 3px solid var(--line); color: var(--muted);
+    }
+
+    ul { margin: 0 0 14px; padding-left: 22px; }
+    li { margin: 4px 0; }
+
+    .qa { margin: 0 0 18px; }
+    .qa p { margin: 4px 0 0; color: var(--muted); }
+
+    code, .mono {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 13.5px; background: var(--code-bg); padding: 1px 6px; border-radius: 5px;
+    }
+    a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+
+    .langbar { display: flex; gap: 8px; margin: 18px 0 4px; flex-wrap: wrap; }
+    .langbar button {
+      font: inherit; font-size: 13px; cursor: pointer;
+      padding: 5px 14px; border-radius: 6px;
+      border: 1px solid var(--line); background: var(--bg); color: var(--muted);
+    }
+    .langbar button[aria-selected="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+    section.lang { display: none; }
+    section.lang.active { display: block; }
+
+    hr { border: 0; border-top: 1px solid var(--line); margin: 44px 0; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>OLLA — <span data-i18n="h1sub">软件介绍与技术支持</span></h1>
+    <div class="langbar" role="tablist" aria-label="Language">
+      <button data-lang="zh" aria-selected="true">中文</button>
+      <button data-lang="en" aria-selected="false">English</button>
+      <button data-lang="ja" aria-selected="false">日本語</button>
+    </div>
+
+    <!-- ════════════════ 中文 ════════════════ -->
+    <section class="lang active" data-lang="zh">
+      <blockquote>本地优先的精品咖啡伴侣——记录、查询、养豆,一切都在你的设备上。</blockquote>
+
+      <h2>软件介绍</h2>
+      <p>OLLA 是一款本地优先的精品咖啡记录与参考工具。它把「录入豆子、查询知识、追踪养豆、记录冲煮」整合到一处:以内容知识库为驱动,快速录入与查询。所有数据只保存在你的设备上,无需注册账号,绝大多数功能可离线使用。</p>
+
+      <h3>豆卡 &amp; 桌面小组件</h3>
+      <p>以「钱包式卡片堆」管理咖啡豆,每张豆卡记录品种、产地、庄园、处理法、烘焙度与养豆 / 购买日期,点按展开完整信息。养豆期与最佳赏味期以分阶段双向进度条显示——养豆从左填满,赏味从满格递减,临期(≤3 天)转红提醒。可将豆卡置顶首页,并通过 iOS 桌面小组件(中、小两种尺寸)随时查看剩余天数与赏味进度。</p>
+
+      <h3>咖啡词典 &amp; REF 数据卡</h3>
+      <p>内置覆盖八大分类的咖啡知识库——产地、品种谱系、庄园、处理法、烘焙、冲煮等。特色是图形化 REF 数据卡:海拔、产量、风味、采收期等关键信息以可视化条形与量表呈现,让你快速读懂一个词条。覆盖 33 个产地、601 个庄园档案、完整品种谱系,并收录赛事与拍卖纪录,全部三语。</p>
+
+      <h3>冲煮记录 &amp; 感官面板</h3>
+      <p>记录每一次冲煮并按月归档。感官面板把口味雷达(香气、酸度、甜度、醇厚、余韵、平衡)、SCA 风味轮廓、萃取判断(有折光仪用 EY/TDS,无则按口感反推)合为一体;杂志风详情排版 + 日历联动,让冲煮历程一目了然。</p>
+
+      <h3>咖啡工具箱</h3>
+      <p>十款随手可用的工具:冲煮计时器(含分段配方)、萃取率计算、Espresso 实验室、粉水比计算、水质配方、杯测评分、研磨指南(24 款研磨器)、烘焙曲线解读、SCA 风味轮、配方库。</p>
+
+      <h3>养豆提醒</h3>
+      <p>为每袋豆设置本地通知:养豆即将完成、最佳赏味期将过时通知你。提醒时间与提前天数均可自定义,纯设备本地调度,不联网、无推送服务器、不收集任何数据。</p>
+
+      <h3>本地优先 · 隐私 · 三语</h3>
+      <p>所有数据只保存在本机,无需账号,绝大多数功能离线可用。支持简体中文 / English / 日本語,提供瓷白、米色、墨蓝、黑曜等多款主题,可跟随系统明暗。随时在「设置 → 数据管理」导出 / 导入(JSON 完整备份或 CSV)。</p>
+
+      <h2>常见问题</h2>
+      <div class="qa"><h3>需要联网或账号吗?</h3><p>不需要。OLLA 完全本地运行,无需注册账号;绝大多数功能可离线使用(仅咖啡词典的增量更新等会发起匿名请求,不含任何个人数据)。</p></div>
+      <div class="qa"><h3>如何备份或迁移我的数据?</h3><p>进入「设置 → 数据管理 → 导出」,可导出 JSON 完整备份或冲煮记录 CSV;更换设备时在新设备「导入」即可恢复全部数据。</p></div>
+      <div class="qa"><h3>养豆 / 赏味提醒会上传吗?</h3><p>不会。通知由设备本地调度,不经过任何推送服务器,也不收集数据。可在「设置 → 通知」中开关并自定义提醒时间与提前天数。</p></div>
+      <div class="qa"><h3>支持哪些语言和主题?</h3><p>支持简体中文 / English / 日本語,默认跟随系统语言;提供瓷白、米色、墨蓝、黑曜等主题,可跟随系统明暗或手动选择。</p></div>
+      <div class="qa"><h3>桌面小组件不更新怎么办?</h3><p>请确认已在首页将豆卡「置顶到首页」(小组件展示置顶的豆卡)。如仍未刷新,长按小组件移除后重新添加,或重启设备让系统刷新组件时间线。</p></div>
+      <div class="qa"><h3>发现问题或想提建议?</h3><p>欢迎邮件联系我们,附上设备型号、iOS 版本与问题描述,我们会逐一查看并尽快回复。</p></div>
+
+      <h2>联系我们</h2>
+      <p>邮箱:<a href="mailto:kokennka@gmail.com"><code>kokennka@gmail.com</code></a></p>
+      <p class="muted">报障请附上设备型号与 iOS 版本,我们会尽快回复。</p>
+    </section>
+
+    <!-- ════════════════ English ════════════════ -->
+    <section class="lang" data-lang="en">
+      <blockquote>A local-first companion for specialty coffee — log, look up, and rest your beans, all on your device.</blockquote>
+
+      <h2>About OLLA</h2>
+      <p>OLLA is a local-first specialty-coffee logging and reference tool. It brings logging beans, looking up knowledge, tracking resting, and recording brews into one place — driven by a built-in knowledge base for fast entry and lookup. All your data stays on your device, no account is needed, and nearly everything works offline.</p>
+
+      <h3>Bean Cards &amp; Home Screen Widget</h3>
+      <p>Manage your beans as a wallet-style card deck. Each card records variety, origin, estate, process, roast level, and resting / purchase dates — tap to expand the full detail. The resting and peak windows show on a phased two-way progress bar: resting fills up, peak counts down, and turns red in the last 3 days. Pin beans to your home screen and check days remaining and tasting progress anytime via the iOS Home Screen widget (small and medium sizes).</p>
+
+      <h3>Coffee Codex &amp; REF Data Cards</h3>
+      <p>A built-in coffee knowledge base across eight categories — origins, variety lineages, estates, processing, roasting, brewing, and more. Its signature is the graphic REF data card: altitude, yield, flavor, and harvest data rendered as visual bars and scales so you grasp an entry at a glance. Covers 33 origins, 601 estate profiles, full variety lineages, plus competition and auction records — all trilingual.</p>
+
+      <h3>Brew Log &amp; Sensory Panel</h3>
+      <p>Log every brew and browse it by month. The sensory panel combines a taste radar (aroma, acidity, sweetness, body, aftertaste, balance), an SCA flavor profile, and an extraction read (EY/TDS with a refractometer, or inferred from taste without one). Magazine-style detail layouts and a linked calendar make your brewing journey easy to review.</p>
+
+      <h3>Toolbox</h3>
+      <p>Ten tools at hand: brew timer (with stepped recipes), extraction-yield calculator, espresso lab, ratio calculator, water recipe, cupping score sheet, grind guide (24 grinders), roast-curve reader, SCA flavor wheel, and a recipe library.</p>
+
+      <h3>Reminders</h3>
+      <p>Set local reminders for each bag: get notified when resting is about to finish and when the peak window is about to close. The time and lead days are fully configurable, scheduled entirely on-device — no network, no push server, no data collected.</p>
+
+      <h3>Local-First · Private · Trilingual</h3>
+      <p>All your data stays on your device, no account needed, and nearly everything works offline. Available in Simplified Chinese / English / Japanese, with porcelain, beige, ink-blue, and obsidian themes that can follow your system appearance. Export or import anytime in Settings → Data (full JSON backup or CSV).</p>
+
+      <h2>FAQ</h2>
+      <div class="qa"><h3>Do I need an account or internet?</h3><p>No. OLLA runs entirely on your device with no sign-up. Nearly everything works offline — only anonymous coffee-dictionary updates touch the network, and they carry no personal data.</p></div>
+      <div class="qa"><h3>How do I back up or move my data?</h3><p>Go to Settings → Data → Export to save a full JSON backup or a CSV of your brews. On a new device, use Import to restore everything.</p></div>
+      <div class="qa"><h3>Are the resting / peak reminders private?</h3><p>Yes. Notifications are scheduled locally on your device, never through a push server, and collect no data. Turn them on and set the time and lead days in Settings → Notifications.</p></div>
+      <div class="qa"><h3>Which languages and themes are supported?</h3><p>Simplified Chinese / English / Japanese, following your system language by default; porcelain, beige, ink-blue, and obsidian themes that can follow your system appearance or be chosen manually.</p></div>
+      <div class="qa"><h3>The Home Screen widget isn't updating?</h3><p>Make sure you've pinned a bean to the home screen (the widget shows pinned beans). If it still looks stale, long-press the widget to remove it and add it again, or restart your device so the system refreshes the widget timeline.</p></div>
+      <div class="qa"><h3>Found a bug or have a request?</h3><p>Email us with your device model, iOS version, and a short description. We read every message and reply as soon as we can.</p></div>
+
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:kokennka@gmail.com"><code>kokennka@gmail.com</code></a></p>
+      <p class="muted">For bug reports, please include your device model and iOS version — we'll reply as soon as we can.</p>
+    </section>
+
+    <!-- ════════════════ 日本語 ════════════════ -->
+    <section class="lang" data-lang="ja">
+      <blockquote>ローカル優先のスペシャルティコーヒーの相棒——記録し、調べ、豆を休ませる。すべては端末の中で。</blockquote>
+
+      <h2>OLLA について</h2>
+      <p>OLLA はローカル優先のスペシャルティコーヒー記録・参照ツールです。豆の登録・知識の検索・熟成の管理・抽出の記録をひとつにまとめ、内蔵の知識ベースを軸にすばやく入力・検索できます。すべてのデータは端末内にのみ保存され、アカウントは不要、ほぼすべてオフラインで動作します。</p>
+
+      <h3>豆カード &amp; ホーム画面ウィジェット</h3>
+      <p>コーヒー豆を「ウォレット風カードデッキ」で管理。各カードに品種・産地・農園・精製・焙煎度・熟成 / 購入日を記録し、タップで詳細を展開。熟成期間と飲み頃は段階式の双方向プログレスバーで表示——熟成は左から満ち、飲み頃は満タンから減り、残り3日で赤に。豆をホーム画面にピン留めし、iOS ホーム画面ウィジェット(中・小の2サイズ)で残り日数と飲み頃の進捗をいつでも確認できます。</p>
+
+      <h3>コーヒー辞典 &amp; REF データカード</h3>
+      <p>8大分類にわたる内蔵のコーヒー知識ベース——産地、品種系統、農園、精製、焙煎、抽出など。特長は図解の REF データカード:標高・収量・風味・収穫期などの要点を視覚的なバーとスケールで表示し、項目を一目で把握できます。33の産地、601の農園プロファイル、品種系統全体、さらに競技・オークション記録を収録し、すべて三言語対応。</p>
+
+      <h3>抽出ログ &amp; 感覚パネル</h3>
+      <p>一杯ごとの抽出を記録し、月別に振り返り。感覚パネルは味覚レーダー(香り・酸・甘み・ボディ・後味・バランス)、SCA フレーバープロファイル、抽出の判定(屈折計があれば EY/TDS、なければ味から推定)を一体化。雑誌風の詳細レイアウトとカレンダー連動で、抽出の歩みをひと目で。</p>
+
+      <h3>ツールボックス</h3>
+      <p>すぐ使えるツール10種:抽出タイマー(段階レシピ対応)、収率計算、エスプレッソ・ラボ、粉水比計算、水質レシピ、カッピング採点、挽き目ガイド(24機種)、焙煎カーブ解読、SCA フレーバーホイール、レシピライブラリ。</p>
+
+      <h3>リマインダー</h3>
+      <p>豆ごとにローカル通知を設定:熟成がもうすぐ終わるとき、飲み頃がもうすぐ過ぎるときに知らせます。時刻や何日前かは自由に設定でき、端末内でローカルにスケジュール——通信なし、プッシュサーバーなし、データ収集なし。</p>
+
+      <h3>ローカル優先 · プライバシー · 三言語</h3>
+      <p>すべてのデータは端末内にのみ保存。アカウント不要で、ほぼすべてオフラインで動作します。簡体字中国語 / English / 日本語に対応し、磁器・ベージュ・藍・黒曜などのテーマをシステムの明暗に追従。「設定 → データ管理」でいつでも書き出し / 取り込み(JSON 完全バックアップまたは CSV)。</p>
+
+      <h2>よくある質問</h2>
+      <div class="qa"><h3>アカウントやネット接続は必要?</h3><p>不要です。OLLA は端末内で完結し、登録は不要。ほぼすべてオフラインで動作します(コーヒー辞典の差分更新のみ匿名で通信し、個人データは含みません)。</p></div>
+      <div class="qa"><h3>データのバックアップ・移行は?</h3><p>「設定 → データ管理 → 書き出し」から、JSON 完全バックアップまたは抽出記録の CSV を保存できます。新しい端末では「取り込み」ですべて復元できます。</p></div>
+      <div class="qa"><h3>熟成・飲み頃のリマインダーは送信される?</h3><p>いいえ。通知は端末内でローカルにスケジュールされ、プッシュサーバーを介さず、データも収集しません。「設定 → 通知」でオン/オフ、時刻や何日前かを設定できます。</p></div>
+      <div class="qa"><h3>対応言語とテーマは?</h3><p>簡体字中国語 / English / 日本語に対応し、既定ではシステム言語に追従。磁器・ベージュ・藍・黒曜などのテーマをシステムの明暗に追従、または手動で選べます。</p></div>
+      <div class="qa"><h3>ホーム画面ウィジェットが更新されない?</h3><p>まず、ホームに豆カードを「ピン留め」しているかご確認ください(ウィジェットはピン留めした豆を表示します)。それでも古い場合は、ウィジェットを長押しして削除し再追加するか、端末を再起動してタイムラインを更新してください。</p></div>
+      <div class="qa"><h3>不具合の報告・ご要望は?</h3><p>端末モデル・iOS バージョン・内容を添えてメールでご連絡ください。すべて拝見し、順次お返事します。</p></div>
+
+      <h2>お問い合わせ</h2>
+      <p>メール:<a href="mailto:kokennka@gmail.com"><code>kokennka@gmail.com</code></a></p>
+      <p class="muted">不具合のご報告は端末モデルと iOS バージョンを添えてください。順次対応します。</p>
+    </section>
+
+    <footer>
+      © OLLA · <span data-i18n="footer">本页为 OLLA 的软件介绍与技术支持页。隐私政策见 /olla/。</span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var H1SUB = { zh: '软件介绍与技术支持', en: 'About & Support', ja: '紹介とサポート' };
+      var FOOTERS = {
+        zh: '本页为 OLLA 的软件介绍与技术支持页。隐私政策见 /olla/。',
+        en: 'OLLA — about & support. Privacy policy: /olla/.',
+        ja: 'OLLA の紹介・サポートページです。プライバシーポリシーは /olla/ へ。'
+      };
+      var buttons = document.querySelectorAll('.langbar button');
+      var sections = document.querySelectorAll('section.lang');
+      function setLang(lang) {
+        document.documentElement.lang = lang;
+        buttons.forEach(function (b) { b.setAttribute('aria-selected', String(b.dataset.lang === lang)); });
+        sections.forEach(function (s) { s.classList.toggle('active', s.dataset.lang === lang); });
+        document.querySelector('[data-i18n="h1sub"]').textContent = H1SUB[lang];
+        document.querySelector('[data-i18n="footer"]').textContent = FOOTERS[lang];
+      }
+      buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+      var nav = (navigator.language || 'zh').slice(0, 2);
+      setLang(H1SUB[nav] ? nav : 'zh');
+    })();
+  </script>
+</body>
+</html>
