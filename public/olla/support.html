@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -84,13 +84,13 @@
   <div class="wrap">
     <h1>OLLA — <span data-i18n="h1sub">软件介绍与技术支持</span></h1>
     <div class="langbar" role="tablist" aria-label="Language">
-      <button data-lang="zh" aria-selected="true">中文</button>
-      <button data-lang="en" aria-selected="false">English</button>
+      <button data-lang="zh" aria-selected="false">中文</button>
+      <button data-lang="en" aria-selected="true">English</button>
       <button data-lang="ja" aria-selected="false">日本語</button>
     </div>
 
     <!-- ════════════════ 中文 ════════════════ -->
-    <section class="lang active" data-lang="zh">
+    <section class="lang" data-lang="zh">
       <blockquote>本地优先的精品咖啡伴侣——记录、查询、养豆,一切都在你的设备上。</blockquote>
 
       <h2>软件介绍</h2>
@@ -128,7 +128,7 @@
     </section>
 
     <!-- ════════════════ English ════════════════ -->
-    <section class="lang" data-lang="en">
+    <section class="lang active" data-lang="en">
       <blockquote>A local-first companion for specialty coffee — log, look up, and rest your beans, all on your device.</blockquote>
 
       <h2>About OLLA</h2>
@@ -226,8 +226,9 @@
         document.querySelector('[data-i18n="footer"]').textContent = FOOTERS[lang];
       }
       buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
-      var nav = (navigator.language || 'zh').slice(0, 2);
-      setLang(H1SUB[nav] ? nav : 'zh');
+      // Default to English; ?lang=zh|en|ja overrides.
+      var q = (location.search.match(/[?&]lang=(zh|en|ja)/) || [])[1];
+      setLang(q || 'en');
     })();
   </script>
 </body>

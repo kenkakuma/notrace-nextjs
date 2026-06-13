@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -76,13 +76,13 @@
     <h1 data-i18n="title">隐私政策</h1>
     <p class="meta" data-i18n="meta">生效日期 · 2026-06-03</p>
     <div class="langbar" role="tablist" aria-label="Language">
-      <button data-lang="zh" aria-selected="true">中文</button>
-      <button data-lang="en" aria-selected="false">English</button>
+      <button data-lang="zh" aria-selected="false">中文</button>
+      <button data-lang="en" aria-selected="true">English</button>
       <button data-lang="ja" aria-selected="false">日本語</button>
     </div>
 
     <!-- ════════════════ 中文 ════════════════ -->
-    <section class="lang active" data-lang="zh">
+    <section class="lang" data-lang="zh">
       <blockquote>OLLA(以下简称"本应用""我们")是一款本地优先的精品咖啡记录与参考工具。核心原则:你的冲煮记录、豆卡、器具等个人数据只保存在你的设备上,我们不收集、不上传、不出售。</blockquote>
 
       <h2>1 · 我们收集的信息</h2>
@@ -130,7 +130,7 @@
     </section>
 
     <!-- ════════════════ English ════════════════ -->
-    <section class="lang" data-lang="en">
+    <section class="lang active" data-lang="en">
       <blockquote>OLLA ("the app", "we") is a local-first specialty-coffee logging and reference tool. Core principle: your personal data — brew logs, bean cards, gear — stays on your device. We do not collect, upload, or sell it.</blockquote>
 
       <h2>1 · Information We Collect</h2>
@@ -250,8 +250,9 @@
         document.querySelector('[data-i18n="footer"]').textContent = FOOTERS[lang];
       }
       buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
-      var nav = (navigator.language || 'zh').slice(0, 2);
-      setLang(TITLES[nav] ? nav : 'zh');
+      // Default to English; ?lang=zh|en|ja overrides.
+      var q = (location.search.match(/[?&]lang=(zh|en|ja)/) || [])[1];
+      setLang(q || 'en');
     })();
   </script>
 </body>
