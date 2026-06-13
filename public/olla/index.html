@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OLLA · Privacy Policy / 隐私政策 / プライバシーポリシー</title>
+  <title>OLLA Brew Lab · Privacy Policy / 隐私政策 / プライバシーポリシー</title>
   <meta name="robots" content="index, follow" />
-  <meta name="description" content="OLLA privacy policy. Local-first specialty-coffee app — no account, no tracking, no analytics. Your data stays on your device." />
+  <meta name="description" content="OLLA Brew Lab privacy policy. Local-first specialty-coffee app — no account, no tracking, no analytics. Your data stays on your device." />
   <style>
     :root {
       --bg: #ffffff;
@@ -35,7 +35,6 @@
       font-size: 16px;
     }
     .wrap { max-width: 820px; margin: 0 auto; padding: 48px 24px 96px; }
-
     h1 {
       font-size: 30px; font-weight: 600; margin: 0 0 4px;
       padding-bottom: 12px; border-bottom: 1px solid var(--line); line-height: 1.3;
@@ -46,17 +45,13 @@
       padding-bottom: 8px; border-bottom: 1px solid var(--line); line-height: 1.3;
     }
     p { margin: 0 0 12px; }
-    code, .mono {
+    ul { margin: 0 0 12px; padding-left: 22px; }
+    li { margin: 4px 0; }
+    code {
       font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
       font-size: 13.5px; background: var(--code-bg); padding: 1px 6px; border-radius: 5px;
     }
     a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
-
-    blockquote {
-      margin: 18px 0; padding: 2px 0 2px 16px;
-      border-left: 3px solid var(--line); color: var(--muted);
-    }
-
     .langbar { display: flex; gap: 8px; margin: 18px 0 4px; flex-wrap: wrap; }
     .langbar button {
       font: inherit; font-size: 13px; cursor: pointer;
@@ -64,181 +59,202 @@
       border: 1px solid var(--line); background: var(--bg); color: var(--muted);
     }
     .langbar button[aria-selected="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
-
     section.lang { display: none; }
     section.lang.active { display: block; }
-
-    footer { margin-top: 52px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1 data-i18n="title">隐私政策</h1>
-    <p class="meta" data-i18n="meta">生效日期 · 2026-06-03</p>
+    <h1 data-i18n="title">Privacy Policy</h1>
+    <p class="meta" data-i18n="meta">Effective Date: June 3, 2026</p>
     <div class="langbar" role="tablist" aria-label="Language">
       <button data-lang="zh" aria-selected="false">中文</button>
       <button data-lang="en" aria-selected="true">English</button>
       <button data-lang="ja" aria-selected="false">日本語</button>
     </div>
 
-    <!-- ════════════════ 中文 ════════════════ -->
-    <section class="lang" data-lang="zh">
-      <blockquote>OLLA(以下简称"本应用""我们")是一款本地优先的精品咖啡记录与参考工具。核心原则:你的冲煮记录、豆卡、器具等个人数据只保存在你的设备上,我们不收集、不上传、不出售。</blockquote>
-
-      <h2>1 · 我们收集的信息</h2>
-      <p>我们不收集任何个人身份信息。本应用 v1.0 不设账户、不需注册登录,也不索取你的姓名、邮箱、电话或位置。</p>
-      <p>你创建的内容(冲煮记录、豆卡/豆罐、器具、收藏、笔记、偏好设置)仅存储在你设备本地(iOS 沙盒内的数据库),不会发送到我们或任何第三方的服务器。</p>
-      <p>我们不收集广告标识符(IDFA)、设备指纹、使用分析、崩溃日志、位置、通讯录、相册、麦克风等信息。本应用不进行 App 追踪,不会请求"App 跟踪透明度(ATT)"授权,也不跨 App 或网站追踪你。</p>
-
-      <h2>2 · 应用请求的系统权限</h2>
-      <p>v1.0 不请求任何敏感权限:无相机、相册、定位、通讯录、麦克风权限。本地养豆提醒使用系统通知权限,首次开启时请求,可随时关闭;仅用于在设备本地按你的设置发送提醒,不涉及任何联网或数据收集。此外仅使用设备本地的触感反馈(振动)以提升交互,该功能不涉及任何数据。</p>
-
-      <h2>3 · 网络连接的使用</h2>
-      <p>本应用可离线使用。联网仅用于获取公开的参考内容,且不发送你的任何个人数据:</p>
-      <p>· 词典内容更新:向我们的内容服务发起匿名请求(仅携带一个"上次更新时间"游标),用于增量更新内置的咖啡词典,不含任何用户或设备标识。</p>
-      <p>· 行业资讯:从同一服务匿名拉取公开的赛事/行业参考内容。</p>
-      <p>· 网络连通性检测:可能向公共测试地址发起无数据的连通性探测。</p>
-      <p>字体已随应用打包,运行时不联网下载。</p>
-
-      <h2>4 · 你的数据控制权</h2>
-      <p>你对自己的数据拥有完全控制权,随时可在「设置 → 数据管理」中:导出全部数据(JSON 完整备份,或冲煮记录 CSV);导入/恢复备份;清除全部数据(不可撤销)。</p>
-      <p>卸载应用即会删除设备上的全部本地数据。由于数据不在我们服务器,删除权完全在你手中。</p>
-
-      <h2>5 · 数据安全与留存</h2>
-      <p>你的数据保存在 iOS 系统提供的应用沙盒中,受设备级加密与系统安全机制保护。你导出的备份文件由你自行保管。数据保留至你主动删除或卸载为止。</p>
-
-      <h2>6 · 第三方服务</h2>
-      <p>Apple:通过 App Store 分发与更新,适用 Apple 的隐私政策。我们的内容服务:仅提供匿名的参考内容,不接收你的个人数据。字体为 Google Fonts 开源字体,已离线打包。本应用不集成任何广告、分析或社交登录 SDK。</p>
-
-      <h2>7 · 儿童隐私</h2>
-      <p>本应用面向普通成年咖啡爱好者,非针对 13 岁以下儿童,我们不会有意收集儿童信息(符合 COPPA 与 Apple 相关要求)。</p>
-
-      <h2>8 · 国际用户</h2>
-      <p>由于我们不收集个人数据,GDPR/CCPA 等法规下的数据主体权利对你而言可通过本地的导出/删除功能直接实现。如你位于 EEA、英国或加州,你仍享有相应法定权利。</p>
-
-      <h2>9 · 政策变更</h2>
-      <p>我们可能更新本政策;重大变更将在应用内或网页上提示,并更新顶部的生效日期。</p>
-
-      <h2>10 · 联系我们</h2>
-      <p>如有隐私相关问题,请联系:<a href="mailto:kokennka@gmail.com"><code>kokennka@gmail.com</code></a></p>
-
-      <h2>版权、引用与免责声明</h2>
-      <p>A · 知识产权:本应用的设计、界面、插画、图标、原创文案及编排版权归 OLLA 所有,保留所有权利。"OLLA" 及相关标识为我们的商标。</p>
-      <p>B · 第三方商标:本应用为教育与参考目的引用了行业标准、器具、赛事与方法,相关名称与商标(如 SCA、Agtron、Hario、Comandante、Mahlkönig、Fellow、La Marzocco、Chemex、AeroPress、World Brewers Cup、Cup of Excellence、Best of Panama 等)均归各自所有者所有。本应用与这些品牌/组织无隶属、赞助或背书关系,引用仅为识别与说明之用。</p>
-      <p>C · 参考数据来源:词典中的标准、Agtron 色值、风味轮等参考自公开行业资料(如 SCA、World Coffee Research、CQI、ICO);冲煮配方注明了其公开提出者/出处,版权归原作者;赛事/冠军/拍卖分数等整理自公开来源,仅供参考,可能存在时效或误差。</p>
-      <p>D · 免责声明:本应用提供的冲煮、烘焙、杯测等内容为信息性参考,非专业建议;实际结果因豆子、设备、操作而异。我们尽力保证数据准确,但不对其完整性、时效性或适用性作任何明示或默示担保。</p>
-    </section>
-
     <!-- ════════════════ English ════════════════ -->
     <section class="lang active" data-lang="en">
-      <blockquote>OLLA ("the app", "we") is a local-first specialty-coffee logging and reference tool. Core principle: your personal data — brew logs, bean cards, gear — stays on your device. We do not collect, upload, or sell it.</blockquote>
+      <p>OLLA Brew Lab (“OLLA”, “the app”, “we”, “us”) is a local-first specialty coffee logging and reference tool. Our core principle is simple: your personal coffee data — such as brew logs, bean cards, gear records, favorites, notes, and preferences — is stored on your device and is not sold.</p>
 
-      <h2>1 · Information We Collect</h2>
-      <p>We do not collect any personally identifiable information. v1.0 has no account, no sign-up, and never asks for your name, email, phone, or location.</p>
-      <p>The content you create (brew logs, bean cards/jars, gear, favorites, notes, preferences) is stored only locally on your device (a database inside the iOS sandbox). It is never sent to us or any third party.</p>
-      <p>We do not collect the advertising identifier (IDFA), device fingerprints, usage analytics, crash logs, location, contacts, photos, or microphone. The app does no App Tracking, never requests App Tracking Transparency (ATT) permission, and does not track you across apps or websites.</p>
+      <h2>1. Information We Collect</h2>
+      <p>The current release does not require an account, sign-up, or login. We do not ask for your name, email address, phone number, precise location, contacts, photos, microphone access, or advertising identifier.</p>
+      <p>Content you create in the app — including brew logs, bean cards or jars, gear records, favorites, notes, and preferences — is stored locally on your device, inside the iOS app sandbox. We do not upload this content to our servers or sell it to third parties.</p>
+      <p>We do not use App Tracking Transparency, and we do not track you across apps or websites.</p>
 
-      <h2>2 · System Permissions</h2>
-      <p>v1.0 requests no sensitive permissions: no camera, photos, location, contacts, or microphone. Local bean reminders use the system notification permission, requested the first time you enable them and revocable at any time; they are used only to deliver on-device reminders per your settings, and involve no networking or data collection. The app also uses only on-device haptic feedback (vibration), which involves no data.</p>
+      <h2>2. System Permissions</h2>
+      <p>The app does not request access to camera, photos, precise location, contacts, or microphone.</p>
+      <p>If you enable local bean reminders, the app will request the iOS notification permission. These reminders are scheduled on your device according to your settings and can be turned off at any time in iOS Settings or inside the app where available.</p>
+      <p>The app may use on-device haptic feedback. Haptic feedback does not involve data collection.</p>
 
-      <h2>3 · Network Use</h2>
-      <p>The app works offline. It connects to the network only to fetch public reference content, and sends none of your personal data:</p>
-      <p>· Dictionary updates: anonymous requests to our content service carrying only a "last updated" cursor, to incrementally update the built-in coffee dictionary. No user or device identifier is included.</p>
-      <p>· Industry content: anonymous fetches of public competition / industry reference content from the same service.</p>
-      <p>· Connectivity check: a no-data reachability probe to a public test address may be made.</p>
+      <h2>3. Network Use</h2>
+      <p>The app is designed to work locally, and core features can be used without an account.</p>
+      <p>The app may connect to the network for limited purposes:</p>
+      <ul>
+        <li>Dictionary updates: the app may make anonymous requests to our content service to check for and download public coffee reference content. These requests may include a “last updated” cursor so the app can fetch only new or changed content.</li>
+        <li>Industry reference content: the app may fetch public competition, auction, or industry reference content from the same service.</li>
+        <li>Connectivity check: the app may perform a no-content reachability check to determine whether network access is available.</li>
+      </ul>
+      <p>These requests do not include your bean cards, brew logs, notes, favorites, or other personal coffee data. We do not include a user account ID or advertising identifier.</p>
+      <p>Standard server logs may temporarily process technical request information such as IP address, timestamp, request path, and user agent for security, debugging, and reliability. We do not use this information to identify users, build user profiles, or track users across apps or websites.</p>
       <p>Fonts are bundled with the app and are not downloaded at runtime.</p>
 
-      <h2>4 · Your Control Over Your Data</h2>
-      <p>You have full control. At any time in Settings → Data you can export everything (a full JSON backup, or a CSV of brews), import/restore a backup, or erase all data (irreversible).</p>
-      <p>Uninstalling the app deletes all local data on your device. Because your data is not on our servers, the right to delete is entirely in your hands.</p>
+      <h2>4. Your Control Over Your Data</h2>
+      <p>You control the data you create in the app.</p>
+      <p>In Settings → Data, you can export your data as a full JSON backup, export brew records as CSV where available, import or restore a backup, or erase all local app data.</p>
+      <p>Uninstalling the app deletes the local app data stored on your device, subject to normal iOS behavior and any device backups you control.</p>
+      <p>Because we do not maintain user accounts or server-side user profiles for your app content, most data access, export, correction, and deletion actions can be performed directly through the app’s local data tools. You may also contact us for privacy questions or requests.</p>
 
-      <h2>5 · Security &amp; Retention</h2>
-      <p>Your data lives in the iOS application sandbox, protected by device-level encryption and system security. Backups you export are yours to safeguard. Data is retained until you delete it or uninstall.</p>
+      <h2>5. Security and Retention</h2>
+      <p>Your app content is stored in the iOS application sandbox and protected by iOS system security and device-level protections. Backups exported from the app are files under your control; you are responsible for storing and sharing them safely.</p>
+      <p>Local app data is retained until you delete it, erase app data, or uninstall the app, subject to any backups you choose to create.</p>
 
-      <h2>6 · Third-Party Services</h2>
-      <p>Apple: distribution and updates via the App Store, subject to Apple's privacy policy. Our content service: provides anonymous reference content only and receives none of your personal data. Fonts are open-source Google Fonts, bundled offline. The app integrates no advertising, analytics, or social-login SDKs.</p>
+      <h2>6. Third-Party Services</h2>
+      <p>The app is distributed through Apple’s App Store and may use Apple system services for app installation, updates, notifications, and device-level functionality. Apple’s handling of data is governed by Apple’s own privacy policy.</p>
+      <p>Our content service provides public coffee reference content and does not receive your bean cards, brew logs, notes, favorites, or other personal coffee data.</p>
+      <p>The current release does not integrate advertising SDKs, third-party analytics SDKs, social-login SDKs, or third-party crash-reporting SDKs. If such services are added in a future release, this policy and our App Store privacy information will be updated accordingly.</p>
 
-      <h2>7 · Children's Privacy</h2>
-      <p>The app is intended for general adult coffee enthusiasts and is not directed at children under 13. We do not knowingly collect information from children (consistent with COPPA and Apple's requirements).</p>
+      <h2>7. Children’s Privacy</h2>
+      <p>The app is intended for a general audience of coffee enthusiasts and is not directed to children under 13. We do not knowingly collect personal information from children.</p>
 
-      <h2>8 · International Users</h2>
-      <p>Because we collect no personal data, your data-subject rights under laws like GDPR/CCPA are realized directly through the local export/delete features. If you are in the EEA, UK, or California, you retain your statutory rights.</p>
+      <h2>8. International Users</h2>
+      <p>The app may be available in multiple countries and regions. If you are located in the EEA, UK, California, Japan, or another region with privacy rights, you may contact us about privacy-related questions or requests.</p>
+      <p>Because the app does not require user accounts and stores your personal coffee content locally, you can manage most of your app data directly through the export, import, and delete features in the app.</p>
 
-      <h2>9 · Changes to This Policy</h2>
-      <p>We may update this policy; material changes will be noted in the app or on the web page, and the effective date above will be updated.</p>
+      <h2>9. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. If we make material changes, we will update the effective date above and may provide notice in the app or on our website.</p>
 
-      <h2>10 · Contact</h2>
+      <h2>10. Contact</h2>
       <p>For privacy questions, contact: <a href="mailto:kokennka@gmail.com"><code>kokennka@gmail.com</code></a></p>
 
-      <h2>Copyright, Attribution &amp; Disclaimer</h2>
-      <p>A · Intellectual property: the design, UI, illustrations, icons, original text, and arrangement are © OLLA, all rights reserved. "OLLA" and related marks are our trademarks.</p>
-      <p>B · Third-party trademarks: for educational and reference purposes the app references industry standards, gear, competitions, and methods. Their names and trademarks (e.g. SCA, Agtron, Hario, Comandante, Mahlkönig, Fellow, La Marzocco, Chemex, AeroPress, World Brewers Cup, Cup of Excellence, Best of Panama) belong to their respective owners. The app has no affiliation, sponsorship, or endorsement relationship with these brands or organizations; references are for identification only.</p>
-      <p>C · Reference sources: dictionary standards, Agtron values, and flavor wheels draw on public industry material (e.g. SCA, World Coffee Research, CQI, ICO); brewing recipes credit their public originators, with copyright held by those authors; competition / champion / auction scores are compiled from public sources, for reference only, and may be dated or inexact.</p>
-      <p>D · Disclaimer: brewing, roasting, and cupping content is informational reference, not professional advice; results vary by bean, equipment, and technique. We strive for accuracy but make no express or implied warranty of completeness, timeliness, or fitness for any purpose.</p>
+      <h2>Legal Notice</h2>
+      <p>© 2026 OLLA Brew Lab. All rights reserved.</p>
+      <p>OLLA Brew Lab and OLLA are names used for this app and related services.</p>
+    </section>
+
+    <!-- ════════════════ 中文 ════════════════ -->
+    <section class="lang" data-lang="zh">
+      <p>OLLA Brew Lab(以下简称“OLLA”“本应用”“我们”)是一款本地优先的精品咖啡记录与参考工具。我们的核心原则很简单:你的个人咖啡数据——例如冲煮记录、豆卡、器具记录、收藏、笔记与偏好设置——保存在你的设备上,我们不会出售。</p>
+
+      <h2>1. 我们收集的信息</h2>
+      <p>当前版本不需要账户、注册或登录。我们不会索取你的姓名、电子邮箱、电话号码、精确位置、通讯录、照片、麦克风权限或广告标识符。</p>
+      <p>你在应用中创建的内容——包括冲煮记录、豆卡/豆罐、器具记录、收藏、笔记与偏好设置——保存在你设备本地的 iOS 应用沙盒内。我们不会将这些内容上传到我们的服务器,也不会出售给第三方。</p>
+      <p>我们不使用 App 跟踪透明度(ATT),也不会跨 App 或网站追踪你。</p>
+
+      <h2>2. 系统权限</h2>
+      <p>本应用不请求相机、照片、精确位置、通讯录或麦克风权限。</p>
+      <p>如果你启用本地养豆提醒,本应用会请求 iOS 通知权限。这些提醒会按你的设置在你的设备上本地调度,并可随时在 iOS 设置或应用内(在提供该选项处)关闭。</p>
+      <p>本应用可能使用设备本地的触感反馈。触感反馈不涉及任何数据收集。</p>
+
+      <h2>3. 网络使用</h2>
+      <p>本应用以本地运行为设计,核心功能无需账户即可使用。</p>
+      <p>本应用可能出于以下有限目的连接网络:</p>
+      <ul>
+        <li>词典更新:本应用可能向我们的内容服务发起匿名请求,以检查并下载公开的咖啡参考内容。这些请求可能包含一个“上次更新时间”游标,使应用仅获取新增或变更的内容。</li>
+        <li>行业参考内容:本应用可能从同一服务获取公开的赛事、拍卖或行业参考内容。</li>
+        <li>连通性检测:本应用可能执行不含内容的可达性检测,以判断网络是否可用。</li>
+      </ul>
+      <p>这些请求不包含你的豆卡、冲煮记录、笔记、收藏或其他个人咖啡数据。我们不会附带用户账户 ID 或广告标识符。</p>
+      <p>标准的服务器日志可能为了安全、调试与可靠性,临时处理诸如 IP 地址、时间戳、请求路径与用户代理(User Agent)等技术性请求信息。我们不会使用这些信息来识别用户、建立用户画像,或跨 App 与网站追踪用户。</p>
+      <p>字体已随应用打包,运行时不会联网下载。</p>
+
+      <h2>4. 你对数据的控制</h2>
+      <p>你掌控你在应用中创建的数据。</p>
+      <p>在「设置 → 数据管理」中,你可以将数据导出为完整的 JSON 备份、在提供该选项处将冲煮记录导出为 CSV、导入或恢复备份,或清除全部本地应用数据。</p>
+      <p>卸载应用会删除存储在你设备上的本地应用数据,具体取决于 iOS 的常规行为以及你自行掌控的设备备份。</p>
+      <p>由于我们不为你的应用内容维护用户账户或服务器端用户画像,大多数数据访问、导出、更正与删除操作都可以直接通过应用的本地数据工具完成。你也可以就隐私问题或请求与我们联系。</p>
+
+      <h2>5. 安全与留存</h2>
+      <p>你的应用内容保存在 iOS 应用沙盒中,受 iOS 系统安全与设备级保护机制保护。从应用导出的备份是由你掌控的文件;你需自行负责安全地存储与分享它们。</p>
+      <p>本地应用数据将保留至你删除它、清除应用数据或卸载应用为止(取决于你选择创建的任何备份)。</p>
+
+      <h2>6. 第三方服务</h2>
+      <p>本应用通过 Apple 的 App Store 分发,并可能使用 Apple 的系统服务进行应用安装、更新、通知与设备级功能。Apple 对数据的处理受 Apple 自身的隐私政策约束。</p>
+      <p>我们的内容服务提供公开的咖啡参考内容,不会接收你的豆卡、冲煮记录、笔记、收藏或其他个人咖啡数据。</p>
+      <p>当前版本未集成广告 SDK、第三方分析 SDK、社交登录 SDK 或第三方崩溃报告 SDK。若未来版本加入此类服务,我们将相应更新本政策与我们在 App Store 的隐私信息。</p>
+
+      <h2>7. 儿童隐私</h2>
+      <p>本应用面向广大咖啡爱好者,并非针对 13 岁以下儿童。我们不会有意收集儿童的个人信息。</p>
+
+      <h2>8. 国际用户</h2>
+      <p>本应用可能在多个国家与地区提供。如果你位于欧洲经济区(EEA)、英国、加利福尼亚、日本或其他享有隐私权利的地区,你可以就隐私相关问题或请求与我们联系。</p>
+      <p>由于本应用不要求用户账户,并将你的个人咖啡内容保存在本地,你可以直接通过应用中的导出、导入与删除功能管理你的大部分应用数据。</p>
+
+      <h2>9. 本政策的变更</h2>
+      <p>我们可能会不时更新本隐私政策。如有重大变更,我们会更新上方的生效日期,并可能在应用内或我们的网站上发出通知。</p>
+
+      <h2>10. 联系我们</h2>
+      <p>如有隐私相关问题,请联系:<a href="mailto:kokennka@gmail.com"><code>kokennka@gmail.com</code></a></p>
+
+      <h2>法律声明</h2>
+      <p>© 2026 OLLA Brew Lab。保留所有权利。</p>
+      <p>OLLA Brew Lab 与 OLLA 是用于本应用及相关服务的名称。</p>
     </section>
 
     <!-- ════════════════ 日本語 ════════════════ -->
     <section class="lang" data-lang="ja">
-      <blockquote>OLLA(以下「本アプリ」「当方」)は、ローカル優先のスペシャルティコーヒー記録・参照ツールです。基本方針:抽出記録・豆カード・器具などの個人データは端末内にのみ保存され、当方は収集・送信・販売を行いません。</blockquote>
+      <p>OLLA Brew Lab(以下「OLLA」「本アプリ」「当方」)は、ローカル優先のスペシャルティコーヒーの記録・参照ツールです。基本方針はシンプルです:抽出記録・豆カード・器具の記録・お気に入り・メモ・設定などのあなたの個人的なコーヒーデータは端末内に保存され、販売されません。</p>
 
-      <h2>1 · 収集する情報</h2>
-      <p>当方は個人を特定できる情報を一切収集しません。v1.0 はアカウント・登録不要で、氏名・メール・電話・位置情報を求めません。</p>
-      <p>あなたが作成した内容(抽出記録・豆カード/豆ジャー・器具・お気に入り・メモ・設定)は端末内(iOS サンドボックス内のデータベース)にのみ保存され、当方や第三者のサーバーには送信されません。</p>
-      <p>広告識別子(IDFA)・端末フィンガープリント・利用解析・クラッシュログ・位置情報・連絡先・写真・マイクは収集しません。App トラッキングは行わず、ATT 許可も要求せず、アプリやサイトを横断した追跡もしません。</p>
+      <h2>1. 収集する情報</h2>
+      <p>現行バージョンはアカウント・登録・ログインを必要としません。氏名・メールアドレス・電話番号・正確な位置情報・連絡先・写真・マイクへのアクセス・広告識別子を求めません。</p>
+      <p>アプリ内で作成した内容——抽出記録・豆カード/豆ジャー・器具の記録・お気に入り・メモ・設定——は、端末内の iOS アプリサンドボックスにローカル保存されます。当方はこの内容をサーバーへアップロードせず、第三者へ販売しません。</p>
+      <p>App トラッキング透明性(ATT)は使用せず、アプリやサイトを横断した追跡も行いません。</p>
 
-      <h2>2 · システム権限</h2>
-      <p>v1.0 は機微な権限を要求しません:カメラ・写真・位置情報・連絡先・マイクなし。ローカルの熟成リマインダーはシステムの通知権限を使用し、初回オン時に要求、いつでも無効化できます。あなたの設定に従い端末内で通知を送るためだけに使われ、通信やデータ収集は伴いません。このほか端末内の触覚フィードバック(振動)のみ使用し、データは関与しません。</p>
+      <h2>2. システム権限</h2>
+      <p>本アプリはカメラ・写真・正確な位置情報・連絡先・マイクへのアクセスを要求しません。</p>
+      <p>ローカルの熟成リマインダーを有効にすると、本アプリは iOS の通知権限を要求します。これらのリマインダーはあなたの設定に従って端末内でスケジュールされ、iOS の設定またはアプリ内(該当する場合)でいつでもオフにできます。</p>
+      <p>本アプリは端末内の触覚フィードバックを使用する場合があります。触覚フィードバックはデータ収集を伴いません。</p>
 
-      <h2>3 · ネットワークの利用</h2>
-      <p>本アプリはオフラインで利用できます。ネットワークは公開の参照コンテンツ取得のみに使用し、あなたの個人データは一切送信しません:</p>
-      <p>· 辞典の更新:「最終更新」カーソルのみを伴う匿名リクエストを当方のコンテンツサービスへ送り、内蔵コーヒー辞典を差分更新します。利用者・端末の識別子は含みません。</p>
-      <p>· 業界情報:同サービスから公開の競技/業界参照コンテンツを匿名で取得します。</p>
-      <p>· 接続確認:データを伴わない到達性チェックを公開テストアドレスへ行う場合があります。</p>
-      <p>フォントはアプリに同梱され、実行時にダウンロードしません。</p>
+      <h2>3. ネットワークの利用</h2>
+      <p>本アプリはローカルで動作するよう設計されており、主要機能はアカウントなしで利用できます。</p>
+      <p>本アプリは限定的な目的でネットワークに接続する場合があります:</p>
+      <ul>
+        <li>辞典の更新:公開のコーヒー参照コンテンツを確認・取得するため、当方のコンテンツサービスへ匿名リクエストを行う場合があります。これらのリクエストには「最終更新」カーソルが含まれることがあり、新規または変更されたコンテンツのみを取得します。</li>
+        <li>業界の参照コンテンツ:同じサービスから、公開の競技・オークション・業界参照コンテンツを取得する場合があります。</li>
+        <li>接続確認:ネットワークが利用可能かを判断するため、コンテンツを伴わない到達性チェックを行う場合があります。</li>
+      </ul>
+      <p>これらのリクエストには、あなたの豆カード・抽出記録・メモ・お気に入り・その他の個人的なコーヒーデータは含まれません。ユーザーアカウント ID や広告識別子も含みません。</p>
+      <p>標準的なサーバーログは、セキュリティ・デバッグ・信頼性のために、IP アドレス・タイムスタンプ・リクエストパス・ユーザーエージェントなどの技術的なリクエスト情報を一時的に処理する場合があります。当方はこの情報を、ユーザーの識別・プロファイル作成・アプリやサイトを横断した追跡には使用しません。</p>
+      <p>フォントはアプリに同梱されており、実行時にダウンロードされません。</p>
 
-      <h2>4 · データの管理</h2>
-      <p>あなたはご自身のデータを完全に管理できます。「設定 → データ管理」でいつでも、全データの書き出し(JSON 完全バックアップ、または抽出記録 CSV)、バックアップの取り込み/復元、全データの消去(取り消し不可)が可能です。</p>
-      <p>アプリを削除すると端末内のすべてのローカルデータが消えます。データは当方サーバーに存在しないため、削除の権利は完全にあなたの手の中にあります。</p>
+      <h2>4. データの管理</h2>
+      <p>アプリ内で作成したデータはあなたが管理します。</p>
+      <p>「設定 → データ管理」で、データを JSON 完全バックアップとして書き出し、該当する場合は抽出記録を CSV で書き出し、バックアップの取り込み/復元、またはすべてのローカルアプリデータの消去ができます。</p>
+      <p>アプリを削除すると端末内のローカルアプリデータは消去されます(iOS の通常の挙動、およびあなたが管理する端末バックアップに従います)。</p>
+      <p>当方はあなたのアプリ内容について、ユーザーアカウントやサーバー側のユーザープロファイルを保持しないため、データへのアクセス・書き出し・訂正・削除の多くはアプリのローカルデータ機能で直接行えます。プライバシーに関する質問やご要望は当方までご連絡いただけます。</p>
 
-      <h2>5 · セキュリティと保持</h2>
-      <p>データは iOS のアプリサンドボックス内に保存され、端末レベルの暗号化とシステムセキュリティで保護されます。書き出したバックアップはご自身で管理してください。データはあなたが削除またはアンインストールするまで保持されます。</p>
+      <h2>5. セキュリティと保持</h2>
+      <p>アプリ内容は iOS アプリサンドボックスに保存され、iOS のシステムセキュリティと端末レベルの保護で守られます。アプリから書き出したバックアップはあなたが管理するファイルであり、安全な保管・共有はあなたの責任です。</p>
+      <p>ローカルアプリデータは、あなたが削除・アプリデータの消去・アプリのアンインストールを行うまで保持されます(あなたが作成したバックアップに従います)。</p>
 
-      <h2>6 · 第三者サービス</h2>
-      <p>Apple:App Store を通じた配信・更新に Apple のプライバシーポリシーが適用されます。当方コンテンツサービス:匿名の参照コンテンツのみを提供し、あなたの個人データは受け取りません。フォントはオープンソースの Google Fonts をオフライン同梱。広告・解析・ソーシャルログインの SDK は一切組み込んでいません。</p>
+      <h2>6. 第三者サービス</h2>
+      <p>本アプリは Apple の App Store を通じて配信され、アプリのインストール・更新・通知・端末レベルの機能のために Apple のシステムサービスを使用する場合があります。Apple によるデータの取り扱いは Apple 自身のプライバシーポリシーに従います。</p>
+      <p>当方のコンテンツサービスは公開のコーヒー参照コンテンツを提供し、あなたの豆カード・抽出記録・メモ・お気に入り・その他の個人的なコーヒーデータを受け取りません。</p>
+      <p>現行バージョンは、広告 SDK・第三者の解析 SDK・ソーシャルログイン SDK・第三者のクラッシュ報告 SDK を組み込んでいません。将来のバージョンでこうしたサービスを追加する場合は、本ポリシーおよび App Store のプライバシー情報を相応に更新します。</p>
 
-      <h2>7 · 子どものプライバシー</h2>
-      <p>本アプリは一般の成人コーヒー愛好家向けで、13 歳未満の子どもを対象としておらず、子どもの情報を意図的に収集しません(COPPA 及び Apple の要件に準拠)。</p>
+      <h2>7. 子どものプライバシー</h2>
+      <p>本アプリは広くコーヒー愛好家を対象としており、13 歳未満の子どもを対象としていません。当方は子どもの個人情報を意図的に収集しません。</p>
 
-      <h2>8 · 国際的な利用者</h2>
-      <p>当方は個人データを収集しないため、GDPR/CCPA 等におけるデータ主体の権利は、端末内の書き出し/削除機能で直接実現できます。EEA・英国・カリフォルニアにお住まいの場合も、法定の権利を保持します。</p>
+      <h2>8. 国際的な利用者</h2>
+      <p>本アプリは複数の国・地域で提供される場合があります。EEA・英国・カリフォルニア・日本、その他プライバシーの権利がある地域にお住まいの場合、プライバシーに関する質問やご要望は当方までご連絡いただけます。</p>
+      <p>本アプリはユーザーアカウントを必要とせず、あなたの個人的なコーヒー内容をローカルに保存するため、アプリ内の書き出し・取り込み・削除機能で大半のデータを直接管理できます。</p>
 
-      <h2>9 · 本ポリシーの変更</h2>
-      <p>本ポリシーは更新されることがあります。重要な変更はアプリ内またはウェブページで通知し、上部の発効日を更新します。</p>
+      <h2>9. 本ポリシーの変更</h2>
+      <p>当方は本プライバシーポリシーを随時更新することがあります。重要な変更を行う場合は、上記の発効日を更新し、アプリ内または当方のウェブサイトで通知する場合があります。</p>
 
-      <h2>10 · お問い合わせ</h2>
+      <h2>10. お問い合わせ</h2>
       <p>プライバシーに関するお問い合わせ:<a href="mailto:kokennka@gmail.com"><code>kokennka@gmail.com</code></a></p>
 
-      <h2>著作権・出典・免責</h2>
-      <p>A · 知的財産:本アプリのデザイン・UI・イラスト・アイコン・オリジナル文章・構成の著作権は OLLA に帰属し、全権利を留保します。「OLLA」及び関連標章は当方の商標です。</p>
-      <p>B · 第三者商標:教育・参照目的で業界標準・器具・競技・手法を参照しています。それらの名称・商標(SCA、Agtron、Hario、Comandante、Mahlkönig、Fellow、La Marzocco、Chemex、AeroPress、World Brewers Cup、Cup of Excellence、Best of Panama 等)は各所有者に帰属します。本アプリはこれらのブランド・団体と提携・スポンサー・推奨の関係になく、参照は識別目的のみです。</p>
-      <p>C · 参照元:辞典の標準・Agtron 値・フレーバーホイール等は公開の業界資料(SCA、World Coffee Research、CQI、ICO 等)に基づきます。抽出レシピは公開の考案者/出典を明記し、著作権は各著者に帰属します。競技/優勝/オークションの点数は公開情報をまとめたもので、参考用であり、古い場合や誤差を含む場合があります。</p>
-      <p>D · 免責:抽出・焙煎・カッピングの内容は情報提供のための参考であり、専門的助言ではありません。結果は豆・器具・技術により異なります。正確性に努めますが、完全性・最新性・特定目的への適合性について明示・黙示の保証を行いません。</p>
+      <h2>法的事項</h2>
+      <p>© 2026 OLLA Brew Lab. All rights reserved.</p>
+      <p>OLLA Brew Lab および OLLA は、本アプリおよび関連サービスに使用される名称です。</p>
     </section>
-
-    <footer>
-      © OLLA · <span data-i18n="footer">本页与 App 内「设置 → 隐私政策」内容一致。</span>
-    </footer>
   </div>
 
   <script>
     (function () {
       var TITLES = { zh: '隐私政策', en: 'Privacy Policy', ja: 'プライバシーポリシー' };
-      var METAS = { zh: '生效日期 · 2026-06-03', en: 'Effective · 2026-06-03', ja: '発効日 · 2026-06-03' };
-      var FOOTERS = {
-        zh: '本页与 App 内「设置 → 隐私政策」内容一致。',
-        en: 'This page mirrors the in-app Settings → Privacy Policy.',
-        ja: 'このページはアプリ内「設定 → プライバシーポリシー」と同一内容です。'
-      };
+      var METAS = { zh: '生效日期:2026年6月3日', en: 'Effective Date: June 3, 2026', ja: '発効日:2026年6月3日' };
       var buttons = document.querySelectorAll('.langbar button');
       var sections = document.querySelectorAll('section.lang');
       function setLang(lang) {
@@ -247,7 +263,6 @@
         sections.forEach(function (s) { s.classList.toggle('active', s.dataset.lang === lang); });
         document.querySelector('[data-i18n="title"]').textContent = TITLES[lang];
         document.querySelector('[data-i18n="meta"]').textContent = METAS[lang];
-        document.querySelector('[data-i18n="footer"]').textContent = FOOTERS[lang];
       }
       buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
       // Default to English; ?lang=zh|en|ja overrides.
