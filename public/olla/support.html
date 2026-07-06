@@ -78,15 +78,20 @@
 
     <!-- ════════════════ English ════════════════ -->
     <section class="lang active" data-lang="en">
-      <p>A local-first companion for specialty coffee — create bean cards, look up coffee knowledge, track resting, and record brews.</p>
+      <p>A local-first companion for specialty coffee — create bean cards, look up coffee knowledge, track resting, and record brews and cuppings.</p>
 
       <h2>About OLLA Brew Lab</h2>
-      <p>OLLA Brew Lab is a local-first specialty coffee logging and reference tool. It brings bean cards, coffee knowledge lookup, resting tracking, brewing tools, and brew records into one place.</p>
-      <p>The app is built around a structured coffee knowledge base that helps you enter and review coffee information faster. Your personal app data — such as bean cards, brew logs, notes, favorites, and preferences — is stored on your device. No account is required, and the core features are designed to work locally.</p>
+      <p>OLLA Brew Lab is a local-first specialty coffee logging and reference tool. It brings bean cards, coffee knowledge lookup, resting tracking, brewing tools, brew records, and cupping records into one place.</p>
+      <p>The app is built around a structured coffee knowledge base that helps you enter and review coffee information faster. Your personal app data — such as bean cards, brew logs, cupping records, notes, favorites, and preferences — is stored on your device; sign in with Apple and it can also sync across your devices through your own iCloud. All core features work without an account.</p>
 
       <h2>Bean Cards &amp; Home Screen Widgets</h2>
       <p>Manage your beans as a card deck. Each bean card can record variety, origin, estate, process, roast level, purchase date, roast date, and resting information.</p>
       <p>The card can expand into a full detail view, and resting / suggested drinking windows are visualized with a phased progress display. You can pin selected beans and show key information through iOS Home Screen widgets in small and medium sizes.</p>
+
+      <h2>Label Scan &amp; Image Sharing</h2>
+      <p>When creating a bean card, tap the scan button and photograph the coffee-bag label, or pick a photo from your library. The app reads the origin, variety, process, roast level, roast date, altitude, and weight. Every recognized field shows its source text, and you confirm, edit, or exclude each one before it fills the card.</p>
+      <p>Recognition runs entirely on your device; neither the photo nor the recognized text is uploaded. You may optionally keep the bag photo as the bean-card cover, stored only on your device.</p>
+      <p>Brew, bean, and cupping detail pages can produce a lab-sheet style share image, sent through the iOS system share sheet. When a brew lands in the golden-cup range for both extraction yield and strength, a gold note appears on the brew card and detail page.</p>
 
       <h2>Coffee Codex &amp; REF Data Cards</h2>
       <p>OLLA includes a built-in coffee knowledge base covering origins, variety lineages, estates, processing, roasting, brewing, sensory work, and coffee culture.</p>
@@ -96,6 +101,11 @@
       <h2>Brew Log &amp; Sensory Panel</h2>
       <p>Record your brews and review them over time. Brew logs can include dose, grind, water temperature, ratio, TDS, extraction yield, brew method, notes, and sensory impressions.</p>
       <p>The sensory panel helps you compare brews through aroma, acidity, sweetness, body, aftertaste, and balance. Where available, you can also record SCA-style flavor information and extraction-related data.</p>
+
+      <h2>Cupping Records &amp; Coffee Archive</h2>
+      <p>Record cuppings on a professional three-part sheet: basic info, ten SCA-style ruler scores — fragrance, flavor, aftertaste and more — plus extraction info and brewing strategy. Scores of 80+ earn a SPECIALTY stamp, and any sheet can be exported as an A4 PDF to share.</p>
+      <p>The Coffee Archive brings bean cards, brews, and cuppings together in one hub with stats, search, and filters; the journal and yearly stats include cuppings as well.</p>
+      <p>The cupping feature, the in-app cupping sheet, and the exported A4 cupping-sheet layout are based on a prototype sheet provided by IvanYang, co-developed as OLLA BREW LAB × IvanYang. Rights to the prototype sheet design belong to IvanYang; the in-app implementation and the digital layout of the exported PDF are © OLLA Brew Lab.</p>
 
       <h2>Toolbox</h2>
       <p>OLLA includes a set of coffee tools for daily brewing and reference, including:</p>
@@ -116,9 +126,13 @@
       <p>You can set local reminders for bean cards, such as reminders for resting progress or suggested drinking windows.</p>
       <p>These reminders are scheduled on your device through the iOS notification system. They do not require a push server and do not upload your bean card or brew log data. Notification permission is requested only when you enable reminder-related features, and you can turn it off at any time in iOS Settings.</p>
 
+      <h2>iCloud Sync &amp; Sign in with Apple</h2>
+      <p>You can optionally use Sign in with Apple to create a local identity and enable iCloud sync: bean cards, brew logs, cupping records, favorites, and preferences are written into the private iCloud container under your own Apple ID and sync across your devices automatically (on cold start, on returning to the foreground, or via Sync Now).</p>
+      <p>This data moves only between your own devices and your own iCloud — we do not operate account servers and cannot access or receive it. You can sign out at any time, turn off the app’s iCloud permission in iOS Settings, or use Restore from Backup.</p>
+
       <h2>Local-First · Private · Trilingual</h2>
-      <p>Your personal app data is stored on your device. No account is required.</p>
-      <p>Core features are designed to work locally. The app may connect to the network only for limited purposes, such as checking for public coffee reference content updates or industry reference content. These requests do not include your bean cards, brew logs, notes, favorites, or other personal coffee data.</p>
+      <p>Your personal app data is stored on your device (and in your own iCloud if you choose to enable it). All core features work without an account.</p>
+      <p>Core features are designed to work locally. The app may connect to the network only for limited purposes, such as checking for public coffee reference content updates or industry reference content. These requests do not include your bean cards, brew logs, cupping records, notes, favorites, or other personal coffee data. The optional Apple sign-in and iCloud sync are Apple system services — your data never passes through our servers. See the <a href="/olla/">Privacy Policy</a> (updated 2026-07-06).</p>
       <p>OLLA supports Simplified Chinese, English, and Japanese. It also includes multiple appearance themes, including light and dark styles.</p>
       <p>Data export and import are available in Settings → Data, including full JSON backup and CSV export where supported.</p>
 
@@ -128,13 +142,18 @@
       <h2>FAQ</h2>
       <div class="faq">
         <h3>Do I need an account?</h3>
-        <p>No. OLLA Brew Lab does not require an account, login, or sign-up.</p>
+        <p>No. All core features work without an account. You can optionally use Sign in with Apple to create a local identity — it signs your cupping sheets as the taster and enables iCloud sync; staying signed out does not limit any local feature.</p>
         <h3>Do I need internet access?</h3>
-        <p>Core features are designed to work locally. You can create bean cards, record brews, use tools, and access built-in reference content without an account. Network access may be used for public reference content updates and connectivity checks. These requests do not include your personal coffee data.</p>
+        <p>Core features are designed to work locally. You can create bean cards, record brews and cuppings, use tools, and access built-in reference content without an account. Network access may be used for public reference content updates and connectivity checks; these requests do not include your personal coffee data. If you enable iCloud sync, sync traffic goes through Apple’s iCloud, not our servers.</p>
         <h3>How do I back up or move my data?</h3>
-        <p>Go to Settings → Data. You can export a full JSON backup, export brew records as CSV where available, and import or restore your data on another device.</p>
+        <p>The easiest way is to sign in with Apple and enable iCloud sync — your data then follows you across devices automatically. You can also go to Settings → Data to export a full JSON backup, export brew records as CSV where available, and import or restore on another device.</p>
+        <h3>Is iCloud sync data safe?</h3>
+        <p>The synced snapshot is written only into the private iCloud container under your own Apple ID, transmitted and stored by Apple; it moves only between your own devices and your own iCloud, and we cannot access it. See the <a href="/olla/">Privacy Policy</a> (updated 2026-07-06).</p>
         <h3>Are reminders private?</h3>
         <p>Yes. Bean reminders are scheduled locally on your device through the iOS notification system. They are not sent through a push server, and they do not upload your bean cards or brew logs. You can manage notification permission in iOS Settings and reminder settings inside the app where available.</p>
+        <h3>Does label scan upload my photos?</h3>
+        <p>No. Text recognition runs on your device using Apple’s Vision framework; neither the photo nor the recognized text is sent to us or to any third party. A photo kept as the bean-card cover is also stored only on your device.</p>
+        <p>If tapping the scan button shows a message asking you to update, the installed build does not yet include the recognition component; please update to the latest version from the App Store or TestFlight.</p>
         <h3>Which languages are supported?</h3>
         <p>OLLA Brew Lab supports Simplified Chinese, English, and Japanese. The app can follow your system language where supported.</p>
         <h3>Which themes are supported?</h3>
@@ -171,15 +190,20 @@
 
     <!-- ════════════════ 中文 ════════════════ -->
     <section class="lang" data-lang="zh">
-      <p>本地优先的精品咖啡伴侣——创建豆卡、查询咖啡知识、追踪养豆、记录冲煮。</p>
+      <p>本地优先的精品咖啡伴侣——创建豆卡、查询咖啡知识、追踪养豆、记录冲煮与杯测。</p>
 
       <h2>关于 OLLA Brew Lab</h2>
-      <p>OLLA Brew Lab 是一款本地优先的精品咖啡记录与参考工具。它把豆卡、咖啡知识查询、养豆追踪、冲煮工具与冲煮记录整合到一处。</p>
-      <p>本应用以结构化的咖啡知识库为核心,帮助你更快地录入与回顾咖啡信息。你的个人应用数据——例如豆卡、冲煮记录、笔记、收藏与偏好设置——保存在你的设备上。无需账户,核心功能以本地运行为设计。</p>
+      <p>OLLA Brew Lab 是一款本地优先的精品咖啡记录与参考工具。它把豆卡、咖啡知识查询、养豆追踪、冲煮工具、冲煮记录与杯测记录整合到一处。</p>
+      <p>本应用以结构化的咖啡知识库为核心,帮助你更快地录入与回顾咖啡信息。你的个人应用数据——例如豆卡、冲煮记录、杯测记录、笔记、收藏与偏好设置——保存在你的设备上;登录 Apple 账户后,还可通过你自己的 iCloud 在多台设备间同步。全部核心功能无需账户即可使用。</p>
 
       <h2>豆卡与桌面小组件</h2>
       <p>以卡片堆的方式管理你的咖啡豆。每张豆卡可记录品种、产地、庄园、处理法、烘焙度、购买日期、烘焙日期与养豆信息。</p>
       <p>豆卡可展开为完整的详情视图,养豆 / 建议赏味期以分阶段进度显示直观呈现。你可以置顶选定的豆子,并通过中、小两种尺寸的 iOS 桌面小组件展示关键信息。</p>
+
+      <h2>拍照识别与图片分享</h2>
+      <p>新建豆卡时,点按「拍照识别」,拍摄或从相册选择豆袋标签,应用会自动读出产地、品种、处理法、烘焙度、烘焙日期、海拔与克重。每一项识别结果都附有来源文字,你可以逐项确认、修改或排除后再填入豆卡。</p>
+      <p>识别完全在你的设备上完成,照片与识别出的文字都不会上传。豆袋照片可以选择留作豆卡封面,只保存在你设备本地。</p>
+      <p>冲煮、豆卡、杯测详情页均可生成一张实验单风格的分享图,通过 iOS 系统分享面板发送;当一次冲煮的萃取率与浓度同时落入金杯区间时,冲煮卡与详情页会出现一枚金色便签。</p>
 
       <h2>咖啡词典与 REF 数据卡</h2>
       <p>OLLA 内置一个咖啡知识库,涵盖产地、品种谱系、庄园、处理法、烘焙、冲煮、感官与咖啡文化。</p>
@@ -189,6 +213,11 @@
       <h2>冲煮记录与感官面板</h2>
       <p>记录你的冲煮并随时间回顾。冲煮记录可包含粉量、研磨度、水温、粉水比、TDS、萃取率、冲煮方式、笔记与感官印象。</p>
       <p>感官面板帮助你通过香气、酸度、甜度、醇厚、余韵与平衡来比较不同冲煮。在可用处,你还可以记录 SCA 风格的风味信息与萃取相关数据。</p>
+
+      <h2>杯测记录与咖啡档案</h2>
+      <p>以专业三段式杯测单记录杯测:基础信息、干香 / 风味 / 余韵等 10 项 SCA 风格标尺打分,以及萃取信息与冲煮策略。80 分以上获得 SPECIALTY 徽章,并可导出 A4 杯测单 PDF 分享。</p>
+      <p>「咖啡档案」把豆卡、冲煮与杯测三份记录整合到一处,支持统计、搜索与筛选;日志与年度统计也会一并纳入杯测。</p>
+      <p>杯测功能、应用内杯测表格与导出的 A4 杯测单版式,基于 IvanYang 提供的原型表格设计,由 OLLA BREW LAB × IvanYang 联合开发。原型表格设计的权利归 IvanYang 所有;应用内实现与导出 PDF 的数字版式设计 © OLLA Brew Lab。</p>
 
       <h2>工具箱</h2>
       <p>OLLA 内置一套用于日常冲煮与参考的咖啡工具,包括:</p>
@@ -209,9 +238,13 @@
       <p>你可以为豆卡设置本地提醒,例如养豆进度或建议赏味期的提醒。</p>
       <p>这些提醒通过 iOS 通知系统在你的设备上调度。它们不需要推送服务器,也不会上传你的豆卡或冲煮记录数据。仅在你启用提醒相关功能时才会请求通知权限,且你可随时在 iOS 设置中关闭。</p>
 
+      <h2>iCloud 同步与 Apple 登录</h2>
+      <p>你可以选择使用「通过 Apple 登录」建立本地身份,并启用 iCloud 同步:豆卡、冲煮记录、杯测记录、收藏与偏好设置会写入你 Apple ID 名下的私人 iCloud 容器,在你的多台设备间自动同步(冷启动、回到前台或手动「立即同步」时)。</p>
+      <p>这些数据仅在你自己的设备与你自己的 iCloud 之间流动——我们不运营账户服务器,无法访问也不会收到这些数据。你可随时退出登录、在 iOS 设置中关闭本应用的 iCloud 权限,或使用「从备份恢复」。</p>
+
       <h2>本地优先 · 隐私 · 三语</h2>
-      <p>你的个人应用数据保存在你的设备上。无需账户。</p>
-      <p>核心功能以本地运行为设计。本应用仅出于有限目的连接网络,例如检查公开的咖啡参考内容更新或行业参考内容。这些请求不包含你的豆卡、冲煮记录、笔记、收藏或其他个人咖啡数据。</p>
+      <p>你的个人应用数据保存在你的设备上(以及你自己选择启用的 iCloud 中)。全部核心功能无需账户。</p>
+      <p>核心功能以本地运行为设计。本应用仅出于有限目的连接网络,例如检查公开的咖啡参考内容更新或行业参考内容。这些请求不包含你的豆卡、冲煮记录、杯测记录、笔记、收藏或其他个人咖啡数据。可选的 Apple 登录与 iCloud 同步均为 Apple 的系统服务,数据不经过我们的服务器——详见<a href="/olla/">《隐私政策》</a>(2026-07-06 更新)。</p>
       <p>OLLA 支持简体中文、英文与日文。它还提供多种外观主题,包括浅色与深色样式。</p>
       <p>数据导出与导入可在「设置 → 数据管理」中进行,包括完整 JSON 备份与(在支持处的)CSV 导出。</p>
 
@@ -221,13 +254,18 @@
       <h2>常见问题</h2>
       <div class="faq">
         <h3>需要账户吗?</h3>
-        <p>不需要。OLLA Brew Lab 不需要账户、登录或注册。</p>
+        <p>不需要。全部核心功能无需账户即可使用。你可以选择使用「通过 Apple 登录」建立本地身份——用于杯测单上的品鉴师署名,并启用 iCloud 同步;不登录不影响任何本地功能。</p>
         <h3>需要联网吗?</h3>
-        <p>核心功能以本地运行为设计。你无需账户即可创建豆卡、记录冲煮、使用工具并访问内置参考内容。联网可能用于公开参考内容更新与连通性检测。这些请求不包含你的个人咖啡数据。</p>
+        <p>核心功能以本地运行为设计。你无需账户即可创建豆卡、记录冲煮与杯测、使用工具并访问内置参考内容。联网可能用于公开参考内容更新与连通性检测,这些请求不包含你的个人咖啡数据。若启用 iCloud 同步,同步流量走 Apple 的 iCloud,不经过我们的服务器。</p>
         <h3>如何备份或迁移我的数据?</h3>
-        <p>进入「设置 → 数据管理」。你可以导出完整 JSON 备份、在可用处将冲煮记录导出为 CSV,并在另一台设备上导入或恢复你的数据。</p>
+        <p>最简单的方式是登录 Apple 账户并启用 iCloud 同步——数据会在你的设备间自动同步。你也可以进入「设置 → 数据管理」导出完整 JSON 备份、在可用处将冲煮记录导出为 CSV,并在另一台设备上导入或恢复。</p>
+        <h3>iCloud 同步的数据安全吗?</h3>
+        <p>同步的数据快照只写入你 Apple ID 名下的私人 iCloud 容器,由 Apple 负责传输与存储;它只在你自己的设备与你自己的 iCloud 之间流动,我们无法访问。详见<a href="/olla/">《隐私政策》</a>(2026-07-06 更新)。</p>
         <h3>提醒是私密的吗?</h3>
         <p>是。养豆提醒通过 iOS 通知系统在你的设备上本地调度。它们不经过推送服务器,也不会上传你的豆卡或冲煮记录。你可以在 iOS 设置中管理通知权限,并在应用内(提供该选项处)管理提醒设置。</p>
+        <h3>拍照识别的照片会上传吗?</h3>
+        <p>不会。文字识别通过 Apple 的 Vision 框架在你的设备上完成,照片与识别出的文字都不会发送给我们或任何第三方。留作豆卡封面的照片也只保存在你设备本地。</p>
+        <p>如果点按「拍照识别」后提示需要更新版本,说明当前安装的构建还不包含识别组件,请从 App Store 或 TestFlight 更新到最新版本。</p>
         <h3>支持哪些语言?</h3>
         <p>OLLA Brew Lab 支持简体中文、英文与日文。在支持处,应用可跟随你的系统语言。</p>
         <h3>支持哪些主题?</h3>
@@ -264,15 +302,20 @@
 
     <!-- ════════════════ 日本語 ════════════════ -->
     <section class="lang" data-lang="ja">
-      <p>ローカル優先のスペシャルティコーヒーの相棒——豆カードを作り、コーヒーの知識を調べ、熟成を追跡し、抽出を記録する。</p>
+      <p>ローカル優先のスペシャルティコーヒーの相棒——豆カードを作り、コーヒーの知識を調べ、熟成を追跡し、抽出とカッピングを記録する。</p>
 
       <h2>OLLA Brew Lab について</h2>
-      <p>OLLA Brew Lab はローカル優先のスペシャルティコーヒーの記録・参照ツールです。豆カード、コーヒー知識の検索、熟成の追跡、抽出ツール、抽出記録をひとつにまとめます。</p>
-      <p>本アプリは構造化されたコーヒー知識ベースを軸に、コーヒー情報の入力と振り返りを素早く行えます。豆カード・抽出記録・メモ・お気に入り・設定などのあなたの個人アプリデータは端末内に保存されます。アカウントは不要で、主要機能はローカルで動作するよう設計されています。</p>
+      <p>OLLA Brew Lab はローカル優先のスペシャルティコーヒーの記録・参照ツールです。豆カード、コーヒー知識の検索、熟成の追跡、抽出ツール、抽出記録、カッピング記録をひとつにまとめます。</p>
+      <p>本アプリは構造化されたコーヒー知識ベースを軸に、コーヒー情報の入力と振り返りを素早く行えます。豆カード・抽出記録・カッピング記録・メモ・お気に入り・設定などのあなたの個人アプリデータは端末内に保存されます。Apple でサインインすると、あなた自身の iCloud を通じてデバイス間で同期することもできます。主要機能はすべてアカウントなしで利用できます。</p>
 
       <h2>豆カードとホーム画面ウィジェット</h2>
       <p>コーヒー豆をカードデッキとして管理。各豆カードには品種・産地・農園・精製・焙煎度・購入日・焙煎日・熟成情報を記録できます。</p>
       <p>カードは詳細ビューに展開でき、熟成 / おすすめの飲み頃は段階式の進捗表示で可視化されます。選んだ豆をピン留めし、中・小サイズの iOS ホーム画面ウィジェットで主要情報を表示できます。</p>
+
+      <h2>ラベル読み取りと画像シェア</h2>
+      <p>豆カードの新規作成時に「ラベル読み取り」をタップし、コーヒー袋のラベルを撮影するか、ライブラリから写真を選びます。アプリは産地・品種・精製方法・焙煎度・焙煎日・標高・内容量を読み取ります。認識された各項目には読み取り元のテキストが表示され、確認・編集・除外してからカードへ反映できます。</p>
+      <p>認識はすべて端末内で行われ、写真も認識されたテキストもアップロードされません。袋の写真は任意で豆カードの表紙として保存でき、端末内にのみ保存されます。</p>
+      <p>ドリップ・豆・カッピングの詳細ページからは、ラボシート風のシェア画像を生成し、iOS のシステム共有シートから送信できます。抽出収率と濃度がともにゴールデンカップの基準域に入ると、ドリップカードと詳細ページに金色の付箋が表示されます。</p>
 
       <h2>コーヒー辞典と REF データカード</h2>
       <p>OLLA には、産地・品種系統・農園・精製・焙煎・抽出・感覚・コーヒー文化を網羅する内蔵のコーヒー知識ベースがあります。</p>
@@ -282,6 +325,11 @@
       <h2>抽出ログと感覚パネル</h2>
       <p>抽出を記録し、時間をかけて振り返ります。抽出記録には、粉量・挽き目・湯温・比率・TDS・収率・抽出方法・メモ・感覚的な印象を含められます。</p>
       <p>感覚パネルは、香り・酸・甘み・ボディ・後味・バランスで抽出を比較できます。利用可能な場合は、SCA 形式の風味情報や抽出関連データも記録できます。</p>
+
+      <h2>カッピング記録とコーヒーアーカイブ</h2>
+      <p>本格的な 3 部構成のカッピングシートで記録:基本情報、ドライ香 / フレーバー / 余韻など SCA スタイル 10 項目のスケール採点、そして抽出情報と抽出戦略。80 点以上で SPECIALTY スタンプが付き、シートは A4 PDF として書き出して共有できます。</p>
+      <p>「コーヒーアーカイブ」は豆カード・抽出・カッピングの記録をひとつのハブに集約し、統計・検索・絞り込みに対応。ジャーナルと年間統計にもカッピングが含まれます。</p>
+      <p>本アプリのカッピング機能、カッピングシート、および書き出される A4 カッピングシートのレイアウトは、IvanYang 提供のプロトタイプシートに基づき、OLLA BREW LAB × IvanYang として共同開発されたものです。プロトタイプシートのデザインに関する権利は IvanYang に帰属し、アプリ内の実装および書き出される PDF のデジタルレイアウトは © OLLA Brew Lab です。</p>
 
       <h2>ツールボックス</h2>
       <p>OLLA には、日々の抽出と参照のためのコーヒーツール群が含まれます:</p>
@@ -302,9 +350,13 @@
       <p>豆カードにローカルリマインダーを設定できます。たとえば熟成の進捗やおすすめの飲み頃の通知です。</p>
       <p>これらのリマインダーは iOS の通知システムを通じて端末内でスケジュールされます。プッシュサーバーを必要とせず、豆カードや抽出記録のデータをアップロードしません。通知権限はリマインダー関連の機能を有効にしたときのみ要求され、iOS の設定でいつでもオフにできます。</p>
 
+      <h2>iCloud 同期と Apple でサインイン</h2>
+      <p>任意で「Apple でサインイン」を使ってローカルの身元を作成し、iCloud 同期を有効にできます:豆カード・抽出記録・カッピング記録・お気に入り・設定が、あなた自身の Apple ID に紐づく私的な iCloud コンテナに書き込まれ、デバイス間で自動的に同期されます(起動時・フォアグラウンド復帰時・手動の「今すぐ同期」)。</p>
+      <p>このデータはあなた自身の端末とあなた自身の iCloud の間だけを移動します——当方はアカウントサーバーを運営しておらず、アクセスも受け取りもできません。いつでもサインアウトでき、iOS 設定で本アプリの iCloud 権限をオフにしたり、「バックアップから復元」を使うこともできます。</p>
+
       <h2>ローカル優先 · プライバシー · 三言語</h2>
-      <p>あなたの個人アプリデータは端末内に保存されます。アカウントは不要です。</p>
-      <p>主要機能はローカルで動作するよう設計されています。本アプリは、公開のコーヒー参照コンテンツの更新確認や業界参照コンテンツなど、限定的な目的のみでネットワークに接続する場合があります。これらのリクエストには、あなたの豆カード・抽出記録・メモ・お気に入り・その他の個人的なコーヒーデータは含まれません。</p>
+      <p>あなたの個人アプリデータは端末内(および、あなたが有効にした場合はあなた自身の iCloud 内)に保存されます。主要機能はすべてアカウントなしで利用できます。</p>
+      <p>主要機能はローカルで動作するよう設計されています。本アプリは、公開のコーヒー参照コンテンツの更新確認や業界参照コンテンツなど、限定的な目的のみでネットワークに接続する場合があります。これらのリクエストには、あなたの豆カード・抽出記録・カッピング記録・メモ・お気に入り・その他の個人的なコーヒーデータは含まれません。任意の Apple サインインと iCloud 同期はいずれも Apple のシステムサービスで、データが当方のサーバーを経由することはありません——詳しくは<a href="/olla/">プライバシーポリシー</a>(2026-07-06 更新)をご覧ください。</p>
       <p>OLLA は簡体字中国語・英語・日本語に対応します。ライト・ダークを含む複数の外観テーマも備えています。</p>
       <p>データの書き出し・取り込みは「設定 → データ管理」で行え、JSON 完全バックアップと(対応する場合の)CSV 書き出しを含みます。</p>
 
@@ -314,13 +366,18 @@
       <h2>よくある質問</h2>
       <div class="faq">
         <h3>アカウントは必要ですか?</h3>
-        <p>不要です。OLLA Brew Lab はアカウント・ログイン・登録を必要としません。</p>
+        <p>不要です。主要機能はすべてアカウントなしで利用できます。任意で「Apple でサインイン」を使ってローカルの身元を作成できます——カッピングシートのテイスター署名に使われ、iCloud 同期が有効になります。サインインしなくてもローカル機能に制限はありません。</p>
         <h3>ネット接続は必要ですか?</h3>
-        <p>主要機能はローカルで動作するよう設計されています。アカウントなしで豆カードの作成・抽出の記録・ツールの利用・内蔵参照コンテンツの閲覧ができます。ネットワークは公開参照コンテンツの更新や接続確認に使われる場合があります。これらのリクエストにあなたの個人的なコーヒーデータは含まれません。</p>
+        <p>主要機能はローカルで動作するよう設計されています。アカウントなしで豆カードの作成・抽出とカッピングの記録・ツールの利用・内蔵参照コンテンツの閲覧ができます。ネットワークは公開参照コンテンツの更新や接続確認に使われる場合があり、これらのリクエストに個人的なコーヒーデータは含まれません。iCloud 同期を有効にした場合、同期の通信は Apple の iCloud を経由し、当方のサーバーは通りません。</p>
         <h3>データのバックアップ・移行は?</h3>
-        <p>「設定 → データ管理」へ。JSON 完全バックアップの書き出し、該当する場合は抽出記録の CSV 書き出し、別の端末での取り込み/復元ができます。</p>
+        <p>いちばん簡単なのは Apple でサインインして iCloud 同期を有効にすることです——データはデバイス間で自動的に同期されます。「設定 → データ管理」から JSON 完全バックアップの書き出し、該当する場合は抽出記録の CSV 書き出し、別の端末での取り込み/復元も行えます。</p>
+        <h3>iCloud 同期のデータは安全ですか?</h3>
+        <p>同期されるスナップショットは、あなた自身の Apple ID に紐づく私的な iCloud コンテナにのみ書き込まれ、転送と保存は Apple が行います。あなた自身の端末とあなた自身の iCloud の間だけを移動し、当方はアクセスできません。詳しくは<a href="/olla/">プライバシーポリシー</a>(2026-07-06 更新)をご覧ください。</p>
         <h3>リマインダーは非公開ですか?</h3>
         <p>はい。熟成リマインダーは iOS の通知システムを通じて端末内でローカルにスケジュールされます。プッシュサーバーを介さず、豆カードや抽出記録をアップロードしません。通知権限は iOS の設定で、リマインダー設定はアプリ内(該当する場合)で管理できます。</p>
+        <h3>ラベル読み取りの写真はアップロードされますか?</h3>
+        <p>いいえ。文字認識は Apple の Vision フレームワークにより端末内で行われ、写真も認識されたテキストも、当方や第三者へ送信されることはありません。豆カードの表紙として保存した写真も端末内にのみ保存されます。</p>
+        <p>「ラベル読み取り」をタップして更新を促すメッセージが表示される場合、インストール中のビルドに認識コンポーネントがまだ含まれていません。App Store または TestFlight から最新バージョンへ更新してください。</p>
         <h3>対応言語は?</h3>
         <p>OLLA Brew Lab は簡体字中国語・英語・日本語に対応します。対応する場合、システム言語に追従できます。</p>
         <h3>対応テーマは?</h3>
